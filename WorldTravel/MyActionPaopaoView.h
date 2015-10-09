@@ -6,8 +6,7 @@
 //  Copyright (c) 2014年 Kent Peifeng Ke. All rights reserved.
 //
 
-#import "BMKActionPaopaoView.h"
 
-@interface MyActionPaopaoView : BMKActionPaopaoView
+@interface MyActionPaopaoView : UIView
 
 @end

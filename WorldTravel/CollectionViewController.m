@@ -73,7 +73,13 @@
         [cell.contentView addSubview:label];
     }
     
-    NSArray * colors = @[[UIColor redColor], [UIColor orangeColor], [UIColor yellowColor], [UIColor greenColor], [UIColor cyanColor], [UIColor blueColor], [UIColor magentaColor]];
+    NSArray * colors = @[[UIColor colorWithRed:0.850 green:0.218 blue:0.159 alpha:1.000],
+                         [UIColor colorWithRed:0.977 green:0.605 blue:0.000 alpha:1.000],
+                         [UIColor colorWithRed:0.986 green:0.780 blue:0.000 alpha:1.000],
+                         [UIColor colorWithRed:0.595 green:0.750 blue:0.000 alpha:1.000],
+                         [UIColor colorWithRed:0.182 green:0.694 blue:0.530 alpha:1.000],
+                         [UIColor colorWithRed:0.190 green:0.358 blue:0.438 alpha:1.000],
+                         [UIColor colorWithRed:0.669 green:0.731 blue:0.949 alpha:1.000]];
     label.backgroundColor = [colors objectAtIndex:arc4random_uniform(colors.count-1)];
     label.text = [NSString stringWithFormat:@"%d", indexPath.row];
     

@@ -8,6 +8,7 @@
 
 #import "CircleButtonViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "UIImage+Utility.h"
 
 @interface CircleButtonViewController ()
 
@@ -65,6 +66,21 @@
     NSLog(@"%@", NSStringFromCGPoint([self.view convertPoint:(CGPointZero) fromView:button]));
     
     NSLog(@"%@", NSStringFromCGPoint([button convertPoint:CGPointZero toView:button2]));
+    
+    UILabel * label = [[UILabel alloc] initWithFrame:(CGRectMake(0, -20, 150, 20))];
+    label.text = @"Hello0101";
+    label.textColor = [UIColor redColor];
+    label.backgroundColor = [UIColor clearColor];
+    label.opaque = NO;
+    CALayer * subViewLayer = [CALayer layer];
+    subViewLayer.contents = (id)[UIImage imageWithView:label].CGImage;
+    
+    subViewLayer.frame = label.frame;
+//    [button.layer addSublayer:subViewLayer];
+    
+     
+    [button.layer addSublayer:label.layer];
+    
 }
 
 - (void)didReceiveMemoryWarning

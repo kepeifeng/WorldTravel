@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "ChatViewController.h"
+#import "LAMapView.h"
 
 @interface ViewController ()<CLLocationManagerDelegate>
 @property (nonatomic , strong) CLLocationManager *locationManager;
@@ -16,8 +17,8 @@
 @implementation ViewController{
     NSInteger markCount;
     NSMutableArray *pointArray;
-    BMKPolyline *pathLine;
-    BMKPolylineView *pathView;
+    LAPolyline *pathLine;
+    LAPolylineView *pathView;
     CLLocationManager * lm;
 }
 
@@ -46,8 +47,6 @@
     
     self.navigationController.navigationBarHidden = NO;
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Chat" style:UIBarButtonItemStylePlain target:self action:@selector(chatButtonTapped:)];
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,7 +58,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-	[_mapView viewWillAppear];
+//	[_mapView viewWillAppear];
 	_mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
     
     self.navigationController.toolbarHidden = NO;
@@ -70,7 +69,7 @@
 
 -(void)viewWillDisappear:(BOOL)animated
 {
-    [_mapView viewWillDisappear];
+//    [_mapView viewWillDisappear];
     _mapView.delegate = nil; // 不用时，置nil
     self.navigationController.toolbarHidden = YES;
 }
@@ -81,7 +80,7 @@
         self.mapView.showsUserLocation = NO;
     }else{
         self.mapView.showsUserLocation = NO;
-        self.mapView.userTrackingMode = BMKUserTrackingModeNone;
+        self.mapView.userTrackingMode = LAUserTrackingModeNone;
         self.mapView.showsUserLocation = YES;
     }
     
@@ -89,20 +88,14 @@
 }
 
 
--(void)chatButtonTapped:(id)sender{
-    
-    ChatViewController *chatViewController = [[ChatViewController alloc] init];
-    [self.navigationController pushViewController:chatViewController animated:YES];
-    
-}
 
--(void)mapView:(BMKMapView *)mapView onClickedMapPoi:(BMKMapPoi *)mapPoi{
+//-(void)mapView:(LAMapView *)mapView onClickedMapPoi:(LAMapPoi *)mapPoi{
+//
+//}
 
-}
-
--(void)mapView:(BMKMapView *)mapView onClickedMapBlank:(CLLocationCoordinate2D)coordinate{
+-(void)mapView:(LAMapView *)mapView onClickedMapBlank:(CLLocationCoordinate2D)coordinate{
     NSLog(@"Tapped");
-    BMKPointAnnotation *annotation = [[BMKPointAnnotation alloc]init];
+    LAPointAnnotation *annotation = [[LAPointAnnotation alloc]init];
     annotation.coordinate = coordinate;
     annotation.title = [NSString stringWithFormat:@"%d",markCount];
     [self.mapView addAnnotation:annotation];
@@ -120,7 +113,7 @@
     }
 
 
-    BMKPolyline *polyLine = [BMKPolyline polylineWithCoordinates:coordinates count:[pointArray count]];
+    LAPolyline *polyLine = [LAPolyline polylineWithCoordinates:coordinates count:[pointArray count]];
     if(pathLine){
     
         [self.mapView removeOverlay:pathLine];
@@ -132,13 +125,13 @@
 
 }
 
--(BMKAnnotationView *)mapView:(BMKMapView *)mapView viewForAnnotation:(id<BMKAnnotation>)annotation{
+-(LAAnnotationView *)mapView:(LAMapView *)mapView viewForAnnotation:(id<LAAnnotation>)annotation{
 
     static NSString * LAAnnotationViewIdentifier = @"AnnotationViewIdentifier";
     static UIImage *image;
-    BMKAnnotationView *annotationView = [self.mapView dequeueReusableAnnotationViewWithIdentifier:LAAnnotationViewIdentifier];
+    LAAnnotationView *annotationView = [self.mapView dequeueReusableAnnotationViewWithIdentifier:LAAnnotationViewIdentifier];
     if(!annotationView){
-        annotationView = [[BMKAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:LAAnnotationViewIdentifier];
+        annotationView = [[LAAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:LAAnnotationViewIdentifier];
         if(!image){
         
             image = [UIImage imageNamed:@"mark"];
@@ -158,11 +151,11 @@
 
 
 
--(BMKOverlayView *)mapView:(BMKMapView *)mapView viewForOverlay:(id<BMKOverlay>)overlay{
+-(LAOverlayView *)mapView:(LAMapView *)mapView viewForOverlay:(id<LAOverlay>)overlay{
     
 
     
-    BMKPolylineView *polylineView = [[BMKPolylineView alloc]initWithOverlay:overlay];
+    LAPolylineView *polylineView = [[LAPolylineView alloc]initWithOverlay:overlay];
     polylineView.strokeColor = [UIColor blueColor];
     polylineView.lineWidth = 2.0;
     
@@ -170,13 +163,13 @@
 
 }
 
--(void)mapView:(BMKMapView *)mapView didUpdateUserLocation:(BMKUserLocation *)userLocation{
+-(void)mapView:(LAMapView *)mapView didUpdateUserLocation:(LAUserLocation *)userLocation{
     
-//    BMKPointAnnotation *annotation = [[BMKPointAnnotation alloc]init];
+//    LAPointAnnotation *annotation = [[LAPointAnnotation alloc]init];
 //    annotation.coordinate = userLocation.coordinate;
 //    [self.mapView addAnnotation:annotation];
     
-    BMKCoordinateRegion region = BMKCoordinateRegionMakeWithDistance(userLocation.coordinate, 2000, 2000);
+    LACoordinateRegion region = LACoordinateRegionMakeWithDistance(userLocation.coordinate, 2000, 2000);
     [self.mapView setRegion:region animated:YES];
 
 }

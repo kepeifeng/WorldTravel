@@ -35,7 +35,17 @@
 */
 - (IBAction)buttonTapped:(id)sender {
     
-    [self dismissViewControllerAnimated:YES completion:NULL];
+    [self fadeOut];
+}
+
+- (void)fadeOut
+{
+    [UIView animateWithDuration:0.3f animations:^{
+        self.view.alpha = 0.0f;
+    } completion:^(BOOL completed) {
+        [self.view removeFromSuperview];
+        [self removeFromParentViewController];
+    }];
 }
 
 @end

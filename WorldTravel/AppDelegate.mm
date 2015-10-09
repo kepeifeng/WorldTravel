@@ -8,52 +8,227 @@
 
 #import "AppDelegate.h"
 #import "MapViewController.h"
-#import <CocoaLumberjack/CocoaLumberjack.h>
+#import "DDLog.h"
+#import "DDASLLogger.h"
+#import "DDTTYLogger.h"
+
 #import "ViewController.h"
 #import "MainViewController.h"
+#import "AKNavigationBar.h"
+#import "DetailViewManager.h"
+#import "WelcomeViewController.h"
+#import "SimpleViewController.h"
+
+#import "UINavigationBar+CustomHeight.h"
+#import "EmptyButtonViewController.h"
+#import "SwitchMapViewController.h"
+#import "NSString+Utility.h"
+#import "DDFileLogger.h"
+#import "NSFileManager+Utility.h"
 
 
 static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+const static NSString *APIKey = @"0f056f7a0f082ce49b19b7cbf760f3c0";
 
 static long long idCounter;
 @implementation AppDelegate
+{
+    DetailViewManager * _detailViewManager;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    NSLog(@"Document Folder:%@",[[NSFileManager defaultManager] documentFolderPath]);
+    NSLog(@"ApplicationSupport Folder:%@",[[NSFileManager defaultManager] supportFolderPath]);
+    
+    NSLog(@"Registering for push notifications...");
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+     (UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+    
+#ifdef BAIDU_MAP
     _mapManager = [[BMKMapManager alloc] init];
     BOOL ret = [_mapManager start:@"7KDoyNKBHeQjuk5MzRG4puZQ" generalDelegate:nil];
     if(!ret){
         NSLog(@"Baidu Map Manager Start Failed");
     }
-
+#elif defined(GAODE_MAP)
+    if ([APIKey length] == 0)
+    {
+#define kMALogTitle @"提示"
+#define kMALogContent @"apiKey为空，请检查key是否正确设置"
+        
+        NSString *log = [NSString stringWithFormat:@"[MAMapKit] %@", kMALogContent];
+        NSLog(@"%@", log);
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:kMALogTitle message:kMALogContent delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            
+            [alert show];
+        });
+    }
     
-//    MapViewController * mapViewController = [[MapViewController alloc] init];
-    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[MainViewController alloc] init]];
+    [MAMapServices sharedServices].apiKey = (NSString *)APIKey;
+#endif
+    
+//    
+//    if ([UINavigationBar instancesRespondToSelector:@selector(setBackIndicatorImage:)])
+//    {
+        // iOS 7
+//        UIEdgeInsets insets = UIEdgeInsetsMake(0, 5, 5, 5);
+//        [[UINavigationBar appearance] setBackIndicatorImage:[[[UIImage imageNamed:@"navigation_left_btn"] imageWithAlignmentRectInsets:insets] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+//        [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:[[[UIImage imageNamed:@"navigation_left_btn"] imageWithAlignmentRectInsets:insets] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] ];
+//        [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(5, 0) forBarMetrics:UIBarMetricsDefault]; // Takes out title
+        
+//    }
+    
+//    [[UIApplication sharedApplication] setStatusBarStyle:(UIStatusBarStyleBlackOpaque)];
+//    [[UIApplication sharedApplication] setStatusBarHidden:NO];
+    
+
+//    UINavigationController * navigationController = [[AKNavigationController alloc] initWithNavigationBarClass:[AKNavigationBar class] toolbarClass:nil];
+    
+//    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.815 green:0.919 blue:0.895 alpha:1.000]];
+    
+
+    self.window.tintColor = [UIColor colorWithRed:0.986 green:0.134 blue:0.236 alpha:1.000];
+    UINavigationController * navigationController = [[UINavigationController alloc] init];
+//    navigationController.navigationBar.translucent = NO;
+//    navigationController.delegate = self;
+    UIViewController * viewController = [[MainViewController alloc] init];
+    [navigationController setViewControllers:@[viewController]];
+    navigationController.tabBarItem.title = @"iOS Playground";
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        _detailViewManager = [[DetailViewManager alloc] init];
+        WelcomeViewController * welcomeViewController = [[WelcomeViewController alloc] init];
+        UISplitViewController * splitViewController = [[UISplitViewController alloc] init];
+        splitViewController.delegate = _detailViewManager;
+        splitViewController.viewControllers = @[navigationController];
+        _detailViewManager.splitViewController = splitViewController;
+        
+        [_detailViewManager setDetailViewController:welcomeViewController];
+        self.window.rootViewController = splitViewController;
+        
+        
+    }else{
+
+//        UITabBarController *tabController = [[UITabBarController alloc] init];
+//        SwitchMapViewController * welcomeViewController = [[SwitchMapViewController alloc] init];
+//        welcomeViewController.tabBarItem.title = @"SwitchMap";
+//        
+//        EmptyButtonViewController * emptyBackButtonVC = [[EmptyButtonViewController alloc] init];
+//        emptyBackButtonVC.tabBarItem.title = @"EBVC";
+//        
+//        tabController.viewControllers = @[welcomeViewController,emptyBackButtonVC, navigationController];
+//        self.window.rootViewController =tabController;
+        self.window.rootViewController = navigationController;
+    }
+
 
     [self showAlertInOneMinute];
-    
 
+    
     
     [DDLog addLogger:[DDASLLogger sharedInstance]];
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
-    // And then enable colors
+//    // And then enable colors
     [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
-
-    NSLog(@"%lld", idCounter++);
-    NSLog(@"%lld", idCounter++);
-    NSLog(@"%lld", idCounter++);
-    NSLog(@"%lld", idCounter++);
+    DDFileLogger * fileLogger = [[DDFileLogger alloc] init];
+    fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
+    fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
     
+    [DDLog addLogger:fileLogger];
+    
+//
+//    NSLog(@"%lld", idCounter++);
+//    NSLog(@"%lld", idCounter++);
+//    NSLog(@"%lld", idCounter++);
+//    NSLog(@"%lld", idCounter++);
+//
     DDLogError(@"This is an error.");
     DDLogWarn(@"This is a warning.");
     DDLogInfo(@"This is just a message.");
     DDLogVerbose(@"This is a verbose message.");
     
+    DDLogInfo(@"Application Did Finished Launch");
+    
+    /*NSDictionary * params = @{@"a":@"aaa",@"b":@"bbbb",@"c":@[@"c1",@"c2",@"c3"]};
+    NSURL * url = [self getRequestToSubUrl:@"phone" parameters:params];
+    NSLog(@"%@", url);*/
+    NSLog(@"Screen Size:%@, scale:%f",NSStringFromCGSize([UIScreen mainScreen].bounds.size), [UIScreen mainScreen].scale);
+
+    
     return YES;
 }
 
+//- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+//    [self.window addSubview:viewController.view];
+//    [self.window makeKeyAndVisible];
+//    
+//
+//    return YES;
+//}
 
+- (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    NSString *str = [NSString stringWithFormat:@"Device Token=%@",deviceToken];
+    NSLog(@"%@", str);
+}
+
+- (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err {
+    NSString *str = [NSString stringWithFormat: @"Error: %@", err];
+    NSLog(@"%@",str);
+}
+
+
+-(NSURL *)getRequestToSubUrl:(NSString *)subUrl parameters:(NSDictionary *)parameterDictionary
+{
+    //p_userId:用户id
+    //p_productType: 产品类型
+    //p_terminalType: 终端类型
+    //p_appVersion: 软件版本号
+    NSMutableDictionary * newDictionary = [NSMutableDictionary dictionaryWithDictionary:parameterDictionary];
+//    [newDictionary setObject:@([[AccountManager loggedInUserInfo] uid]) forKey:@"p_userId"];
+//    [newDictionary setObject:@(1) forKey:@"p_productType"];
+//    [newDictionary setObject:@(3) forKey:@"p_terminalType"];
+//    [newDictionary setObject:APP_CURRENT_VERSION forKey:@"p_appVersion"];
+    
+    parameterDictionary = newDictionary;
+    NSString * HTTP_HOST = @"www.somedomain.com";
+    NSString *finalUrl;
+    if(parameterDictionary)
+    {
+        
+        NSMutableString * urlStr=[NSMutableString stringWithFormat:@"%@/%@?",HTTP_HOST,subUrl];
+        if(parameterDictionary)
+        {
+            [parameterDictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+                if ([obj isKindOfClass:[NSArray class]]) {
+                    //把数组分解为GET请求参数
+                    [urlStr appendFormat:@"%@=%@&",key, [(NSArray *)obj componentsJoinedByString:[NSString stringWithFormat:@"&%@=",key]]];
+                    
+                }else{
+                    
+                    [urlStr appendFormat:@"%@=%@&",key,obj];
+                    
+                }
+            }];
+        }
+        finalUrl = [urlStr substringToIndex:urlStr.length-1];
+    }
+    
+    return [NSURL URLWithString:[finalUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    return YES;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    return [gestureRecognizer isKindOfClass:UIScreenEdgePanGestureRecognizer.class];
+}
 
 -(void)doSomethingToTheArray:(NSMutableArray *)array{
     [array removeLastObject];
@@ -100,6 +275,26 @@ static long long idCounter;
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     NSLog(@"Scheduled Local Notification");
 
+}
+
+#pragma mark - Navigation Controller Delegate
+-(void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
+
+}
+
+-(void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    if ( [navigationController.navigationBar respondsToSelector:@selector(setBarTintColor:)] )
+    {
+        // iOS 7
+        navigationController.navigationBar.barTintColor = viewController.navigationItem.navigationBarBackgroundColor;
+    }
+    else
+    {
+        // iOS 6
+        navigationController.navigationBar.tintColor = viewController.navigationItem.navigationBarBackgroundColor;
+        // stops the gradient on iOS 6 UINavigationBar
+        //            [self setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    }
 }
 
 @end

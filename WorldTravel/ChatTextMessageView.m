@@ -48,7 +48,7 @@
 //    textEdgeInsets = UIEdgeInsetsMake(5, 12, 5, 5);
     textView = [[UITextView alloc] initWithFrame:frame];
     [textView setEditable:NO];
-    [textView setBackgroundColor:[UIColor yellowColor]];
+//    [textView setBackgroundColor:[UIColor yellowColor]];
     [textView setSelectable:NO];
     [textView setFont:[UIFont systemFontOfSize:14]];
     [textView setContentInset:UIEdgeInsetsZero];

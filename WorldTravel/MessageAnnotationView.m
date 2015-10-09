@@ -73,13 +73,13 @@
 //    float pos = 0;
 //    
 //    UIView *mySuperview = self.superview;
-//    while (mySuperview && ![mySuperview isKindOfClass:[BMKMapView class]])
+//    while (mySuperview && ![mySuperview isKindOfClass:[LAMapView class]])
 //        mySuperview = mySuperview.superview;
-//    if ([mySuperview isKindOfClass:[BMKMapView class]])
+//    if ([mySuperview isKindOfClass:[LAMapView class]])
 //        //given the position in the array
 //        // pos = [((MKMapView *) mySuperview).annotations indexOfObject:self.annotation];
 //        // left to right sequence;
-//        pos = [((BMKMapView *) mySuperview) convertCoordinate:self.annotation.coordinate toPointToView:mySuperview].x / xOriginDivider;
+//        pos = [((LAMapView *) mySuperview) convertCoordinate:self.annotation.coordinate toPointToView:mySuperview].x / xOriginDivider;
 //    
 //    float yOffsetMultiplier = 20.;
 //    float timeOffsetMultiplier = 0.05;

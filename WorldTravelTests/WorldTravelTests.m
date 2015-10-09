@@ -99,4 +99,8 @@
     CGRect rect = [attributedString boundingRectWithSize:CGSizeMake(80, 1000) options:NSStringDrawingUsesLineFragmentOrigin context:nil];
 }
 
+-(void)testKml{
+    
+}
+
 @end

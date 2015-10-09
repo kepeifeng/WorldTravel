@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BMapKit.h"
+#import "LAMap.h"
+#import "LAMapView.h"
 @interface MapViewController : UIViewController
-@property (weak, nonatomic) IBOutlet BMKMapView *mapView;
+@property (weak, nonatomic) IBOutlet LAMapView *mapView;
 
 @end

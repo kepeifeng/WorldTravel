@@ -1,6 +1,7 @@
 # Uncomment this line to define a global platform for your project
-# platform :ios, "7.0"
+# platform :ios, "6.0"
 
 pod "pop"
 pod "CocoaLumberjack"
-
+pod "FastImageCache"
+pod 'iOS-KML-Framework', :git => 'https://github.com/FLCLjp/iOS-KML-Framework.git'

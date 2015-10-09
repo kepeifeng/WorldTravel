@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GradientButtonViewController">
+            <connections>
+                <outlet property="button" destination="orq-1V-APL" id="JoT-d3-ma4"/>
+                <outlet property="squareButton" destination="6CI-ll-V3t" id="mzX-HK-O3U"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="orq-1V-APL" customClass="AKGradientButton">
+                    <rect key="frame" x="277" y="81" width="46" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="bi9-Jb-KE0"/>
+                    </constraints>
+                    <state key="normal" title="Button">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6CI-ll-V3t" customClass="AKGradientButton">
+                    <rect key="frame" x="260" y="172" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="JDZ-m8-KaL"/>
+                        <constraint firstAttribute="width" constant="150" id="Xci-LH-uZn"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="y3P-LY-PQH"/>
+                    </constraints>
+                    <state key="normal" title="添加 照片">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Xci-LH-uZn"/>
+                        </mask>
+                    </variation>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="6CI-ll-V3t" secondAttribute="centerX" id="APY-zH-AZ8"/>
+                <constraint firstItem="orq-1V-APL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="81" id="BTO-41-HGk"/>
+                <constraint firstAttribute="centerX" secondItem="orq-1V-APL" secondAttribute="centerX" id="oPs-o4-WQe"/>
+                <constraint firstItem="6CI-ll-V3t" firstAttribute="top" secondItem="orq-1V-APL" secondAttribute="bottom" constant="61" id="p94-Oh-Jm3"/>
+            </constraints>
+            <point key="canvasLocation" x="87" y="190"/>
+        </view>
+    </objects>
+</document>

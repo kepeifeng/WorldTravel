@@ -10,7 +10,8 @@
 #import "MessageAnnotationView.h"
 #import "MyActionPaopaoView.h"
 
-@interface MapViewController ()<BMKMapViewDelegate>
+
+@interface MapViewController ()<LAMapViewDelegate>
 
 @end
 
@@ -18,7 +19,7 @@
     NSInteger markCount;
     NSMutableArray * annotations;
     NSTimer *_timer;
-    id<BMKAnnotation>  _currentAnnotation;
+    id<LAAnnotation>  _currentAnnotation;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -56,7 +57,7 @@
     if (annotations.count == 0) {
         return;
     }
-    id<BMKAnnotation> _oldAnnotation = _currentAnnotation;
+    id<LAAnnotation> _oldAnnotation = _currentAnnotation;
     if (!_currentAnnotation) {
         _currentAnnotation = [annotations firstObject];
     }
@@ -73,7 +74,7 @@
 }
 
 
--(void)startAnimationFormAnnotation:(id<BMKAnnotation>)startAnnotation toAnnotation:(id<BMKAnnotation>)endAnnotation{
+-(void)startAnimationFormAnnotation:(id<LAAnnotation>)startAnnotation toAnnotation:(id<LAAnnotation>)endAnnotation{
 
 }
 
@@ -81,9 +82,9 @@
 
 #pragma mark - Map View Delegate
 
--(void)mapView:(BMKMapView *)mapView onClickedMapBlank:(CLLocationCoordinate2D)coordinate{
+-(void)mapView:(LAMapView *)mapView onClickedMapBlank:(CLLocationCoordinate2D)coordinate{
     
-    BMKPointAnnotation *annotation = [[BMKPointAnnotation alloc]init];
+    LAPointAnnotation *annotation = [[LAPointAnnotation alloc]init];
     annotation.coordinate = coordinate;
     annotation.title = [NSString stringWithFormat:@"%d",markCount];
     if (!annotations) {
@@ -94,7 +95,7 @@
     
 }
 
--(BMKAnnotationView *)mapView:(BMKMapView *)mapView viewForAnnotation:(id<BMKAnnotation>)annotation{
+-(LAAnnotationView *)mapView:(LAMapView *)mapView viewForAnnotation:(id<LAAnnotation>)annotation{
 
     static NSString * MessageAnnotationViewIdentifier = @"MessageAnnotationViewIdentifier";
     MessageAnnotationView * annotationView = (MessageAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:MessageAnnotationViewIdentifier];
@@ -111,15 +112,15 @@
     viewFrame.size.height = 60 + 10 * arc4random_uniform(10);
     actionView.frame = viewFrame;
     actionView.backgroundColor = [UIColor grayColor];
-    annotationView.paopaoView = nil;
-    BMKActionPaopaoView * actionPaopaoView = [[MyActionPaopaoView alloc] initWithCustomView:actionView];
-    annotationView.paopaoView = actionPaopaoView;
+    annotationView.calloutView = nil;
+    MyActionPaopaoView * actionPaopaoView = [[MyActionPaopaoView alloc] init];
+    annotationView.calloutView = actionPaopaoView;
 //    annotationView.centerOffset = CGPointMake(0, -CGRectGetHeight(viewFrame)/2);
     
     return annotationView;
 }
 
--(void)mapView:(BMKMapView *)mapView annotationViewForBubble:(BMKAnnotationView *)view{
+-(void)mapView:(LAMapView *)mapView annotationViewForBubble:(LAAnnotationView *)view{
 
 //    CGRect viewFrame = CGRectZero;
 //    viewFrame.size.width = 80 + 10 * arc4random_uniform(10);
@@ -129,9 +130,9 @@
 //    actionView.backgroundColor = [UIColor grayColor];
 }
 
-//-(void)mapView:(BMKMapView *)mapView didAddAnnotationViews:(NSArray *)views{
+//-(void)mapView:(LAMapView *)mapView didAddAnnotationViews:(NSArray *)views{
 //    
-//    for (BMKAnnotationView * annotationView in views) {
+//    for (LAAnnotationView * annotationView in views) {
 //        
 //        [annotationView setSelected:YES animated:YES];
 ////        [mapView selectAnnotation:annotationView.annotation animated:NO];

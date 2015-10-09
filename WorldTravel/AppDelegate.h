@@ -10,8 +10,11 @@
 #import "BMapKit.h"
 
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>{
+@interface AppDelegate : UIResponder <UIApplicationDelegate, UINavigationControllerDelegate,
+UIGestureRecognizerDelegate>{
+#ifdef BAIDU_MAP
     BMKMapManager *_mapManager;
+#endif
 }
 
 @property (strong, nonatomic) UIWindow *window;

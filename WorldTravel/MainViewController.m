@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "DetailViewManager.h"
 
 @interface MainViewController ()
 
@@ -18,7 +19,6 @@
 {
     self = [super initWithRoot:[[QRootElement alloc] init]];
     if (self) {
-        self.title = @"iOS Playground";
         [self setupRootElement];
     }
     return self;
@@ -27,6 +27,7 @@
 -(void)setupRootElement{
 
     QRootElement * root = self.root;
+    root.title = @"iOS Playground";
     QAppearance * appearance = [root.appearance copy];
     appearance.labelFont = [UIFont fontWithName:@"Avenir-Book" size:14];
     appearance.valueFont = appearance.labelFont;
@@ -36,14 +37,25 @@
     QSection * section = [[QSection alloc] init];
     [root addSection:section];
     
+    [section addElement:[self labelElementWithTitle:@"Arrow Path" viewControllerName:@"ArrowPathViewController"]];
     [section addElement:[self labelElementWithTitle:@"Round Button" viewControllerName:@"CircleButtonViewController"]];
     [section addElement:[self labelElementWithTitle:@"Chat" viewControllerName:@"ChatViewController"]];
     [section addElement:[self labelElementWithTitle:@"Table" viewControllerName:@"TableViewController"]];
-    [section addElement:[self labelElementWithTitle:@"Map" viewControllerName:@"MapViewController"]];
+//    [section addElement:[self labelElementWithTitle:@"Map" viewControllerName:@"MapViewController"]];
     [section addElement:[self labelElementWithTitle:@"Rotate Image" viewControllerName:@"RotateImageViewController"]];
     [section addElement:[self labelElementWithTitle:@"Collection" viewControllerName:@"CollectionViewController"]];
     [section addElement:[self labelElementWithTitle:@"Animation" viewControllerName:@"AnimationViewController"]];
-    [section addElement:[self labelElementWithTitle:@"Map II" viewControllerName:@"ViewController"]];
+//    [section addElement:[self labelElementWithTitle:@"Map II" viewControllerName:@"ViewController"]];
+    [section addElement:[self labelElementWithTitle:@"Custom Modal View Controller" viewControllerName:@"ParentViewController"]];
+    [section addElement:[self labelElementWithTitle:@"Empty Back Button" viewControllerName:@"EmptyButtonViewController"]];
+    [section addElement:[self labelElementWithTitle:@"Navigation View Controller" viewControllerName:@"NavigationBarViewController"]];
+    [section addElement:[self labelElementWithTitle:@"Alert Controller" viewControllerName:@"AlertViewController"]];
+    [section addElement:[self labelElementWithTitle:@"Observer Controller" viewControllerName:@"ObserverViewController"]];
+    [section addElement:[self labelElementWithTitle:@"File Sharing" viewControllerName:@"FileSharingViewController"]];
+    [section addElement:[self labelElementWithTitle:@"Grid Finder" viewControllerName:@"GridFinderViewController"]];
+    [section addElement:[self labelElementWithTitle:@"Switch Map" viewControllerName:@"SwitchMapViewController"]];
+    [section addElement:[self labelElementWithTitle:@"Gradient Button" viewControllerName:@"GradientButtonViewController"]];
+    [section addElement:[self labelElementWithTitle:@"Image Picker View Controller" viewControllerName:@"ImagePickerViewController"]];
     
     
     [self.quickDialogTableView reloadData];
@@ -51,14 +63,25 @@
     
 }
 
--(QLabelElement *)labelElementWithTitle:(NSString *)title viewControllerName:(NSString *)viewControllerName{
-    
+-(QLabelElement *)labelElementWithTitle:(NSString *)title viewControllerName:(NSString *)viewControllerName color:(UIColor *)color image:(UIImage *)image{
     QLabelElement * label = [[QLabelElement alloc] initWithTitle:title Value:nil];
+    
     label.controllerAction = @"labelElementHandler:";
     label.key = viewControllerName;
+    label.image = image;
+    if (color) {
+        QAppearance * apprearance = [[self.root appearance] copy];
+        apprearance.labelColorEnabled = color;
+        label.appearance = apprearance;
+    }
     label.keepSelected = NO;
     label.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return label;
+
+}
+-(QLabelElement *)labelElementWithTitle:(NSString *)title viewControllerName:(NSString *)viewControllerName{
+    
+    return [self labelElementWithTitle:title viewControllerName:viewControllerName color:nil image:nil];
     
 }
 
@@ -82,7 +105,21 @@
     
     Class viewControllerClass = NSClassFromString(viewControllerName);
     UIViewController * viewController = [[viewControllerClass alloc] init];
-    [self.navigationController pushViewController:viewController animated:YES];
+    
+    if (viewController.title.length == 0) {
+        viewController.title = element.title;
+    }
+    
+    if (self.splitViewController) {
+        DetailViewManager * detailViewMangager = (DetailViewManager *)self.splitViewController.delegate;
+        detailViewMangager.detailViewController = viewController;
+    }else{
+        viewController.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:viewController animated:YES];
+    
+    }
+    
+
     
 }
 

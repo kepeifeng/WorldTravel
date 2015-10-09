@@ -6,8 +6,8 @@
 //  Copyright (c) 2014年 Kent Peifeng Ke. All rights reserved.
 //
 
-#import "BMapKit.h"
+#import "LAMap.h"
 
-@interface MessageAnnotationView : BMKAnnotationView
+@interface MessageAnnotationView : LAAnnotationView
 
 @end

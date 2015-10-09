@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BMapKit.h"
+#import "LAMap.h"
 
-@interface ViewController : UIViewController<BMKMapViewDelegate>
-@property (weak, nonatomic) IBOutlet BMKMapView *mapView;
+#import "LAMapView.h"
+@interface ViewController : UIViewController<LAMapViewDelegate>
+@property (weak, nonatomic) IBOutlet LAMapView *mapView;
 - (IBAction)fineMeButtonTapped:(id)sender;
 - (IBAction)profileButtonTapped:(id)sender;
 
