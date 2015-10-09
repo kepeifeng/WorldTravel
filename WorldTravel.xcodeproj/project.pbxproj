@@ -223,6 +223,11 @@
 		37A5B73F1BC668DC0017BA22 /* main@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 37A5B73E1BC668DC0017BA22 /* main@2x.jpg */; settings = {ASSET_TAGS = (); }; };
 		37A5B7431BC66C1B0017BA22 /* ImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A5B7411BC66C1B0017BA22 /* ImagePickerViewController.m */; settings = {ASSET_TAGS = (); }; };
 		37A5B7441BC66C1B0017BA22 /* ImagePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37A5B7421BC66C1B0017BA22 /* ImagePickerViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		37E6CCE81BC7BF1D00B14535 /* AccelerometerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E6CCE71BC7BF1D00B14535 /* AccelerometerViewController.m */; settings = {ASSET_TAGS = (); }; };
+		37E6CCEA1BC7BF4100B14535 /* AccelerometerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E6CCE91BC7BF4100B14535 /* AccelerometerViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		37E6CCEC1BC7C19700B14535 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E6CCEB1BC7C19700B14535 /* CoreMotion.framework */; };
+		37E6CCF01BC7C6BF00B14535 /* GyroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E6CCEE1BC7C6BF00B14535 /* GyroViewController.m */; settings = {ASSET_TAGS = (); }; };
+		37E6CCF11BC7C6BF00B14535 /* GyroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E6CCEF1BC7C6BF00B14535 /* GyroViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		549762262BB082D7F416CB46 /* libPods-WorldTravel Logic Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E8D4C917F56404C3650B9A /* libPods-WorldTravel Logic Tests.a */; };
 		A38E458A8F2196F7C1CB92C3 /* libPods-WorldTravelTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5697BD0622F4D25F5A4D7225 /* libPods-WorldTravelTests.a */; };
 /* End PBXBuildFile section */
@@ -638,6 +643,13 @@
 		37A5B7401BC66C1B0017BA22 /* ImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagePickerViewController.h; sourceTree = "<group>"; };
 		37A5B7411BC66C1B0017BA22 /* ImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagePickerViewController.m; sourceTree = "<group>"; };
 		37A5B7421BC66C1B0017BA22 /* ImagePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImagePickerViewController.xib; sourceTree = "<group>"; };
+		37E6CCE61BC7BF1D00B14535 /* AccelerometerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccelerometerViewController.h; path = CoreMotion/AccelerometerViewController.h; sourceTree = "<group>"; };
+		37E6CCE71BC7BF1D00B14535 /* AccelerometerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccelerometerViewController.m; path = CoreMotion/AccelerometerViewController.m; sourceTree = "<group>"; };
+		37E6CCE91BC7BF4100B14535 /* AccelerometerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccelerometerViewController.xib; sourceTree = "<group>"; };
+		37E6CCEB1BC7C19700B14535 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		37E6CCED1BC7C6BF00B14535 /* GyroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GyroViewController.h; sourceTree = "<group>"; };
+		37E6CCEE1BC7C6BF00B14535 /* GyroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GyroViewController.m; sourceTree = "<group>"; };
+		37E6CCEF1BC7C6BF00B14535 /* GyroViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GyroViewController.xib; sourceTree = "<group>"; };
 		442E2BCDBDD924DBC8B46F2A /* Pods-WorldTravelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorldTravelTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WorldTravelTests/Pods-WorldTravelTests.release.xcconfig"; sourceTree = "<group>"; };
 		5697BD0622F4D25F5A4D7225 /* libPods-WorldTravelTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WorldTravelTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68E8D4C917F56404C3650B9A /* libPods-WorldTravel Logic Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WorldTravel Logic Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -654,6 +666,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37E6CCEC1BC7C19700B14535 /* CoreMotion.framework in Frameworks */,
 				18990A3A1A665FF800D5208B /* libstdc++.6.0.9.dylib in Frameworks */,
 				18D5D4821A665DFF00145163 /* Security.framework in Frameworks */,
 				18D5D47E1A665DE600145163 /* libz.dylib in Frameworks */,
@@ -979,6 +992,7 @@
 		188DA7081917287C005C8A12 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				37E6CCEB1BC7C19700B14535 /* CoreMotion.framework */,
 				18990A391A665FF800D5208B /* libstdc++.6.0.9.dylib */,
 				18D5D4811A665DFF00145163 /* Security.framework */,
 				18D5D47F1A665DF600145163 /* libstdc++.dylib */,
@@ -1269,6 +1283,12 @@
 				37A5B7471BC66D300017BA22 /* Gradient Button */,
 				37A5B7461BC66D260017BA22 /* Arrow Path */,
 				37A5B7451BC66CFF0017BA22 /* ImagePickerViewController */,
+				37E6CCE61BC7BF1D00B14535 /* AccelerometerViewController.h */,
+				37E6CCE71BC7BF1D00B14535 /* AccelerometerViewController.m */,
+				37E6CCE91BC7BF4100B14535 /* AccelerometerViewController.xib */,
+				37E6CCED1BC7C6BF00B14535 /* GyroViewController.h */,
+				37E6CCEE1BC7C6BF00B14535 /* GyroViewController.m */,
+				37E6CCEF1BC7C6BF00B14535 /* GyroViewController.xib */,
 			);
 			name = "Playground View Controllers";
 			sourceTree = "<group>";
@@ -1566,6 +1586,7 @@
 				1811D9291A3149ED0011C5DA /* GotoPrefViewController.xib in Resources */,
 				18D5D4601A66592900145163 /* icon_maptype_google_selected.png in Resources */,
 				188DA7221917287C005C8A12 /* Images.xcassets in Resources */,
+				37E6CCF11BC7C6BF00B14535 /* GyroViewController.xib in Resources */,
 				1891B5CB19188BE900195AE8 /* bg_chat_text_left@2x.png in Resources */,
 				18ECC4D31A037E56001AFABD /* AnimationViewController.xib in Resources */,
 				18D5D4441A66473400145163 /* icon-user-location@2x.png in Resources */,
@@ -1616,6 +1637,7 @@
 				18D5D46A1A66592900145163 /* icon_maptype_ocm.png in Resources */,
 				1801B59E195C001700AE5D05 /* MapViewController.xib in Resources */,
 				18D5D4671A66592900145163 /* icon_maptype_night_street@2x.png in Resources */,
+				37E6CCEA1BC7BF4100B14535 /* AccelerometerViewController.xib in Resources */,
 				18D5D46D1A66592900145163 /* icon_maptype_osm_selected@2x.png in Resources */,
 				18D5D4761A66592900145163 /* icon_maptype_standard_street.png in Resources */,
 				183BFFE31A5E93060087BD43 /* cam_button_bg@2x.jpg in Resources */,
@@ -1766,6 +1788,7 @@
 				18D5D4341A660B6D00145163 /* MapAreaSelectionViewController.m in Sources */,
 				182FD01E1A52A07D00FE3F2C /* ObserverViewController.m in Sources */,
 				1878FDFB1926074400730B56 /* QDecimalTableViewCell.m in Sources */,
+				37E6CCE81BC7BF1D00B14535 /* AccelerometerViewController.m in Sources */,
 				1878FDF61926074400730B56 /* QCountdownElement.m in Sources */,
 				18490E0D1A5A3B34005C73B7 /* DetailViewManager.m in Sources */,
 				18490E1F1A5A7BD1005C73B7 /* GridView.mm in Sources */,
@@ -1789,6 +1812,7 @@
 				1878FE031926074400730B56 /* QFloatElement.m in Sources */,
 				1878FDEC1926074400730B56 /* QAppearance.m in Sources */,
 				37A5B7431BC66C1B0017BA22 /* ImagePickerViewController.m in Sources */,
+				37E6CCF01BC7C6BF00B14535 /* GyroViewController.m in Sources */,
 				1878FE101926074400730B56 /* QRootElement+JsonBuilder.m in Sources */,
 				1801B59D195C001700AE5D05 /* MapViewController.m in Sources */,
 				1878FDEF1926074400730B56 /* QBadgeElement.m in Sources */,

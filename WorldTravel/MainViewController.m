@@ -28,16 +28,25 @@
 
     QRootElement * root = self.root;
     root.title = @"iOS Playground";
+    root.grouped = YES;
     QAppearance * appearance = [root.appearance copy];
     appearance.labelFont = [UIFont fontWithName:@"Avenir-Book" size:14];
     appearance.valueFont = appearance.labelFont;
     appearance.entryFont = appearance.labelFont;
     root.appearance = appearance;
     
+    
+    QSection * motionSection = [[QSection alloc] init];
+    
+    [root addSection:motionSection];
+    [motionSection addElement:[self labelElementWithTitle:@"Accelerometer" viewControllerName:@"AccelerometerViewController"]];
+    [motionSection addElement:[self labelElementWithTitle:@"GyroViewController" viewControllerName:@"AccelerometerViewController"]];
+    
     QSection * section = [[QSection alloc] init];
     [root addSection:section];
     
-    [section addElement:[self labelElementWithTitle:@"Arrow Path" viewControllerName:@"ArrowPathViewController"]];
+
+//    [section addElement:[self labelElementWithTitle:@"Arrow Path" viewControllerName:@"ArrowPathViewController"]];
     [section addElement:[self labelElementWithTitle:@"Round Button" viewControllerName:@"CircleButtonViewController"]];
     [section addElement:[self labelElementWithTitle:@"Chat" viewControllerName:@"ChatViewController"]];
     [section addElement:[self labelElementWithTitle:@"Table" viewControllerName:@"TableViewController"]];
@@ -57,6 +66,7 @@
     [section addElement:[self labelElementWithTitle:@"Gradient Button" viewControllerName:@"GradientButtonViewController"]];
     [section addElement:[self labelElementWithTitle:@"Image Picker View Controller" viewControllerName:@"ImagePickerViewController"]];
     
+
     
     [self.quickDialogTableView reloadData];
 

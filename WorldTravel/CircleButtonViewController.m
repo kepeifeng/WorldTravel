@@ -36,6 +36,7 @@
     button.center = self.view.center;
     button.backgroundColor = [UIColor colorWithRed:0.486 green:0.698 blue:0.694 alpha:1.000];
     button.layer.cornerRadius = CGRectGetWidth(button.frame)/2;
+    [button addTarget:self action:@selector(showImageViewTapped:) forControlEvents:(UIControlEventTouchUpInside)];
     
 
     
@@ -81,6 +82,72 @@
      
     [button.layer addSublayer:label.layer];
     
+
+    
+    
+    
+    
+}
+
+-(void)showImageViewTapped:(id)sender{
+    
+    UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectInset(self.view.bounds, 50, 50)];
+    imageView.image = [UIImage imageNamed:@"main.jpg"];
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
+    imageView.clipsToBounds = YES;
+    [self.view addSubview:imageView];
+    
+    UILabel * label = [[UILabel alloc] initWithFrame:imageView.bounds];
+    label.textColor = [UIColor whiteColor];
+    label.text = @"Hello";
+
+    [imageView addSubview:label];
+    
+    CGPoint center = CGPointMake(imageView.frame.size.width/2, imageView.frame.size.height/2);
+    CGFloat radius = sqrtf(pow(CGRectGetHeight(imageView.frame), 2) + pow(CGRectGetWidth(imageView.frame), 2))/2;
+    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:center radius:radius startAngle:0 endAngle:M_PI*2 clockwise:NO];
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    shapeLayer.lineWidth = 5;
+    shapeLayer.fillColor = [UIColor blackColor].CGColor;
+    shapeLayer.frame = imageView.layer.bounds;
+//    shapeLayer.strokeColor = [UIColor darkGrayColor].CGColor;
+    shapeLayer.path = path.CGPath;
+//    shapeLayer.affineTransform = CGAffineTransformMakeScale(0.1, 0.1);
+    CATransform3D transform = CATransform3DMakeScale(0.1, 0.1, 1);
+    shapeLayer.transform = transform;
+    imageView.layer.mask = shapeLayer;
+
+    shapeLayer.anchorPoint = CGPointMake(0.5, 0.5);
+    CABasicAnimation *scale = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    [scale setFromValue:[NSNumber numberWithFloat:0.0f]];
+    [scale setToValue:[NSNumber numberWithFloat:1.0f]];
+    [scale setDuration:0.5f];
+    [scale setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]];
+    [scale setRemovedOnCompletion:NO];
+    [scale setFillMode:kCAFillModeForwards];
+    
+    [shapeLayer addAnimation:scale forKey:nil];
+
+    
+//    [UIView animateWithDuration:0.5 animations:^{
+//        
+//        shapeLayer.affineTransform = CGAffineTransformIdentity;
+//    }];
+    
+//    [imageView.layer addSublayer:layer];
+    
+/*
+    CGRect layerFrame = imageView.layer.frame;
+    imageView.layer.frame = CGRectMake(100, 100, 160.0, 160.0);
+    imageView.layer.cornerRadius = 80.0;
+
+    
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        imageView.layer.frame = CGRectMake(100, 100, 320.0, 320.0);
+        imageView.layer.cornerRadius = 160.0;
+    }];
+*/
 }
 
 - (void)didReceiveMemoryWarning
