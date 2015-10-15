@@ -35,7 +35,8 @@
 */
 - (IBAction)buttonTapped:(id)sender {
     
-    [self fadeOut];
+//    [self fadeOut];
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 - (void)fadeOut

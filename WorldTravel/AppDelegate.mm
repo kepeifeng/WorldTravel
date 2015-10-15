@@ -8,9 +8,10 @@
 
 #import "AppDelegate.h"
 #import "MapViewController.h"
-#import "DDLog.h"
+
 #import "DDASLLogger.h"
 #import "DDTTYLogger.h"
+#import "DDFileLogger.h"
 
 #import "ViewController.h"
 #import "MainViewController.h"
@@ -27,7 +28,7 @@
 #import "NSFileManager+Utility.h"
 
 
-static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+
 const static NSString *APIKey = @"0f056f7a0f082ce49b19b7cbf760f3c0";
 
 static long long idCounter;
@@ -131,31 +132,28 @@ static long long idCounter;
     
     [DDLog addLogger:[DDASLLogger sharedInstance]];
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
-//    // And then enable colors
     [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
     DDFileLogger * fileLogger = [[DDFileLogger alloc] init];
-    fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
+//    fileLogger.rollingFrequency = 1; // 24 hour rolling
     fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
-    
+    [fileLogger rollLogFileNow];
     [DDLog addLogger:fileLogger];
     
-//
-//    NSLog(@"%lld", idCounter++);
-//    NSLog(@"%lld", idCounter++);
-//    NSLog(@"%lld", idCounter++);
-//    NSLog(@"%lld", idCounter++);
-//
+/*
     DDLogError(@"This is an error.");
     DDLogWarn(@"This is a warning.");
     DDLogInfo(@"This is just a message.");
     DDLogVerbose(@"This is a verbose message.");
+
     
-    DDLogInfo(@"Application Did Finished Launch");
-    
+
+*/
+        DDLogInfo(@"Application Did Finished Launch with Options:\n%@", launchOptions);
     /*NSDictionary * params = @{@"a":@"aaa",@"b":@"bbbb",@"c":@[@"c1",@"c2",@"c3"]};
     NSURL * url = [self getRequestToSubUrl:@"phone" parameters:params];
     NSLog(@"%@", url);*/
-    NSLog(@"Screen Size:%@, scale:%f",NSStringFromCGSize([UIScreen mainScreen].bounds.size), [UIScreen mainScreen].scale);
+
+
 
     
     return YES;
@@ -169,6 +167,44 @@ static long long idCounter;
 //    return YES;
 //}
 
+- (void)remoteControlReceivedWithEvent:(UIEvent *)event
+{
+    NSDictionary * typeName = @{@(0):@"UIEventSubtypeNone",
+                                @(1):@"UIEventSubtypeMotionShake",
+                                @(100):@"UIEventSubtypeRemoteControlPlay",
+                                @(101):@"UIEventSubtypeRemoteControlPause",
+                                @(102):@"UIEventSubtypeRemoteControlStop",
+                                @(103):@"UIEventSubtypeRemoteControlTogglePlayPause",
+                                @(104):@"UIEventSubtypeRemoteControlNextTrack",
+                                @(105):@"UIEventSubtypeRemoteControlPreviousTrack",
+                                @(106):@"UIEventSubtypeRemoteControlBeginSeekingBackward",
+                                @(107):@"UIEventSubtypeRemoteControlEndSeekingBackward",
+                                @(108):@"UIEventSubtypeRemoteControlBeginSeekingForward",
+                                @(109):@"UIEventSubtypeRemoteControlEndSeekingForward"};
+    
+    NSLog(@"%@", typeName[@(event.subtype)]);
+//    switch (event.subtype) {
+//        case UIEventSubtypeRemoteControlPlay:
+//            [self postNotificationWithName:remoteControlPlayButtonTapped];
+//            break;
+//        case UIEventSubtypeRemoteControlPause:
+//            [self postNotificationWithName:remoteControlPauseButtonTapped];
+//            break;
+//        case UIEventSubtypeRemoteControlStop:
+//            [self postNotificationWithName:remoteControlStopButtonTapped];
+//            break;
+//        case UIEventSubtypeRemoteControlNextTrack:
+//            [self postNotificationWithName:remoteControlForwardButtonTapped];
+//            break;
+//        case UIEventSubtypeRemoteControlPreviousTrack:
+//            [self postNotificationWithName:remoteControlBackwardButtonTapped];
+//            break;
+//        default:
+//            [self postNotificationWithName:remoteControlOtherButtonTapped];
+//            break;
+//    }
+}
+
 - (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     NSString *str = [NSString stringWithFormat:@"Device Token=%@",deviceToken];
     NSLog(@"%@", str);
@@ -179,7 +215,20 @@ static long long idCounter;
     NSLog(@"%@",str);
 }
 
+-(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options{
+    
+    DDLogInfo(@"openURL:%@\noption:%@", url,options);
+    
+    return YES;
+}
 
+//-(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
+//    
+//}
+//
+//-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+//    
+//}
 -(NSURL *)getRequestToSubUrl:(NSString *)subUrl parameters:(NSDictionary *)parameterDictionary
 {
     //p_userId:用户id

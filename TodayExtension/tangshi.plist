@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>title</key>
+		<string>听弹琴</string>
+		<key>content</key>
+		<string>泠泠七弦上，静听松风寒。
+古调虽自爱，今人多不弹。</string>
+		<key>author</key>
+		<string>刘长卿</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>春宫曲</string>
+		<key>content</key>
+		<string>昨夜风开露井桃，未央前殿月轮高。
+平阳歌舞新承宠，帘外春寒赐锦袍。</string>
+		<key>author</key>
+		<string>王昌龄</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>后宫词</string>
+		<key>content</key>
+		<string>泪湿罗巾梦不成，夜深前殿按歌声。
+红颜未老恩先断，斜倚熏笼坐到明。</string>
+		<key>author</key>
+		<string>白居易</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>逢入京使</string>
+		<key>content</key>
+		<string>故园东望路漫漫，双袖龙钟泪不干。
+马上相逢无纸笔，凭君传语报平安。</string>
+		<key>author</key>
+		<string>岑参</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>夜上受降城闻笛</string>
+		<key>content</key>
+		<string>回乐峰前沙似雪，受降城外月如霜。
+不知何处吹芦管，一夜征人尽望乡。</string>
+		<key>author</key>
+		<string>李益</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>寻隐者不遇</string>
+		<key>content</key>
+		<string>松下问童子，言师采药去。
+只在此山中，云深不知处。</string>
+		<key>author</key>
+		<string>贾岛</string>
+	</dict>
+</array>
+</plist>

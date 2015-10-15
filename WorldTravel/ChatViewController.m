@@ -89,9 +89,9 @@
 // Call this method somewhere in your view controller setup code.
 - (void)registerForKeyboardNotifications
 {
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWasShown:)
-                                                 name:UIKeyboardDidShowNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(keyboardWasShown:)
+//                                                 name:UIKeyboardDidShowNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillBeHidden:)
@@ -105,12 +105,12 @@
 - (void)keyboardWillShow:(NSNotification*)aNotification{
     
     NSDictionary* info = [aNotification userInfo];
-    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
     NSTimeInterval animationDuration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     
     tableViewContentInset = self.tableView.contentInset;
     UIEdgeInsets contentInsets = tableViewContentInset;
-    contentInsets.bottom += kbSize.height;
+    contentInsets.bottom = kbSize.height;
     self.tableView.contentInset = contentInsets;
     self.tableView.scrollIndicatorInsets = contentInsets;
     

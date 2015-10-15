@@ -47,6 +47,11 @@
     
 
 //    [section addElement:[self labelElementWithTitle:@"Arrow Path" viewControllerName:@"ArrowPathViewController"]];
+    
+    [section addElement:[self labelElementWithTitle:@"Document Interact Controller" viewControllerName:@"WTDocumentViewController"]];
+    [section addElement:[self labelElementWithTitle:@"Activity View Controller" viewControllerName:@"WTActivityViewController"]];
+    [section addElement:[self labelElementWithTitle:@"Music Player" viewControllerName:@"MusicViewController"]];
+    [section addElement:[self labelElementWithTitle:@"UIKit Dynamic" viewControllerName:@"UIDynamicViewController"]];
     [section addElement:[self labelElementWithTitle:@"Round Button" viewControllerName:@"CircleButtonViewController"]];
     [section addElement:[self labelElementWithTitle:@"Chat" viewControllerName:@"ChatViewController"]];
     [section addElement:[self labelElementWithTitle:@"Table" viewControllerName:@"TableViewController"]];
@@ -66,6 +71,12 @@
     [section addElement:[self labelElementWithTitle:@"Gradient Button" viewControllerName:@"GradientButtonViewController"]];
     [section addElement:[self labelElementWithTitle:@"Image Picker View Controller" viewControllerName:@"ImagePickerViewController"]];
     
+    
+    QSection * helpSection = [[QSection alloc] init];
+    [root addSection:helpSection];
+    
+    [helpSection addElement:[self labelElementWithTitle:@"Log" viewControllerName:@"WTLogViewController"]];
+
 
     
     [self.quickDialogTableView reloadData];
