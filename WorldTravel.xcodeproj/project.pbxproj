@@ -246,18 +246,32 @@
 		373E2F5D1BCB94760043BB52 /* main_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 373E2F5C1BCB94760043BB52 /* main_icon@2x.png */; settings = {ASSET_TAGS = (); }; };
 		373E2F611BCB98B10043BB52 /* WTDocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 373E2F5F1BCB98B10043BB52 /* WTDocumentViewController.m */; settings = {ASSET_TAGS = (); }; };
 		373E2F621BCB98B10043BB52 /* WTDocumentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 373E2F601BCB98B10043BB52 /* WTDocumentViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		373E2F691BCBB3880043BB52 /* WTLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 373E2F671BCBB3880043BB52 /* WTLogViewController.m */; settings = {ASSET_TAGS = (); }; };
+		373E2F691BCBB3880043BB52 /* WTLogViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 373E2F671BCBB3880043BB52 /* WTLogViewController.mm */; settings = {ASSET_TAGS = (); }; };
 		373E2F6A1BCBB3880043BB52 /* WTLogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 373E2F681BCBB3880043BB52 /* WTLogViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		3740B9B41BE3850E006CCB71 /* lisongpro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3740B9B31BE38499006CCB71 /* lisongpro.ttf */; settings = {ASSET_TAGS = (); }; };
+		3740B9B61BE38594006CCB71 /* TpldYiFengScripture.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3740B9B51BE38594006CCB71 /* TpldYiFengScripture.otf */; settings = {ASSET_TAGS = (); }; };
 		37A1B58B1B71A92A00174A53 /* NSFileManager+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A1B58A1B71A92A00174A53 /* NSFileManager+Utility.m */; };
 		37A5B73D1BC667630017BA22 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37A5B73C1BC667630017BA22 /* LaunchScreen.xib */; settings = {ASSET_TAGS = (); }; };
 		37A5B73F1BC668DC0017BA22 /* main@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 37A5B73E1BC668DC0017BA22 /* main@2x.jpg */; settings = {ASSET_TAGS = (); }; };
 		37A5B7431BC66C1B0017BA22 /* ImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A5B7411BC66C1B0017BA22 /* ImagePickerViewController.m */; settings = {ASSET_TAGS = (); }; };
 		37A5B7441BC66C1B0017BA22 /* ImagePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37A5B7421BC66C1B0017BA22 /* ImagePickerViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		37B132DD1BE31E910054559E /* WTVerticalTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B132DC1BE31E910054559E /* WTVerticalTextViewController.m */; settings = {ASSET_TAGS = (); }; };
+		37B132E11BE31EB80054559E /* WTVerticalTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B132E01BE31EB80054559E /* WTVerticalTextView.m */; settings = {ASSET_TAGS = (); }; };
+		37B132E31BE31F9A0054559E /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B132E21BE31F9A0054559E /* CoreText.framework */; };
+		37B1331F1BE3826C0054559E /* ChekiangShuKeSung.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 37B1331E1BE380C50054559E /* ChekiangShuKeSung.TTF */; settings = {ASSET_TAGS = (); }; };
 		37E6CCE81BC7BF1D00B14535 /* AccelerometerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E6CCE71BC7BF1D00B14535 /* AccelerometerViewController.m */; settings = {ASSET_TAGS = (); }; };
 		37E6CCEA1BC7BF4100B14535 /* AccelerometerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E6CCE91BC7BF4100B14535 /* AccelerometerViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		37E6CCEC1BC7C19700B14535 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E6CCEB1BC7C19700B14535 /* CoreMotion.framework */; };
 		37E6CCF01BC7C6BF00B14535 /* GyroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E6CCEE1BC7C6BF00B14535 /* GyroViewController.m */; settings = {ASSET_TAGS = (); }; };
 		37E6CCF11BC7C6BF00B14535 /* GyroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E6CCEF1BC7C6BF00B14535 /* GyroViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		37F0A9D51BD730A800EB8FEC /* WTWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F0A9D41BD730A800EB8FEC /* WTWebViewController.m */; settings = {ASSET_TAGS = (); }; };
+		37F0A9D71BD731DC00EB8FEC /* page.html in Resources */ = {isa = PBXBuildFile; fileRef = 37F0A9D61BD731DC00EB8FEC /* page.html */; settings = {ASSET_TAGS = (); }; };
+		37F0AAB71BD7406900EB8FEC /* WTSqliteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F0AAB61BD7406900EB8FEC /* WTSqliteViewController.m */; settings = {ASSET_TAGS = (); }; };
+		37F0AAB91BD7607200EB8FEC /* tang-poetry.db in Resources */ = {isa = PBXBuildFile; fileRef = 37F0AAB81BD75CC000EB8FEC /* tang-poetry.db */; settings = {ASSET_TAGS = (); }; };
+		37F0AABD1BD7613F00EB8FEC /* WTArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F0AABC1BD7613F00EB8FEC /* WTArticleViewController.m */; settings = {ASSET_TAGS = (); }; };
+		37F0AAC01BD7615200EB8FEC /* WTArticleEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F0AABF1BD7615200EB8FEC /* WTArticleEntity.m */; settings = {ASSET_TAGS = (); }; };
+		37F0AAC61BD7665400EB8FEC /* WTVerticalTextContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F0AAC51BD7665400EB8FEC /* WTVerticalTextContainer.m */; settings = {ASSET_TAGS = (); }; };
+		37F0AAD01BD7911700EB8FEC /* vertical-text.html in Resources */ = {isa = PBXBuildFile; fileRef = 37F0AACF1BD7911700EB8FEC /* vertical-text.html */; settings = {ASSET_TAGS = (); }; };
 		549762262BB082D7F416CB46 /* libPods-WorldTravel Logic Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E8D4C917F56404C3650B9A /* libPods-WorldTravel Logic Tests.a */; };
 		A38E458A8F2196F7C1CB92C3 /* libPods-WorldTravelTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5697BD0622F4D25F5A4D7225 /* libPods-WorldTravelTests.a */; };
 /* End PBXBuildFile section */
@@ -751,8 +765,10 @@
 		373E2F5F1BCB98B10043BB52 /* WTDocumentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTDocumentViewController.m; sourceTree = "<group>"; };
 		373E2F601BCB98B10043BB52 /* WTDocumentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WTDocumentViewController.xib; sourceTree = "<group>"; };
 		373E2F661BCBB3880043BB52 /* WTLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTLogViewController.h; sourceTree = "<group>"; };
-		373E2F671BCBB3880043BB52 /* WTLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTLogViewController.m; sourceTree = "<group>"; };
+		373E2F671BCBB3880043BB52 /* WTLogViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WTLogViewController.mm; sourceTree = "<group>"; };
 		373E2F681BCBB3880043BB52 /* WTLogViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WTLogViewController.xib; sourceTree = "<group>"; };
+		3740B9B31BE38499006CCB71 /* lisongpro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lisongpro.ttf; sourceTree = "<group>"; };
+		3740B9B51BE38594006CCB71 /* TpldYiFengScripture.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TpldYiFengScripture.otf; sourceTree = "<group>"; };
 		37502387FF5855BE3CDF676D /* Pods-WorldTravelTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorldTravelTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WorldTravelTests/Pods-WorldTravelTests.debug.xcconfig"; sourceTree = "<group>"; };
 		37A1B5891B71A92A00174A53 /* NSFileManager+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+Utility.h"; sourceTree = "<group>"; };
 		37A1B58A1B71A92A00174A53 /* NSFileManager+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+Utility.m"; sourceTree = "<group>"; };
@@ -761,6 +777,12 @@
 		37A5B7401BC66C1B0017BA22 /* ImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagePickerViewController.h; sourceTree = "<group>"; };
 		37A5B7411BC66C1B0017BA22 /* ImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagePickerViewController.m; sourceTree = "<group>"; };
 		37A5B7421BC66C1B0017BA22 /* ImagePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImagePickerViewController.xib; sourceTree = "<group>"; };
+		37B132DB1BE31E910054559E /* WTVerticalTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTVerticalTextViewController.h; sourceTree = "<group>"; };
+		37B132DC1BE31E910054559E /* WTVerticalTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTVerticalTextViewController.m; sourceTree = "<group>"; };
+		37B132DF1BE31EB80054559E /* WTVerticalTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTVerticalTextView.h; sourceTree = "<group>"; };
+		37B132E01BE31EB80054559E /* WTVerticalTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTVerticalTextView.m; sourceTree = "<group>"; };
+		37B132E21BE31F9A0054559E /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		37B1331E1BE380C50054559E /* ChekiangShuKeSung.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = ChekiangShuKeSung.TTF; sourceTree = "<group>"; };
 		37E6CCE61BC7BF1D00B14535 /* AccelerometerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccelerometerViewController.h; path = CoreMotion/AccelerometerViewController.h; sourceTree = "<group>"; };
 		37E6CCE71BC7BF1D00B14535 /* AccelerometerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccelerometerViewController.m; path = CoreMotion/AccelerometerViewController.m; sourceTree = "<group>"; };
 		37E6CCE91BC7BF4100B14535 /* AccelerometerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccelerometerViewController.xib; sourceTree = "<group>"; };
@@ -768,6 +790,20 @@
 		37E6CCED1BC7C6BF00B14535 /* GyroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GyroViewController.h; sourceTree = "<group>"; };
 		37E6CCEE1BC7C6BF00B14535 /* GyroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GyroViewController.m; sourceTree = "<group>"; };
 		37E6CCEF1BC7C6BF00B14535 /* GyroViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GyroViewController.xib; sourceTree = "<group>"; };
+		37F0A9D31BD730A800EB8FEC /* WTWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTWebViewController.h; sourceTree = "<group>"; };
+		37F0A9D41BD730A800EB8FEC /* WTWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTWebViewController.m; sourceTree = "<group>"; };
+		37F0A9D61BD731DC00EB8FEC /* page.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = page.html; sourceTree = "<group>"; };
+		37F0AAB51BD7406900EB8FEC /* WTSqliteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTSqliteViewController.h; sourceTree = "<group>"; };
+		37F0AAB61BD7406900EB8FEC /* WTSqliteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTSqliteViewController.m; sourceTree = "<group>"; };
+		37F0AAB81BD75CC000EB8FEC /* tang-poetry.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tang-poetry.db"; sourceTree = "<group>"; };
+		37F0AABB1BD7613F00EB8FEC /* WTArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTArticleViewController.h; sourceTree = "<group>"; };
+		37F0AABC1BD7613F00EB8FEC /* WTArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTArticleViewController.m; sourceTree = "<group>"; };
+		37F0AABE1BD7615200EB8FEC /* WTArticleEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTArticleEntity.h; sourceTree = "<group>"; };
+		37F0AABF1BD7615200EB8FEC /* WTArticleEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTArticleEntity.m; sourceTree = "<group>"; };
+		37F0AAC41BD7665400EB8FEC /* WTVerticalTextContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTVerticalTextContainer.h; sourceTree = "<group>"; };
+		37F0AAC51BD7665400EB8FEC /* WTVerticalTextContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTVerticalTextContainer.m; sourceTree = "<group>"; };
+		37F0AAC71BD7696C00EB8FEC /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/../build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		37F0AACF1BD7911700EB8FEC /* vertical-text.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "vertical-text.html"; sourceTree = "<group>"; };
 		442E2BCDBDD924DBC8B46F2A /* Pods-WorldTravelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorldTravelTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WorldTravelTests/Pods-WorldTravelTests.release.xcconfig"; sourceTree = "<group>"; };
 		5697BD0622F4D25F5A4D7225 /* libPods-WorldTravelTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WorldTravelTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68E8D4C917F56404C3650B9A /* libPods-WorldTravel Logic Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WorldTravel Logic Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -784,6 +820,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37B132E31BE31F9A0054559E /* CoreText.framework in Frameworks */,
 				373E2F4D1BCB5C8E0043BB52 /* MediaPlayer.framework in Frameworks */,
 				373E2F4B1BCB5C850043BB52 /* AVFoundation.framework in Frameworks */,
 				37E6CCEC1BC7C19700B14535 /* CoreMotion.framework in Frameworks */,
@@ -883,6 +920,11 @@
 		18119151191729B700D8848C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				37B1331E1BE380C50054559E /* ChekiangShuKeSung.TTF */,
+				3740B9B31BE38499006CCB71 /* lisongpro.ttf */,
+				3740B9B51BE38594006CCB71 /* TpldYiFengScripture.otf */,
+				37F0AAB81BD75CC000EB8FEC /* tang-poetry.db */,
+				37F0A9D61BD731DC00EB8FEC /* page.html */,
 				373E2F5C1BCB94760043BB52 /* main_icon@2x.png */,
 				373E2F4E1BCB662A0043BB52 /* music.mp3 */,
 				188DA71B1917287C005C8A12 /* Main.storyboard */,
@@ -1151,6 +1193,8 @@
 		188DA7081917287C005C8A12 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				37B132E21BE31F9A0054559E /* CoreText.framework */,
+				37F0AAC71BD7696C00EB8FEC /* libPods.a */,
 				373E2F4C1BCB5C8E0043BB52 /* MediaPlayer.framework */,
 				373E2F4A1BCB5C850043BB52 /* AVFoundation.framework */,
 				37E6CCEB1BC7C19700B14535 /* CoreMotion.framework */,
@@ -1442,8 +1486,12 @@
 				373E2F551BCB87E00043BB52 /* WTActivityViewController */,
 				373E2F631BCB98B80043BB52 /* WTDocumentViewController */,
 				373E2F661BCBB3880043BB52 /* WTLogViewController.h */,
-				373E2F671BCBB3880043BB52 /* WTLogViewController.m */,
+				373E2F671BCBB3880043BB52 /* WTLogViewController.mm */,
 				373E2F681BCBB3880043BB52 /* WTLogViewController.xib */,
+				37F0A9D31BD730A800EB8FEC /* WTWebViewController.h */,
+				37F0A9D41BD730A800EB8FEC /* WTWebViewController.m */,
+				37F0AABA1BD7611900EB8FEC /* Sqlite View Controller */,
+				37B132DE1BE31E970054559E /* Vertical Text View Controller */,
 			);
 			name = "Playground View Controllers";
 			sourceTree = "<group>";
@@ -1727,6 +1775,33 @@
 			name = "Observe View Controller";
 			sourceTree = "<group>";
 		};
+		37B132DE1BE31E970054559E /* Vertical Text View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				37B132DB1BE31E910054559E /* WTVerticalTextViewController.h */,
+				37B132DC1BE31E910054559E /* WTVerticalTextViewController.m */,
+				37B132DF1BE31EB80054559E /* WTVerticalTextView.h */,
+				37B132E01BE31EB80054559E /* WTVerticalTextView.m */,
+			);
+			name = "Vertical Text View Controller";
+			sourceTree = "<group>";
+		};
+		37F0AABA1BD7611900EB8FEC /* Sqlite View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				37F0AAB51BD7406900EB8FEC /* WTSqliteViewController.h */,
+				37F0AAB61BD7406900EB8FEC /* WTSqliteViewController.m */,
+				37F0AABB1BD7613F00EB8FEC /* WTArticleViewController.h */,
+				37F0AABC1BD7613F00EB8FEC /* WTArticleViewController.m */,
+				37F0AACF1BD7911700EB8FEC /* vertical-text.html */,
+				37F0AABE1BD7615200EB8FEC /* WTArticleEntity.h */,
+				37F0AABF1BD7615200EB8FEC /* WTArticleEntity.m */,
+				37F0AAC41BD7665400EB8FEC /* WTVerticalTextContainer.h */,
+				37F0AAC51BD7665400EB8FEC /* WTVerticalTextContainer.m */,
+			);
+			name = "Sqlite View Controller";
+			sourceTree = "<group>";
+		};
 		B2286DD1349210A4C3B694F6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1753,6 +1828,7 @@
 				188DA7041917287C005C8A12 /* Resources */,
 				D9F3A03211D44E52A8933363 /* Copy Pods Resources */,
 				371F60091BC8E5AB00FD36A5 /* Embed App Extensions */,
+				EDB2D5F5B699E730A1C6A3F6 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1958,12 +2034,14 @@
 				18D5D4601A66592900145163 /* icon_maptype_google_selected.png in Resources */,
 				188DA7221917287C005C8A12 /* Images.xcassets in Resources */,
 				37E6CCF11BC7C6BF00B14535 /* GyroViewController.xib in Resources */,
+				37F0AAB91BD7607200EB8FEC /* tang-poetry.db in Resources */,
 				1891B5CB19188BE900195AE8 /* bg_chat_text_left@2x.png in Resources */,
 				18ECC4D31A037E56001AFABD /* AnimationViewController.xib in Resources */,
 				18D5D4441A66473400145163 /* icon-user-location@2x.png in Resources */,
 				18D22CBA1A594A3A00AF5AA0 /* large in Resources */,
 				18AACBD61917896B0008FA5F /* ChatViewController.xib in Resources */,
 				18D7C4FA19C1AB4300C55304 /* star@2x.png in Resources */,
+				37F0A9D71BD731DC00EB8FEC /* page.html in Resources */,
 				373E2F6A1BCBB3880043BB52 /* WTLogViewController.xib in Resources */,
 				18D5D4721A66592900145163 /* icon_maptype_standard_satellite.png in Resources */,
 				18A7797B1A5F817E007C2D0B /* start_sport_btn_img.png in Resources */,
@@ -1972,6 +2050,7 @@
 				182FD01F1A52A07D00FE3F2C /* ObserverViewController.xib in Resources */,
 				1891B5D01918B51F00195AE8 /* bg_chat_text_right@2x.png in Resources */,
 				18D5D46E1A66592900145163 /* icon_maptype_osm.png in Resources */,
+				37B1331F1BE3826C0054559E /* ChekiangShuKeSung.TTF in Resources */,
 				18AACBEA1917A4350008FA5F /* ChatMessageCell.xib in Resources */,
 				18D5D4681A66592900145163 /* icon_maptype_ocm_selected.png in Resources */,
 				18D5D46B1A66592900145163 /* icon_maptype_ocm@2x.png in Resources */,
@@ -1996,7 +2075,9 @@
 				18D5D46C1A66592900145163 /* icon_maptype_osm_selected.png in Resources */,
 				18D5D4701A66592900145163 /* icon_maptype_standard_satellite_selected.png in Resources */,
 				18B9346F1A0C8E1D0093940A /* ParentViewController.xib in Resources */,
+				3740B9B61BE38594006CCB71 /* TpldYiFengScripture.otf in Resources */,
 				1835CAD7199DDF82006497A3 /* location.png in Resources */,
+				37F0AAD01BD7911700EB8FEC /* vertical-text.html in Resources */,
 				18D5D4711A66592900145163 /* icon_maptype_standard_satellite_selected@2x.png in Resources */,
 				1838F9251A7B18FC0078A2D0 /* GradientButtonViewController.xib in Resources */,
 				373E2F621BCB98B10043BB52 /* WTDocumentViewController.xib in Resources */,
@@ -2007,6 +2088,7 @@
 				18A0F9911A11BD3E002989FA /* AlertViewController.xib in Resources */,
 				18D5D4741A66592900145163 /* icon_maptype_standard_street_selected.png in Resources */,
 				18AACBD9191797730008FA5F /* bg_chat_text_left.png in Resources */,
+				3740B9B41BE3850E006CCB71 /* lisongpro.ttf in Resources */,
 				18D5D46A1A66592900145163 /* icon_maptype_ocm.png in Resources */,
 				1801B59E195C001700AE5D05 /* MapViewController.xib in Resources */,
 				18D5D4671A66592900145163 /* icon_maptype_night_street@2x.png in Resources */,
@@ -2174,6 +2256,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WorldTravelTests/Pods-WorldTravelTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EDB2D5F5B699E730A1C6A3F6 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -2219,6 +2316,7 @@
 				18AACBE81917A4140008FA5F /* ChatMessageCell.m in Sources */,
 				1878FE1D1926074400730B56 /* QuickDialogController+Navigation.m in Sources */,
 				373E2F481BCB5C030043BB52 /* MusicViewController.m in Sources */,
+				37B132DD1BE31E910054559E /* WTVerticalTextViewController.m in Sources */,
 				373E2F581BCB90100043BB52 /* WTCopyQuoteViewController.m in Sources */,
 				1878FDF51926074400730B56 /* QClassicAppearance.m in Sources */,
 				1878FDF21926074400730B56 /* QBindingEvaluator.m in Sources */,
@@ -2238,10 +2336,11 @@
 				1801B5A6195C22FA00AE5D05 /* MyActionPaopaoView.m in Sources */,
 				1878FE161926074400730B56 /* QSortingSection.m in Sources */,
 				18B934771A0C95090093940A /* EmptyButtonViewController.m in Sources */,
+				37F0AAB71BD7406900EB8FEC /* WTSqliteViewController.m in Sources */,
 				1878FE0F1926074400730B56 /* QRootBuilder.m in Sources */,
 				1878FDF41926074400730B56 /* QButtonElement.m in Sources */,
 				189AB5DA1A6E43F100544924 /* NSString+Utility.m in Sources */,
-				373E2F691BCBB3880043BB52 /* WTLogViewController.m in Sources */,
+				373E2F691BCBB3880043BB52 /* WTLogViewController.mm in Sources */,
 				180A6160195D829C00882951 /* TableViewController.m in Sources */,
 				1838F9241A7B18FC0078A2D0 /* GradientButtonViewController.m in Sources */,
 				18D5D42E1A66049100145163 /* LAAnnotation.m in Sources */,
@@ -2259,6 +2358,7 @@
 				18901A7019877AFB00CD4FAC /* TableViewCell.m in Sources */,
 				1878FE1E1926074400730B56 /* QuickDialogController.m in Sources */,
 				1878FE181926074400730B56 /* QTextElement.m in Sources */,
+				37F0AABD1BD7613F00EB8FEC /* WTArticleViewController.m in Sources */,
 				18AACBD4191788F40008FA5F /* ChatViewController.m in Sources */,
 				184FF30319FA2DA50072995D /* CollectionViewController.m in Sources */,
 				1878FDF31926074400730B56 /* QBooleanElement.m in Sources */,
@@ -2270,6 +2370,7 @@
 				1878FE021926074400730B56 /* QFlatAppearance.m in Sources */,
 				373E2F5B1BCB90430043BB52 /* WTCopyQuoteActivity.m in Sources */,
 				188DA7161917287C005C8A12 /* main.m in Sources */,
+				37F0AAC61BD7665400EB8FEC /* WTVerticalTextContainer.m in Sources */,
 				18AACBE5191799430008FA5F /* ChatTextMessageView.m in Sources */,
 				18AACBE1191798320008FA5F /* ChatTextMessage.m in Sources */,
 				1878FE1F1926074400730B56 /* QuickDialogDataSource.m in Sources */,
@@ -2291,9 +2392,11 @@
 				18A779771A5F6873007C2D0B /* UINavigationBar+CustomHeight.m in Sources */,
 				1878FE121926074400730B56 /* QSection.m in Sources */,
 				1878FDFD1926074400730B56 /* QElement+Appearance.m in Sources */,
+				37F0A9D51BD730A800EB8FEC /* WTWebViewController.m in Sources */,
 				1878FDED1926074400730B56 /* QAutoEntryElement.m in Sources */,
 				1878FE011926074400730B56 /* QEntryTableViewCell.m in Sources */,
 				1878FE001926074400730B56 /* QEntryElement.m in Sources */,
+				37F0AAC01BD7615200EB8FEC /* WTArticleEntity.m in Sources */,
 				1878FE221926074400730B56 /* QuickDialogWebController.m in Sources */,
 				18C593F71A652EFC0000F07F /* LAMapDefine.m in Sources */,
 				1878FE141926074400730B56 /* QSelectItemElement.m in Sources */,
@@ -2302,6 +2405,7 @@
 				1878FE1B1926074400730B56 /* QuickDialogController+Helpers.m in Sources */,
 				1838F92A1A7B19530078A2D0 /* AKGradientButton.m in Sources */,
 				1878FDFA1926074400730B56 /* QDecimalElement.m in Sources */,
+				37B132E11BE31EB80054559E /* WTVerticalTextView.m in Sources */,
 				18C593F11A6523370000F07F /* TreasureAnnotationView.m in Sources */,
 				1878FE191926074400730B56 /* QTextField.m in Sources */,
 				184924A519C13BC90028B000 /* PopViewController.m in Sources */,
@@ -2708,6 +2812,10 @@
 				INFOPLIST_FILE = ActionExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.coffeeandsandwich.ios.WorldTravel.ActionExtension;
@@ -2730,6 +2838,10 @@
 				INFOPLIST_FILE = ActionExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.coffeeandsandwich.ios.WorldTravel.ActionExtension;

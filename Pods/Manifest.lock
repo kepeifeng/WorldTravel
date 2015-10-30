@@ -5,6 +5,11 @@ PODS:
   - CocoaLumberjack/Extensions (1.9.2):
     - CocoaLumberjack/Core
   - FastImageCache (1.3)
+  - FMDB (2.5):
+    - FMDB/standard (= 2.5)
+  - FMDB/common (2.5)
+  - FMDB/standard (2.5):
+    - FMDB/common
   - iOS-KML-Framework (1.0.0):
     - TBXML (~> 1.5)
   - pop (1.0.6)
@@ -13,6 +18,7 @@ PODS:
 DEPENDENCIES:
   - CocoaLumberjack
   - FastImageCache
+  - FMDB
   - iOS-KML-Framework (from `https://github.com/FLCLjp/iOS-KML-Framework.git`)
   - pop
 
@@ -26,10 +32,11 @@ CHECKOUT OPTIONS:
     :git: https://github.com/FLCLjp/iOS-KML-Framework.git
 
 SPEC CHECKSUMS:
-  CocoaLumberjack: 205769c032b5fef85b92472046bcc8b7e7c8a817
-  FastImageCache: f0897a850a1479a95b1415eb88ed1fdce708353a
-  iOS-KML-Framework: af22c3c41f4205ddf565ee5b925749d9adec5606
-  pop: e518794da38942c05255eb64b36d894e70cb4f00
-  TBXML: a279440030ba55c40e1455cafba3b0a44e1963d4
+  CocoaLumberjack: 628fca2e88ef06f7cf6817309aa405f325d9a6fa
+  FastImageCache: 25f214fd46405daca3d1995d783fb83b9036c62e
+  FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
+  iOS-KML-Framework: 4eca6b45dc562d388a8226d140bdf276b49c306d
+  pop: 1d978024a33fcf46426b42e60fb32e685d1f1d2e
+  TBXML: 9f9dadb239f2f2af1dadb87fe43a0ce6e479379a
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.39.0

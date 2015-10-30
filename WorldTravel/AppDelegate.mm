@@ -136,7 +136,7 @@ static long long idCounter;
     DDFileLogger * fileLogger = [[DDFileLogger alloc] init];
 //    fileLogger.rollingFrequency = 1; // 24 hour rolling
     fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
-    [fileLogger rollLogFileNow];
+//    [fileLogger rollLogFileNow];
     [DDLog addLogger:fileLogger];
     
 /*

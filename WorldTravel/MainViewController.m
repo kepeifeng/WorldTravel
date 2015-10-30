@@ -48,6 +48,10 @@
 
 //    [section addElement:[self labelElementWithTitle:@"Arrow Path" viewControllerName:@"ArrowPathViewController"]];
     
+    
+    [section addElement:[self labelElementWithTitle:@"Vertical Text View Controller" viewControllerName:@"WTVerticalTextViewController"]];
+    [section addElement:[self labelElementWithTitle:@"Sqlite View Controller" viewControllerName:@"WTSqliteViewController"]];
+    [section addElement:[self labelElementWithTitle:@"Web View Controller" viewControllerName:@"WTWebViewController"]];
     [section addElement:[self labelElementWithTitle:@"Document Interact Controller" viewControllerName:@"WTDocumentViewController"]];
     [section addElement:[self labelElementWithTitle:@"Activity View Controller" viewControllerName:@"WTActivityViewController"]];
     [section addElement:[self labelElementWithTitle:@"Music Player" viewControllerName:@"MusicViewController"]];

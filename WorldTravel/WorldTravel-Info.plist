@@ -49,6 +49,16 @@
 				<string>file</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.aroh.kent.worldtravel.oepnurl</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wtopenurl</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
@@ -56,6 +66,12 @@
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Let me kill your bettery</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>ChekiangShuKeSung.TTF</string>
+		<string>lisongpro.ttf</string>
+		<string>TpldYiFengScripture.otf</string>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>

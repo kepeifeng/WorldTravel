@@ -20,7 +20,7 @@
     // Do any additional setup after loading the view from its nib.
 
     self.view.translatesAutoresizingMaskIntoConstraints = NO;
-    self.view.backgroundColor = [UIColor lightGrayColor];
+//    self.view.backgroundColor = [UIColor lightGrayColor];
     [self updateContent];
 }
 
