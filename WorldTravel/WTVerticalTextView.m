@@ -18,6 +18,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.minimumLineHeight = 28;
+        self.backgroundColor = [UIColor clearColor];
     }
     return self;
 }
@@ -25,6 +26,10 @@
 -(void)setFont:(UIFont *)font{
     _font = font;
     [self updateAttributedString];
+}
+
+-(NSAttributedString *)attributedText{
+    return _attributed;
 }
 
 -(UIFont *)font{
@@ -72,19 +77,20 @@
 
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
-    
+
 
 //    NSString * text = @"iOS开发之Attributes文字的操作\n你是谁 Who are you.";
     
+//    UIColor * color = self.backgroundColor;
 
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    CGContextSetRGBFillColor(context, 1.0, 1.0, 1.0, 1.0);
-    CGContextAddRect(context, rect);
-    CGContextFillPath(context);
+//    CGContextSetRGBFillColor(context, 1.0, 1.0, 1.0, 1.0);
+//    CGContextAddRect(context, rect);
+//    CGContextFillPath(context);
     
     CGContextRotateCTM(context, M_PI_2);
-    CGContextTranslateCTM(context, 30.0, 35.0);
+//    CGContextTranslateCTM(context, 30.0, 35.0);//偏移
     CGContextScaleCTM(context, 1.0, -1.0);
     
     CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString((__bridge CFAttributedStringRef)_attributed);

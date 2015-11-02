@@ -69,6 +69,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>ChekiangShuKeSung.TTF</string>
+		<string>MingLiU.ttf</string>
 		<string>lisongpro.ttf</string>
 		<string>TpldYiFengScripture.otf</string>
 	</array>
