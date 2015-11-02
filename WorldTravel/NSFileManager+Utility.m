@@ -42,6 +42,9 @@
     {
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
         applicationSupportDirectory = [paths firstObject];
+        if([self fileExistsAtPath:applicationSupportDirectory] == NO){
+            [self createDirectoryAtPath:applicationSupportDirectory withIntermediateDirectories:YES attributes:nil error:nil];
+        }
     }
     return applicationSupportDirectory;
 }

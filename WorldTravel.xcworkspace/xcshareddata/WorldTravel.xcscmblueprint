@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "E04F3687C276933E9D892BB1F998181AAD90A44D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "E04F3687C276933E9D892BB1F998181AAD90A44D" : 0,
+    "C663044A1215EDAE9BFEE2935FD16744DA3876FB" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "8DFF74FD-AC4A-49B1-9BA2-E4823CB65DF6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "E04F3687C276933E9D892BB1F998181AAD90A44D" : "WorldTravel",
+    "C663044A1215EDAE9BFEE2935FD16744DA3876FB" : "Open%20Source%20Project\/SwipeView\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "WorldTravel",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "WorldTravel.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kepeifeng\/SwipeView.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C663044A1215EDAE9BFEE2935FD16744DA3876FB"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kepeifeng\/WorldTravel.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E04F3687C276933E9D892BB1F998181AAD90A44D"
+    }
+  ]
+}

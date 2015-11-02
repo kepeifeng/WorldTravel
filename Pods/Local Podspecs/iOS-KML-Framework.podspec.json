@@ -2,7 +2,7 @@
   "name": "iOS-KML-Framework",
   "version": "1.0.0",
   "summary": "The iOS framework for parsing/generating KML files.",
-  "description": "                    This is a iOS framework for parsing/generating KML files.\n                    This Framework parses the KML from a URL or Strings and create Objective-C Instances of KML structure. \n",
+  "description": "This is a iOS framework for parsing/generating KML files.\nThis Framework parses the KML from a URL or Strings and create Objective-C Instances of KML structure.",
   "homepage": "http://kmlframework.com",
   "screenshots": [
     "kmlframework.com/img/kml_viewer.png",

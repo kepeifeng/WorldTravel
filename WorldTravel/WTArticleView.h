@@ -12,4 +12,6 @@
 @property (nonatomic, strong) WTVerticalTextView * titleView;
 @property (nonatomic, strong) WTVerticalTextView * authorLabel;
 @property (nonatomic, strong) WTVerticalTextView * contentLabel;
+
+-(void)layout;
 @end

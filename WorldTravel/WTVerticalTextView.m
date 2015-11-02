@@ -107,4 +107,15 @@
     const char *cString = [subString UTF8String];
     return strlen(cString) == 3;
 }
+
+
+-(CGSize)sizeThatFits:(CGSize)size{
+
+    CGRect titleRect = [self.attributedText boundingRectWithSize:CGSizeMake(size.height, size.width)
+                                                               options:(NSStringDrawingUsesLineFragmentOrigin)
+                                                               context:nil];
+    
+    return CGSizeMake(CGRectGetHeight(titleRect), CGRectGetWidth(titleRect));
+
+}
 @end

@@ -10,5 +10,7 @@
 #import "WTArticleEntity.h"
 
 @interface WTArticleViewController : UIViewController
-@property (nonatomic) WTArticleEntity * articleEntity;
+
+@property (nonatomic, strong) NSArray * entityArray;
+@property (nonatomic, assign) NSInteger defaultIndex;
 @end

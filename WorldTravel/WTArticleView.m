@@ -39,26 +39,30 @@
 -(void)didMoveToWindow{
     [super didMoveToWindow];
     
-    //Need no NSStringDrawingUsesLineFragmentOrigin
+}
 
+-(void)layout{
+
+    //Need no NSStringDrawingUsesLineFragmentOrigin
+    
     CGRect titleRect = [_titleView.attributedText boundingRectWithSize:CGSizeMake(CGRectGetHeight(self.bounds), 9999)
                                                                options:(NSStringDrawingUsesLineFragmentOrigin)
                                                                context:nil];
     _titleView.frame = CGRectMake(0, 0, CGRectGetHeight(titleRect), CGRectGetWidth(titleRect));
-
+    
     CGRect authorRect = [_authorLabel.attributedText boundingRectWithSize:CGSizeMake(CGRectGetHeight(self.bounds), 9999)
                                                                   options:(NSStringDrawingUsesLineFragmentOrigin)
                                                                   context:nil];
-
+    
     _authorLabel.frame = CGRectMake(CGRectGetMaxX(_titleView.frame), 0, CGRectGetHeight(authorRect), CGRectGetWidth(authorRect));
-
+    
     CGRect contentRect = [_contentLabel.attributedText boundingRectWithSize:CGSizeMake(CGRectGetHeight(self.bounds), 9999)
                                                                     options:(NSStringDrawingUsesLineFragmentOrigin)
                                                                     context:nil];
-
-
+    
+    
     _contentLabel.frame = CGRectMake(CGRectGetMaxX(_authorLabel.frame)+20, 0, CGRectGetHeight(contentRect), CGRectGetWidth(contentRect));
-
+    
     NSArray * views = @[_titleView, _authorLabel, _contentLabel];
     CGFloat width = MAX(CGRectGetMaxX(_contentLabel.frame), CGRectGetWidth(self.bounds) - self.contentInset.right);
     self.contentSize = CGSizeMake(width, CGRectGetHeight(self.bounds));
@@ -68,8 +72,9 @@
         frame.origin.x = width - CGRectGetMaxX(frame);
         view.frame = frame;
     }
-
+    
     self.contentOffset = CGPointMake(width - CGRectGetWidth(self.bounds) + self.contentInset.right, -self.contentInset.top);
+    
 
 }
 

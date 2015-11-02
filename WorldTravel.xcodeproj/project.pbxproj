@@ -256,6 +256,9 @@
 		373E2F6A1BCBB3880043BB52 /* WTLogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 373E2F681BCBB3880043BB52 /* WTLogViewController.xib */; };
 		3740B9B41BE3850E006CCB71 /* lisongpro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3740B9B31BE38499006CCB71 /* lisongpro.ttf */; };
 		3740B9B61BE38594006CCB71 /* TpldYiFengScripture.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3740B9B51BE38594006CCB71 /* TpldYiFengScripture.otf */; };
+		375F61A41BE73CFD009CE82E /* WTArticleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 375F61A31BE73CFD009CE82E /* WTArticleManager.m */; };
+		375F61A71BE75011009CE82E /* WTArticleSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 375F61A61BE75011009CE82E /* WTArticleSummaryViewController.m */; };
+		375F61A91BE759A9009CE82E /* icon-info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 375F61A81BE759A9009CE82E /* icon-info@2x.png */; };
 		37A1B58B1B71A92A00174A53 /* NSFileManager+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A1B58A1B71A92A00174A53 /* NSFileManager+Utility.m */; };
 		37A5B73D1BC667630017BA22 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37A5B73C1BC667630017BA22 /* LaunchScreen.xib */; };
 		37A5B73F1BC668DC0017BA22 /* main@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 37A5B73E1BC668DC0017BA22 /* main@2x.jpg */; };
@@ -784,6 +787,11 @@
 		3740B9B31BE38499006CCB71 /* lisongpro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lisongpro.ttf; sourceTree = "<group>"; };
 		3740B9B51BE38594006CCB71 /* TpldYiFengScripture.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TpldYiFengScripture.otf; sourceTree = "<group>"; };
 		37502387FF5855BE3CDF676D /* Pods-WorldTravelTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorldTravelTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WorldTravelTests/Pods-WorldTravelTests.debug.xcconfig"; sourceTree = "<group>"; };
+		375F61A21BE73CFD009CE82E /* WTArticleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTArticleManager.h; sourceTree = "<group>"; };
+		375F61A31BE73CFD009CE82E /* WTArticleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTArticleManager.m; sourceTree = "<group>"; };
+		375F61A51BE75011009CE82E /* WTArticleSummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTArticleSummaryViewController.h; sourceTree = "<group>"; };
+		375F61A61BE75011009CE82E /* WTArticleSummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTArticleSummaryViewController.m; sourceTree = "<group>"; };
+		375F61A81BE759A9009CE82E /* icon-info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-info@2x.png"; sourceTree = "<group>"; };
 		37A1B5891B71A92A00174A53 /* NSFileManager+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+Utility.h"; sourceTree = "<group>"; };
 		37A1B58A1B71A92A00174A53 /* NSFileManager+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+Utility.m"; sourceTree = "<group>"; };
 		37A5B73C1BC667630017BA22 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -1451,6 +1459,7 @@
 		18B934691A0C64700093940A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				375F61A81BE759A9009CE82E /* icon-info@2x.png */,
 				37307AC41BE50A130023E681 /* icon-heart-empty@2x.png */,
 				37307AC51BE50A130023E681 /* icon-heart-full@2x.png */,
 				37307AC61BE50A130023E681 /* icon-left@2x.png */,
@@ -1820,6 +1829,10 @@
 				37F0AAC51BD7665400EB8FEC /* WTVerticalTextContainer.m */,
 				37307ABD1BE4705F0023E681 /* WTArticleView.h */,
 				37307ABE1BE4705F0023E681 /* WTArticleView.m */,
+				375F61A21BE73CFD009CE82E /* WTArticleManager.h */,
+				375F61A31BE73CFD009CE82E /* WTArticleManager.m */,
+				375F61A51BE75011009CE82E /* WTArticleSummaryViewController.h */,
+				375F61A61BE75011009CE82E /* WTArticleSummaryViewController.m */,
 			);
 			name = "Sqlite View Controller";
 			sourceTree = "<group>";
@@ -2079,6 +2092,7 @@
 				18AACBEA1917A4350008FA5F /* ChatMessageCell.xib in Resources */,
 				18D5D4681A66592900145163 /* icon_maptype_ocm_selected.png in Resources */,
 				18D5D46B1A66592900145163 /* icon_maptype_ocm@2x.png in Resources */,
+				375F61A91BE759A9009CE82E /* icon-info@2x.png in Resources */,
 				18D5D4731A66592900145163 /* icon_maptype_standard_satellite@2x.png in Resources */,
 				18119150191729A800D8848C /* mapapi.bundle in Resources */,
 				18D5D4411A66473400145163 /* icon_minus@2x.png in Resources */,
@@ -2313,6 +2327,7 @@
 				1878FE0D1926074400730B56 /* QRadioItemElement.m in Sources */,
 				1878FDFE1926074400730B56 /* QElement.m in Sources */,
 				37A1B58B1B71A92A00174A53 /* NSFileManager+Utility.m in Sources */,
+				375F61A71BE75011009CE82E /* WTArticleSummaryViewController.m in Sources */,
 				371F5FF51BC8B15F00FD36A5 /* UIDynamicViewController.m in Sources */,
 				18BC19C01A6510CC00261644 /* LAMap.m in Sources */,
 				1878FDE91926074400730B56 /* DOAutocompleteTextField.m in Sources */,
@@ -2355,6 +2370,7 @@
 				37E6CCF01BC7C6BF00B14535 /* GyroViewController.m in Sources */,
 				1878FE101926074400730B56 /* QRootElement+JsonBuilder.m in Sources */,
 				1801B59D195C001700AE5D05 /* MapViewController.m in Sources */,
+				375F61A41BE73CFD009CE82E /* WTArticleManager.m in Sources */,
 				1878FDEF1926074400730B56 /* QBadgeElement.m in Sources */,
 				1878FE051926074400730B56 /* QImageElement.m in Sources */,
 				18A0F9901A11BD3E002989FA /* AlertViewController.m in Sources */,

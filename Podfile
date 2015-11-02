@@ -6,4 +6,5 @@ pod "CocoaLumberjack"
 pod "FastImageCache"
 pod 'iOS-KML-Framework', :git => 'https://github.com/FLCLjp/iOS-KML-Framework.git'
 pod 'FMDB'
-pod 'SwipeView', :git => 'https://github.com/nicklockwood/SwipeView'
+#pod 'SwipeView', :git => 'https://github.com/nicklockwood/SwipeView'
+pod 'SwipeView', :path => '~/Documents/Projects/Open Source Project/SwipeView'

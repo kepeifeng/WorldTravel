@@ -16,8 +16,15 @@
     #import "QuickDialog.h"
 #endif
 
-
-#import "DDLog.h"
-static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+#import <DDLog.h>
+#ifdef DEBUG
+static const DDLogLevel ddLogLevel = DDLogLevelVerbose;
+#else
+static const DDLogLevel ddLogLevel = DDLogLevelWarn;
+#endif
+#import <CocoaLumberjack/CocoaLumberjack.h>
 
 #define kAppDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
+
+#define FONT_NAME @"MingLiU"
+#define ARTICLE_FONT_SIZE (18.0)

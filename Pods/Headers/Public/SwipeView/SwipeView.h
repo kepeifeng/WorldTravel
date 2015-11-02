@@ -1,1 +1,1 @@
-../../../SwipeView/SwipeView/SwipeView.h
+../../../../../Open Source Project/SwipeView/SwipeView/SwipeView.h

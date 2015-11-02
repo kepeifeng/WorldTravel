@@ -7,9 +7,10 @@
 //
 
 #import "WTSqliteViewController.h"
-#import <FMDB.h>
-#import "WTArticleEntity.h"
+
+#import "WTArticleManager.h"
 #import "WTArticleViewController.h"
+
 
 @interface WTSqliteViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -19,7 +20,6 @@
 
     UITableView * _tableView;
     NSArray * _items;
-    FMDatabase * _database;
     
     UISearchController * _searchController;
     BOOL _displayed;
@@ -55,29 +55,7 @@
 }
 
 -(void)loadData{
-
-    NSString * path = [[NSBundle mainBundle] pathForResource:@"tang-poetry" ofType:@"db"];
-    _database = [FMDatabase databaseWithPath:path];
-    
-    if (![_database open]) {
-        DDLogInfo(@"Database open failed.");
-        return;
-    }
-    NSString * sql = @"SELECT `D_TITLE`,`D_SHI`,`D_AUTHOR` FROM `T_SHI`  LIMIT 0, 50000;";
-    FMResultSet * set = [_database executeQuery:sql];
-    
-    NSMutableArray * entityArray = [[NSMutableArray alloc] initWithCapacity:100];
-    while ([set next]) {
-        WTArticleEntity * entity = [[WTArticleEntity alloc] init];
-        entity.title = [set stringForColumn:@"D_TITLE"];
-        entity.content = [set stringForColumn:@"D_SHI"];
-        entity.author = [set stringForColumn:@"D_AUTHOR"];
-        
-        [entityArray addObject:entity];
-    }
-    
-    _items = entityArray;
-
+    _items = [[WTArticleManager sharedManager] allEntity];
 }
 
 -(void)restoreIndexPath{
@@ -149,7 +127,9 @@
     WTArticleEntity * entity = _items[indexPath.row];
 
     WTArticleViewController * articleVC = [[WTArticleViewController alloc] init];
-    articleVC.articleEntity = entity;
+//    articleVC.articleEntity = entity;
+    articleVC.entityArray = _items;
+    articleVC.defaultIndex = indexPath.row;
     
     [self.navigationController pushViewController:articleVC animated:YES];
 }

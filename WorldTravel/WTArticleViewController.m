@@ -10,9 +10,12 @@
 #import "WTVerticalTextContainer.h"
 #import "WTVerticalTextView.h"
 #import "WTArticleView.h"
+#import <SwipeView/SwipeView.h>
+#import "WTArticleManager.h"
+#import "WTArticleSummaryViewController.h"
 
-@interface WTArticleViewController ()
-
+@interface WTArticleViewController ()<SwipeViewDataSource, SwipeViewDelegate>
+@property (nonatomic, readonly) WTArticleEntity * articleEntity;
 @end
 
 @implementation WTArticleViewController{
@@ -22,6 +25,10 @@
     NSTextStorage * _textStorage;
     
     BOOL _originalNavBarHidden;
+
+    SwipeView * _swipeView;
+    
+    UIBarButtonItem * _favButton;
 }
 
 -(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
@@ -43,26 +50,35 @@
     return radians * 180 / M_PI;
 };
 
+-(WTArticleEntity *)articleEntity{
+
+    if (_swipeView.currentItemIndex >=0 && _swipeView.currentItemIndex < self.entityArray.count) {
+        return self.entityArray[_swipeView.currentItemIndex];
+    }
+    return nil;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UIEdgeInsets insert = UIEdgeInsetsMake(0, 0, 0, 20);
     
-    WTArticleView * articleView = [[WTArticleView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.navigationController.navigationBar.frame) + 20,
-                                                                                  CGRectGetWidth(self.view.bounds),
-                                                                                  CGRectGetHeight(self.view.bounds) - CGRectGetMaxY(self.navigationController.navigationBar.frame) - 40)];
-    articleView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    [self.view addSubview:articleView];
-    articleView.contentSize = articleView.bounds.size;
-    articleView.contentInset = insert;
-    articleView.titleView.text = self.articleEntity.title;
-    articleView.authorLabel.text = self.articleEntity.author;
-    articleView.contentLabel.text = self.articleEntity.content;
-    articleView.showsHorizontalScrollIndicator = NO;
-    articleView.showsVerticalScrollIndicator = NO;
     
+    _swipeView = [[SwipeView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.navigationController.navigationBar.frame) + 20,
+                                                             CGRectGetWidth(self.view.bounds),
+                                                             CGRectGetHeight(self.view.bounds) - CGRectGetMaxY(self.navigationController.navigationBar.frame) - 40)];
+    [self.view addSubview:_swipeView];
+    _swipeView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+
+
+    _swipeView.delegate = self;
+    _swipeView.dataSource = self;
+    _swipeView.itemsToPreloadBackward = 1;
+    _swipeView.itemsToPreloadForward = 1;
+    
+
+    _swipeView.currentItemIndex = self.defaultIndex;
     
 //    UIButton * backButton = [UIButton buttonWithType:(UIButtonTypeSystem)];
 //    backButton.frame = (CGRectMake(CGRectGetWidth(self.view.bounds) - 10 - 80, CGRectGetHeight(self.view.bounds) - 10 - 80, 80, 80));
@@ -116,12 +132,27 @@
     UIBarButtonItem * nextButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon-right"]
                                                                     style:(UIBarButtonItemStylePlain)
                                                                    target:self action:@selector(nextButtonTapped:)];
-    UIBarButtonItem * favButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon-heart-empty"]
+    _favButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon-heart-empty"]
                                                                    style:(UIBarButtonItemStylePlain)
                                                                   target:self action:@selector(favButtonTapped:)];
     
-    self.toolbarItems = @[backItem, space, prevButton, nextButton, favButton];
-    self.navigationController.toolbarHidden = NO;
+    UIBarButtonItem * infoButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon-info"] style:(UIBarButtonItemStylePlain) target:self action:@selector(infoButtonTapped:)];
+    
+    self.toolbarItems = @[backItem, space, prevButton, nextButton, _favButton,infoButton];
+//    self.navigationController.toolbarHidden = NO;
+    
+    [self updateViewFromEntity];
+    
+    
+//    UIView * gestureView = [[UIView alloc] initWithFrame:self.view.bounds];
+//    gestureView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+//    gestureView.exclusiveTouch = NO;
+//    [self.view addSubview:gestureView];
+    
+    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTappedHandler:)];
+    [self.view addGestureRecognizer:tapGesture];
+    
+
 
 /*
     CGRect titleRect = [articleView.contentLabel.attributedText boundingRectWithSize:CGSizeMake(CGRectGetHeight(self.view.bounds), 9999)
@@ -198,17 +229,48 @@
 */
 }
 
+-(void)infoButtonTapped:(id)sender{
+
+    WTArticleSummaryViewController * summaryVC = [WTArticleSummaryViewController new];
+    summaryVC.articleEntity = self.articleEntity;
+    [self presentViewController:[[UINavigationController alloc] initWithRootViewController:summaryVC] animated:YES completion:NULL];
+    
+}
+
+-(void)viewTappedHandler:(UITapGestureRecognizer *)gesture{
+
+
+//    NSLog(@"viewTappedHandler");
+    [self.navigationController setToolbarHidden:!self.navigationController.toolbarHidden animated:YES];
+}
+
 -(void)previousButtonTapped:(id)sender{
 
+    if (_swipeView.currentItemIndex>0) {
+//        _swipeView.currentItemIndex--;
+        [_swipeView scrollToItemAtIndex:_swipeView.currentItemIndex - 1 duration:0.3];
+    }
 }
 
 -(void)nextButtonTapped:(id)sender{
+    if (_swipeView.currentItemIndex < self.entityArray.count - 1) {
+//        _swipeView.currentItemIndex++;
+        
+        [_swipeView scrollToItemAtIndex:_swipeView.currentItemIndex + 1 duration:0.3];
+    }
+}
+
+-(void)updateViewFromEntity{
+
+    _favButton.image = [UIImage imageNamed:(self.articleEntity.fav)?@"icon-heart-full":@"icon-heart-empty"];
     
 }
 
-
 -(void)favButtonTapped:(id)sender{
-    
+
+    self.articleEntity.fav = !self.articleEntity.isFav;
+    [[WTArticleManager sharedManager] setFav:self.articleEntity.fav forEntityId:self.articleEntity.entityId];
+    [self updateViewFromEntity];
 }
 
 
@@ -233,6 +295,61 @@
 -(void)backButtonTapped:(id)sender{
 
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark - Swipe View Delegate
+-(NSInteger)numberOfItemsInSwipeView:(SwipeView *)swipeView{
+    return self.entityArray.count;
+}
+
+-(CGSize)swipeViewItemSize:(SwipeView *)swipeView{
+    return CGSizeMake(CGRectGetWidth(swipeView.bounds) + 20, CGRectGetHeight(swipeView.bounds));
+}
+
+-(void)swipeViewCurrentItemIndexDidChange:(SwipeView *)swipeView{
+    [self updateViewFromEntity];
+}
+
+-(UIView *)swipeView:(SwipeView *)swipeView viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view{
+
+    
+    
+    if(!view){
+        UIEdgeInsets insert = UIEdgeInsetsMake(0, 0, 0, 20);
+        
+//        articleView = [[WTArticleView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.navigationController.navigationBar.frame) + 20,
+//                                                          CGRectGetWidth(self.view.bounds),
+//                                                          CGRectGetHeight(self.view.bounds) - CGRectGetMaxY(self.navigationController.navigationBar.frame) - 40)];
+        view = [[UIView alloc] initWithFrame:swipeView.bounds];
+        
+        WTArticleView * articleView = [[WTArticleView alloc] initWithFrame:swipeView.bounds];
+//        [self.view addSubview:articleView];
+        articleView.contentSize = articleView.bounds.size;
+        articleView.showsHorizontalScrollIndicator = NO;
+        articleView.showsVerticalScrollIndicator = NO;
+        articleView.contentInset = insert;
+        articleView.bounces = NO;
+        articleView.tag = 10000;
+        
+        [view addSubview:articleView];
+    }
+    
+    WTArticleView * articleView = (WTArticleView *)[view viewWithTag:10000];
+    
+    WTArticleEntity * articleEntity = self.entityArray[index];
+    
+    articleView.titleView.text = articleEntity.title;
+    articleView.authorLabel.text = articleEntity.author;
+    articleView.contentLabel.text = articleEntity.content;
+    [articleView layout];
+    
+    return view;
+
+}
+
+-(void)swipeView:(SwipeView *)swipeView didSelectItemAtIndex:(NSInteger)index{
+
+    NSLog(@"didSelectItemAtIndex");
 }
 /*
 #pragma mark - Navigation
