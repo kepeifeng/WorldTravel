@@ -8,9 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "WTArticleEntity.h"
+#import "WTDynastyEntity.h"
 @interface WTArticleManager : NSObject
 + (instancetype)sharedManager;
 
 -(NSArray *)allEntity;
+-(NSArray *)allDynasty;
 -(void)setFav:(BOOL)isFav forEntityId:(NSInteger)entityId;
+-(NSArray *)allPoetryOfDynasty:(NSString *)dynasty;
+
+-(NSArray *)searchWithKeyword:(NSString *)keyword;
 @end

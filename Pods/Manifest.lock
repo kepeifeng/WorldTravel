@@ -25,18 +25,21 @@ DEPENDENCIES:
   - FMDB
   - iOS-KML-Framework (from `https://github.com/FLCLjp/iOS-KML-Framework.git`)
   - pop
-  - SwipeView (from `~/Documents/Projects/Open Source Project/SwipeView`)
+  - SwipeView (from `https://github.com/kepeifeng/SwipeView`)
 
 EXTERNAL SOURCES:
   iOS-KML-Framework:
     :git: https://github.com/FLCLjp/iOS-KML-Framework.git
   SwipeView:
-    :path: "~/Documents/Projects/Open Source Project/SwipeView"
+    :git: https://github.com/kepeifeng/SwipeView
 
 CHECKOUT OPTIONS:
   iOS-KML-Framework:
     :commit: dc38d7c2e80e0d4c077a63e7cce4c3b34ac25d08
     :git: https://github.com/FLCLjp/iOS-KML-Framework.git
+  SwipeView:
+    :commit: e3fa874138c237954d58655f84cdd53d8d622180
+    :git: https://github.com/kepeifeng/SwipeView
 
 SPEC CHECKSUMS:
   CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0

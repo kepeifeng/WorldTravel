@@ -63,12 +63,13 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
+    CGFloat margin = MIN(CGRectGetHeight([[UIScreen mainScreen] bounds])*0.1, 64);
     
-    
-    _swipeView = [[SwipeView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.navigationController.navigationBar.frame) + 20,
+    _swipeView = [[SwipeView alloc] initWithFrame:CGRectMake(0, margin,
                                                              CGRectGetWidth(self.view.bounds),
-                                                             CGRectGetHeight(self.view.bounds) - CGRectGetMaxY(self.navigationController.navigationBar.frame) - 40)];
+                                                             CGRectGetHeight(self.view.bounds) - margin*2)];
     [self.view addSubview:_swipeView];
+
     _swipeView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
 
 
@@ -229,6 +230,13 @@
 */
 }
 
+
+-(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    [_swipeView reloadData];
+}
+
+
 -(void)infoButtonTapped:(id)sender{
 
     WTArticleSummaryViewController * summaryVC = [WTArticleSummaryViewController new];
@@ -315,7 +323,7 @@
     
     
     if(!view){
-        UIEdgeInsets insert = UIEdgeInsetsMake(0, 0, 0, 20);
+        UIEdgeInsets insert = UIEdgeInsetsMake(0, 20, 0, 20);
         
 //        articleView = [[WTArticleView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.navigationController.navigationBar.frame) + 20,
 //                                                          CGRectGetWidth(self.view.bounds),

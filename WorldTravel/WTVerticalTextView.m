@@ -11,9 +11,10 @@
 
 @implementation WTVerticalTextView{
 
-    NSAttributedString * _attributed;
+
 }
 @synthesize font = _font;
+@synthesize attributedText = _attributedText;
 -(instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
@@ -28,9 +29,9 @@
     [self updateAttributedString];
 }
 
--(NSAttributedString *)attributedText{
-    return _attributed;
-}
+//-(NSAttributedString *)attributedText{
+//    return _attributedText;
+//}
 
 -(UIFont *)font{
 
@@ -48,7 +49,7 @@
 -(void)updateAttributedString{
 
     if (!_text) {
-        _attributed = nil;
+        _attributedText = nil;
         [self setNeedsDisplay];
         return;
     }
@@ -71,7 +72,7 @@
                                 NSVerticalGlyphFormAttributeName:@(YES),
                                 NSParagraphStyleAttributeName:style} range:NSMakeRange(0, attributed.length)];
     
-    _attributed = attributed;
+    _attributedText = attributed;
     [self setNeedsDisplay];
 }
 
@@ -93,7 +94,7 @@
 //    CGContextTranslateCTM(context, 30.0, 35.0);//偏移
     CGContextScaleCTM(context, 1.0, -1.0);
     
-    CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString((__bridge CFAttributedStringRef)_attributed);
+    CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString((__bridge CFAttributedStringRef)_attributedText);
     CGPathRef path = CGPathCreateWithRect(CGRectMake(0.0, 0.0, rect.size.height, rect.size.width), nil);
     CTFrameRef frame = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, 0), path, nil);
     CTFrameDraw(frame, context);

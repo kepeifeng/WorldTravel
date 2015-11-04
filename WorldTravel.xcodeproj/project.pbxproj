@@ -268,15 +268,20 @@
 		37B132E11BE31EB80054559E /* WTVerticalTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B132E01BE31EB80054559E /* WTVerticalTextView.m */; };
 		37B132E31BE31F9A0054559E /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B132E21BE31F9A0054559E /* CoreText.framework */; };
 		37B1331F1BE3826C0054559E /* ChekiangShuKeSung.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 37B1331E1BE380C50054559E /* ChekiangShuKeSung.TTF */; };
+		37CA564C1BE8772400CA43BC /* tang-poetry-2.db in Resources */ = {isa = PBXBuildFile; fileRef = 37CA564B1BE8771300CA43BC /* tang-poetry-2.db */; };
+		37CA564F1BE87EB500CA43BC /* WTDynastyEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CA564E1BE87EB500CA43BC /* WTDynastyEntity.m */; };
+		37CA56521BE8A36500CA43BC /* WTAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CA56511BE8A36500CA43BC /* WTAlertAction.m */; };
+		37CA56551BE8ACE700CA43BC /* WTPoetrySearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CA56541BE8ACE700CA43BC /* WTPoetrySearchViewController.m */; };
 		37E6CCE81BC7BF1D00B14535 /* AccelerometerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E6CCE71BC7BF1D00B14535 /* AccelerometerViewController.m */; };
 		37E6CCEA1BC7BF4100B14535 /* AccelerometerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E6CCE91BC7BF4100B14535 /* AccelerometerViewController.xib */; };
 		37E6CCEC1BC7C19700B14535 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E6CCEB1BC7C19700B14535 /* CoreMotion.framework */; };
 		37E6CCF01BC7C6BF00B14535 /* GyroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E6CCEE1BC7C6BF00B14535 /* GyroViewController.m */; };
 		37E6CCF11BC7C6BF00B14535 /* GyroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E6CCEF1BC7C6BF00B14535 /* GyroViewController.xib */; };
+		37E8BD901BEA14C50050FDAB /* WTPoetryContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E8BD8F1BEA14C50050FDAB /* WTPoetryContentView.m */; };
 		37F0A9D51BD730A800EB8FEC /* WTWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F0A9D41BD730A800EB8FEC /* WTWebViewController.m */; };
 		37F0A9D71BD731DC00EB8FEC /* page.html in Resources */ = {isa = PBXBuildFile; fileRef = 37F0A9D61BD731DC00EB8FEC /* page.html */; };
 		37F0AAB71BD7406900EB8FEC /* WTSqliteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F0AAB61BD7406900EB8FEC /* WTSqliteViewController.m */; };
-		37F0AAB91BD7607200EB8FEC /* tang-poetry.db in Resources */ = {isa = PBXBuildFile; fileRef = 37F0AAB81BD75CC000EB8FEC /* tang-poetry.db */; };
+		37F0AAB91BD7607200EB8FEC /* tang-poetry-1.db in Resources */ = {isa = PBXBuildFile; fileRef = 37F0AAB81BD75CC000EB8FEC /* tang-poetry-1.db */; };
 		37F0AABD1BD7613F00EB8FEC /* WTArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F0AABC1BD7613F00EB8FEC /* WTArticleViewController.m */; };
 		37F0AAC01BD7615200EB8FEC /* WTArticleEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F0AABF1BD7615200EB8FEC /* WTArticleEntity.m */; };
 		37F0AAC61BD7665400EB8FEC /* WTVerticalTextContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F0AAC51BD7665400EB8FEC /* WTVerticalTextContainer.m */; };
@@ -805,6 +810,13 @@
 		37B132E01BE31EB80054559E /* WTVerticalTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTVerticalTextView.m; sourceTree = "<group>"; };
 		37B132E21BE31F9A0054559E /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		37B1331E1BE380C50054559E /* ChekiangShuKeSung.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = ChekiangShuKeSung.TTF; sourceTree = "<group>"; };
+		37CA564B1BE8771300CA43BC /* tang-poetry-2.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tang-poetry-2.db"; sourceTree = "<group>"; };
+		37CA564D1BE87EB500CA43BC /* WTDynastyEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTDynastyEntity.h; sourceTree = "<group>"; };
+		37CA564E1BE87EB500CA43BC /* WTDynastyEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTDynastyEntity.m; sourceTree = "<group>"; };
+		37CA56501BE8A36500CA43BC /* WTAlertAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTAlertAction.h; sourceTree = "<group>"; };
+		37CA56511BE8A36500CA43BC /* WTAlertAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTAlertAction.m; sourceTree = "<group>"; };
+		37CA56531BE8ACE700CA43BC /* WTPoetrySearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTPoetrySearchViewController.h; sourceTree = "<group>"; };
+		37CA56541BE8ACE700CA43BC /* WTPoetrySearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTPoetrySearchViewController.m; sourceTree = "<group>"; };
 		37E6CCE61BC7BF1D00B14535 /* AccelerometerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccelerometerViewController.h; path = CoreMotion/AccelerometerViewController.h; sourceTree = "<group>"; };
 		37E6CCE71BC7BF1D00B14535 /* AccelerometerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccelerometerViewController.m; path = CoreMotion/AccelerometerViewController.m; sourceTree = "<group>"; };
 		37E6CCE91BC7BF4100B14535 /* AccelerometerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccelerometerViewController.xib; sourceTree = "<group>"; };
@@ -812,12 +824,14 @@
 		37E6CCED1BC7C6BF00B14535 /* GyroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GyroViewController.h; sourceTree = "<group>"; };
 		37E6CCEE1BC7C6BF00B14535 /* GyroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GyroViewController.m; sourceTree = "<group>"; };
 		37E6CCEF1BC7C6BF00B14535 /* GyroViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GyroViewController.xib; sourceTree = "<group>"; };
+		37E8BD8E1BEA14C50050FDAB /* WTPoetryContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTPoetryContentView.h; sourceTree = "<group>"; };
+		37E8BD8F1BEA14C50050FDAB /* WTPoetryContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTPoetryContentView.m; sourceTree = "<group>"; };
 		37F0A9D31BD730A800EB8FEC /* WTWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTWebViewController.h; sourceTree = "<group>"; };
 		37F0A9D41BD730A800EB8FEC /* WTWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTWebViewController.m; sourceTree = "<group>"; };
 		37F0A9D61BD731DC00EB8FEC /* page.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = page.html; sourceTree = "<group>"; };
 		37F0AAB51BD7406900EB8FEC /* WTSqliteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTSqliteViewController.h; sourceTree = "<group>"; };
 		37F0AAB61BD7406900EB8FEC /* WTSqliteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTSqliteViewController.m; sourceTree = "<group>"; };
-		37F0AAB81BD75CC000EB8FEC /* tang-poetry.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tang-poetry.db"; sourceTree = "<group>"; };
+		37F0AAB81BD75CC000EB8FEC /* tang-poetry-1.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tang-poetry-1.db"; sourceTree = "<group>"; };
 		37F0AABB1BD7613F00EB8FEC /* WTArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTArticleViewController.h; sourceTree = "<group>"; };
 		37F0AABC1BD7613F00EB8FEC /* WTArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTArticleViewController.m; sourceTree = "<group>"; };
 		37F0AABE1BD7615200EB8FEC /* WTArticleEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTArticleEntity.h; sourceTree = "<group>"; };
@@ -946,7 +960,8 @@
 				37B1331E1BE380C50054559E /* ChekiangShuKeSung.TTF */,
 				3740B9B31BE38499006CCB71 /* lisongpro.ttf */,
 				3740B9B51BE38594006CCB71 /* TpldYiFengScripture.otf */,
-				37F0AAB81BD75CC000EB8FEC /* tang-poetry.db */,
+				37F0AAB81BD75CC000EB8FEC /* tang-poetry-1.db */,
+				37CA564B1BE8771300CA43BC /* tang-poetry-2.db */,
 				37F0A9D61BD731DC00EB8FEC /* page.html */,
 				373E2F5C1BCB94760043BB52 /* main_icon@2x.png */,
 				373E2F4E1BCB662A0043BB52 /* music.mp3 */,
@@ -1811,6 +1826,8 @@
 				37B132DC1BE31E910054559E /* WTVerticalTextViewController.m */,
 				37B132DF1BE31EB80054559E /* WTVerticalTextView.h */,
 				37B132E01BE31EB80054559E /* WTVerticalTextView.m */,
+				37E8BD8E1BEA14C50050FDAB /* WTPoetryContentView.h */,
+				37E8BD8F1BEA14C50050FDAB /* WTPoetryContentView.m */,
 			);
 			name = "Vertical Text View Controller";
 			sourceTree = "<group>";
@@ -1833,6 +1850,12 @@
 				375F61A31BE73CFD009CE82E /* WTArticleManager.m */,
 				375F61A51BE75011009CE82E /* WTArticleSummaryViewController.h */,
 				375F61A61BE75011009CE82E /* WTArticleSummaryViewController.m */,
+				37CA564D1BE87EB500CA43BC /* WTDynastyEntity.h */,
+				37CA564E1BE87EB500CA43BC /* WTDynastyEntity.m */,
+				37CA56501BE8A36500CA43BC /* WTAlertAction.h */,
+				37CA56511BE8A36500CA43BC /* WTAlertAction.m */,
+				37CA56531BE8ACE700CA43BC /* WTPoetrySearchViewController.h */,
+				37CA56541BE8ACE700CA43BC /* WTPoetrySearchViewController.m */,
 			);
 			name = "Sqlite View Controller";
 			sourceTree = "<group>";
@@ -2069,7 +2092,7 @@
 				18D5D4601A66592900145163 /* icon_maptype_google_selected.png in Resources */,
 				188DA7221917287C005C8A12 /* Images.xcassets in Resources */,
 				37E6CCF11BC7C6BF00B14535 /* GyroViewController.xib in Resources */,
-				37F0AAB91BD7607200EB8FEC /* tang-poetry.db in Resources */,
+				37F0AAB91BD7607200EB8FEC /* tang-poetry-1.db in Resources */,
 				37307ACB1BE50A130023E681 /* icon-right@2x.png in Resources */,
 				1891B5CB19188BE900195AE8 /* bg_chat_text_left@2x.png in Resources */,
 				18ECC4D31A037E56001AFABD /* AnimationViewController.xib in Resources */,
@@ -2108,6 +2131,7 @@
 				1835CAD5199DDF46006497A3 /* RotateImageViewController.xib in Resources */,
 				188DA7141917287C005C8A12 /* InfoPlist.strings in Resources */,
 				37A5B7441BC66C1B0017BA22 /* ImagePickerViewController.xib in Resources */,
+				37CA564C1BE8772400CA43BC /* tang-poetry-2.db in Resources */,
 				18D5D4691A66592900145163 /* icon_maptype_ocm_selected@2x.png in Resources */,
 				18D5D45F1A66592900145163 /* icon_map_type.png in Resources */,
 				18D5D4631A66592900145163 /* icon_maptype_google@2x.png in Resources */,
@@ -2355,6 +2379,7 @@
 				1878FE211926074400730B56 /* QuickDialogTableView.m in Sources */,
 				1878FE091926074400730B56 /* QMultilineElement.m in Sources */,
 				1878FDF11926074400730B56 /* QBadgeTableCell.m in Sources */,
+				37CA56551BE8ACE700CA43BC /* WTPoetrySearchViewController.m in Sources */,
 				18AACBE81917A4140008FA5F /* ChatMessageCell.m in Sources */,
 				1878FE1D1926074400730B56 /* QuickDialogController+Navigation.m in Sources */,
 				373E2F481BCB5C030043BB52 /* MusicViewController.m in Sources */,
@@ -2426,6 +2451,7 @@
 				1878FE151926074400730B56 /* QSelectSection.m in Sources */,
 				1878FDEB1926074400730B56 /* NSMutableArray+MoveObject.m in Sources */,
 				1865D2A51A0CB719002D30C0 /* NavigationBarViewController.m in Sources */,
+				37E8BD901BEA14C50050FDAB /* WTPoetryContentView.m in Sources */,
 				18B9345B1A0C599C0093940A /* MainViewController.m in Sources */,
 				18AACBDE191797B90008FA5F /* ChatMessage.m in Sources */,
 				18990A3D1A66628800D5208B /* MAMap+LAMap.m in Sources */,
@@ -2448,11 +2474,13 @@
 				18ECC4D21A037E56001AFABD /* AnimationViewController.m in Sources */,
 				1878FE1B1926074400730B56 /* QuickDialogController+Helpers.m in Sources */,
 				1838F92A1A7B19530078A2D0 /* AKGradientButton.m in Sources */,
+				37CA564F1BE87EB500CA43BC /* WTDynastyEntity.m in Sources */,
 				1878FDFA1926074400730B56 /* QDecimalElement.m in Sources */,
 				37B132E11BE31EB80054559E /* WTVerticalTextView.m in Sources */,
 				18C593F11A6523370000F07F /* TreasureAnnotationView.m in Sources */,
 				1878FE191926074400730B56 /* QTextField.m in Sources */,
 				184924A519C13BC90028B000 /* PopViewController.m in Sources */,
+				37CA56521BE8A36500CA43BC /* WTAlertAction.m in Sources */,
 				1878FDF91926074400730B56 /* QDateTimeInlineElement.m in Sources */,
 				1878FE0E1926074400730B56 /* QRadioSection.m in Sources */,
 				1878FE111926074400730B56 /* QRootElement.m in Sources */,

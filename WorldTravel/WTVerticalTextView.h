@@ -8,10 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WTVerticalTextView : UIView
+@interface WTVerticalTextView : UIView{
+    NSAttributedString * _attributedText;
+}
 @property (nonatomic, strong) NSString * text;
 @property (nonatomic, readonly) NSAttributedString * attributedText;
 @property (nonatomic, copy) UIFont * font;
 @property (nonatomic, assign) CGFloat minimumLineHeight;
+
+
+-(void)updateAttributedString;
 
 @end

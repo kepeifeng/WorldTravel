@@ -10,7 +10,8 @@
 
 #import "WTArticleManager.h"
 #import "WTArticleViewController.h"
-
+#import "WTAlertAction.h"
+#import "WTPoetrySearchViewController.h"
 
 @interface WTSqliteViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -23,6 +24,10 @@
     
     UISearchController * _searchController;
     BOOL _displayed;
+    
+    UIBarButtonItem * _dynastyItem;
+    WTDynastyEntity * _currentDynasty;
+    NSArray * _dynastyArray;
 }
 
 - (void)viewDidLoad {
@@ -35,10 +40,23 @@
     _tableView.delegate = self;
     [self.view addSubview:_tableView];
     
-    UISearchBar * searchBar = [[UISearchBar alloc] initWithFrame:(CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 30))];
+//    UISearchBar * searchBar = [[UISearchBar alloc] initWithFrame:(CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 30))];
+//    
+//    _tableView.tableHeaderView = searchBar;
     
+    UIBarButtonItem * searchItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemSearch) target:self action:@selector(searchItemTapped:)];
+    self.navigationItem.rightBarButtonItem = searchItem;
     
+    _dynastyItem = [[UIBarButtonItem alloc] initWithTitle:@"朝代" style:(UIBarButtonItemStylePlain) target:self action:@selector(dynastyItemTapped:)];
+    self.toolbarItems = @[_dynastyItem];
+    self.navigationController.toolbarHidden = NO;
     [self loadData];
+}
+
+-(void)searchItemTapped:(id)sender{
+
+    WTPoetrySearchViewController * searchVC = [[WTPoetrySearchViewController alloc] init];
+    [self.navigationController pushViewController:searchVC animated:YES];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -49,6 +67,52 @@
     }
 }
 
+-(void)dynastyItemTapped:(id)sender{
+
+    UIAlertController * alertControl = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:(UIAlertControllerStyleActionSheet)];
+    
+    if (!_dynastyArray) {
+        _dynastyArray = [[WTArticleManager sharedManager] allDynasty];
+    }
+    
+    for (WTDynastyEntity * dynasty in _dynastyArray) {
+        WTAlertAction * action = [WTAlertAction actionWithTitle:dynasty.title style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+//            WTAlertAction * alertAction = (WTAlertAction *)action;
+            [self selectDynasty:dynasty];
+        }];
+        
+        [alertControl addAction:action];
+    }
+    
+    WTAlertAction * action = [WTAlertAction actionWithTitle:@"全部" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        [self selectDynasty:nil];
+    }];
+    [alertControl addAction:action];
+    
+    WTAlertAction * cancelAction = [WTAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:nil];
+    [alertControl addAction:cancelAction];
+    
+    [self presentViewController:alertControl animated:YES completion:NULL];
+}
+
+-(void)selectDynasty:(WTDynastyEntity *)dynasty{
+
+    NSLog(@"%@", dynasty);
+    _currentDynasty = dynasty;
+    
+    if (!dynasty) {
+        _items = [[WTArticleManager sharedManager] allEntity];
+        _dynastyItem.title = @"全部";
+     
+    }else{
+        _items = [[WTArticleManager sharedManager] allPoetryOfDynasty:dynasty.title];
+        _dynastyItem.title = dynasty.title;
+    }
+    
+    [_tableView reloadData];
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -56,6 +120,7 @@
 
 -(void)loadData{
     _items = [[WTArticleManager sharedManager] allEntity];
+    [_tableView reloadData];
 }
 
 -(void)restoreIndexPath{
@@ -88,6 +153,7 @@
 //    NSLog(@"scrollViewDidEndDecelerating");
     [self saveCurrentIndexPath];
 }
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
 
     return 1;

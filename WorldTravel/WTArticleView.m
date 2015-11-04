@@ -7,6 +7,7 @@
 //
 
 #import "WTArticleView.h"
+#import "WTPoetryContentView.h"
 
 @implementation WTArticleView
 -(instancetype)initWithFrame:(CGRect)frame{
@@ -29,7 +30,7 @@
 //    _authorLabel.backgroundColor = [UIColor yellowColor];
     [self addSubview:_authorLabel];
     
-    _contentLabel = [[WTVerticalTextView alloc] init];
+    _contentLabel = [[WTPoetryContentView alloc] init];
     _contentLabel.font = [UIFont fontWithName:@"MingLiU" size:18];
 //    _contentLabel.backgroundColor = [UIColor blueColor];
     [self addSubview:_contentLabel];
