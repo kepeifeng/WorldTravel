@@ -268,6 +268,7 @@
 		37B132E11BE31EB80054559E /* WTVerticalTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B132E01BE31EB80054559E /* WTVerticalTextView.m */; };
 		37B132E31BE31F9A0054559E /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B132E21BE31F9A0054559E /* CoreText.framework */; };
 		37B1331F1BE3826C0054559E /* ChekiangShuKeSung.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 37B1331E1BE380C50054559E /* ChekiangShuKeSung.TTF */; };
+		37B45E3F1BEF972E00A2AEE3 /* poetry.db in Resources */ = {isa = PBXBuildFile; fileRef = 37B45E3E1BEF972E00A2AEE3 /* poetry.db */; };
 		37CA564C1BE8772400CA43BC /* tang-poetry-2.db in Resources */ = {isa = PBXBuildFile; fileRef = 37CA564B1BE8771300CA43BC /* tang-poetry-2.db */; };
 		37CA564F1BE87EB500CA43BC /* WTDynastyEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CA564E1BE87EB500CA43BC /* WTDynastyEntity.m */; };
 		37CA56521BE8A36500CA43BC /* WTAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CA56511BE8A36500CA43BC /* WTAlertAction.m */; };
@@ -810,6 +811,7 @@
 		37B132E01BE31EB80054559E /* WTVerticalTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTVerticalTextView.m; sourceTree = "<group>"; };
 		37B132E21BE31F9A0054559E /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		37B1331E1BE380C50054559E /* ChekiangShuKeSung.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = ChekiangShuKeSung.TTF; sourceTree = "<group>"; };
+		37B45E3E1BEF972E00A2AEE3 /* poetry.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = poetry.db; sourceTree = "<group>"; };
 		37CA564B1BE8771300CA43BC /* tang-poetry-2.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tang-poetry-2.db"; sourceTree = "<group>"; };
 		37CA564D1BE87EB500CA43BC /* WTDynastyEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTDynastyEntity.h; sourceTree = "<group>"; };
 		37CA564E1BE87EB500CA43BC /* WTDynastyEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTDynastyEntity.m; sourceTree = "<group>"; };
@@ -962,6 +964,7 @@
 				3740B9B51BE38594006CCB71 /* TpldYiFengScripture.otf */,
 				37F0AAB81BD75CC000EB8FEC /* tang-poetry-1.db */,
 				37CA564B1BE8771300CA43BC /* tang-poetry-2.db */,
+				37B45E3E1BEF972E00A2AEE3 /* poetry.db */,
 				37F0A9D61BD731DC00EB8FEC /* page.html */,
 				373E2F5C1BCB94760043BB52 /* main_icon@2x.png */,
 				373E2F4E1BCB662A0043BB52 /* music.mp3 */,
@@ -2112,6 +2115,7 @@
 				1891B5D01918B51F00195AE8 /* bg_chat_text_right@2x.png in Resources */,
 				18D5D46E1A66592900145163 /* icon_maptype_osm.png in Resources */,
 				37B1331F1BE3826C0054559E /* ChekiangShuKeSung.TTF in Resources */,
+				37B45E3F1BEF972E00A2AEE3 /* poetry.db in Resources */,
 				18AACBEA1917A4350008FA5F /* ChatMessageCell.xib in Resources */,
 				18D5D4681A66592900145163 /* icon_maptype_ocm_selected.png in Resources */,
 				18D5D46B1A66592900145163 /* icon_maptype_ocm@2x.png in Resources */,
