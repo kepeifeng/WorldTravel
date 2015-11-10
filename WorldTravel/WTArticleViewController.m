@@ -58,6 +58,8 @@
     return nil;
 }
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -345,6 +347,10 @@
     WTArticleView * articleView = (WTArticleView *)[view viewWithTag:10000];
     
     WTArticleEntity * articleEntity = self.entityArray[index];
+    
+    if (articleEntity.summary == nil) {
+        articleEntity.summary = [[WTArticleManager sharedManager]getMainSummaryOfPoetryId:articleEntity.entityId];
+    }
     
     articleView.titleView.text = articleEntity.title;
     articleView.authorLabel.text = articleEntity.author;

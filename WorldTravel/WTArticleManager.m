@@ -31,7 +31,7 @@
     self = [super init];
     if (self) {
         
-        NSString * dbFilename = @"tang-poetry-1.db";
+        NSString * dbFilename = @"poetry.db";
         
         NSString * dbCopyPath = [[[NSFileManager defaultManager] supportFolderPath] stringByAppendingPathComponent:dbFilename];
         
@@ -67,6 +67,16 @@
     
 }
 
+-(NSArray *)poetriesAtPage:(NSInteger)pageIndex pageSize:(NSInteger)pageSize{
+
+    NSString * sql = [NSString stringWithFormat:@"SELECT * FROM `T_SHI`  LIMIT %ld, %ld;", (long)pageIndex * pageSize, (long)pageSize];
+    FMResultSet * set = [_database executeQuery:sql];
+    
+    return [self entitiesFromResultSet:set];
+
+
+}
+
 -(NSArray *)entitiesFromResultSet:(FMResultSet *)set{
 
     NSMutableArray * entityArray = [[NSMutableArray alloc] initWithCapacity:100];
@@ -77,7 +87,7 @@
         entity.content = [set stringForColumn:@"D_SHI"];
         entity.author = [set stringForColumn:@"D_AUTHOR"];
         entity.fav = [set intForColumn:@"D_FAV"];
-        entity.summary = [set stringForColumn:@"D_INTROSHI"];
+//        entity.summary = [set stringForColumn:@"D_INTROSHI"];
         [entityArray addObject:entity];
     }
     
@@ -94,7 +104,7 @@
     while ([result next]) {
         WTDynastyEntity * dynasty = [[WTDynastyEntity alloc] init];
         dynasty.title = [result stringForColumn:@"d_dynasty"];
-        dynasty.entityId = [result intForColumn:@"d_num"];
+        dynasty.entityId = [result intForColumn:@"d_id"];
         dynasty.desc = [result stringForColumn:@"d_intro"];
         
         [entityArray addObject:dynasty];
@@ -103,9 +113,10 @@
     return entityArray;
 }
 
--(NSArray *)allPoetryOfDynasty:(NSString *)dynasty{
+-(NSArray *)allPoetryOfDynasty:(NSString *)dynasty atPage:(NSInteger)pageIndex pageSize:(NSUInteger)pageSize{
     //D_SHI, t_shi.D_AUTHOR, t_author.d_dynasty
-    NSString * sql = [NSString stringWithFormat:@"select * from (t_shi join t_author on t_shi.d_author = t_author.d_author) where t_author.d_dynasty = '%@'", dynasty];
+    
+    NSString * sql = [NSString stringWithFormat:@"select * from t_shi where d_dynasty = '%@' LIMIT %ld, %ld;", dynasty, (long)pageIndex * pageSize, (long)pageSize];
     FMResultSet * set = [_database executeQuery:sql];
     return [self entitiesFromResultSet:set];
     
@@ -119,6 +130,16 @@
 
 }
 
+-(NSString *)getMainSummaryOfPoetryId:(NSInteger)poetryId{
+
+    NSString * sql = [NSString stringWithFormat:@"SELECT * FROM T_SHI_DETAIL WHERE D_SHI_ID = %ld LIMIT 0,1", (long)poetryId];
+    FMResultSet * set = [_database executeQuery:sql];
+    while (set.next) {
+        return [set stringForColumn:@"D_CONTENT"];
+    }
+    
+    return nil;
+}
 -(void)clear{
     NSArray  *allEntity = [self allEntity];
     

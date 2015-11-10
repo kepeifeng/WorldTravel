@@ -14,13 +14,15 @@
 #import "WTPoetrySearchViewController.h"
 
 @interface WTSqliteViewController ()<UITableViewDataSource, UITableViewDelegate>
-
+@property (nonatomic, readonly) BOOL currentPageIndex;
 @end
+
+#define kPageSize (20.0)
 
 @implementation WTSqliteViewController{
 
     UITableView * _tableView;
-    NSArray * _items;
+    NSMutableArray * _items;
     
     UISearchController * _searchController;
     BOOL _displayed;
@@ -28,7 +30,13 @@
     UIBarButtonItem * _dynastyItem;
     WTDynastyEntity * _currentDynasty;
     NSArray * _dynastyArray;
+    
+    BOOL _reachEnd;
+    
+    UIView * _loadMoreView;
 }
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,6 +47,16 @@
     _tableView.dataSource = self;
     _tableView.delegate = self;
     [self.view addSubview:_tableView];
+    
+    
+    _loadMoreView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(_tableView.frame), 80)];
+    UIActivityIndicatorView * spinView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:(UIActivityIndicatorViewStyleGray)];
+    spinView.center = _loadMoreView.center;
+    [spinView startAnimating];
+    [_loadMoreView addSubview:spinView];
+    
+//    _loadMoreView.textColor = [UIColor lightGrayColor];
+    
     
 //    UISearchBar * searchBar = [[UISearchBar alloc] initWithFrame:(CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 30))];
 //    
@@ -51,6 +69,7 @@
     self.toolbarItems = @[_dynastyItem];
     self.navigationController.toolbarHidden = NO;
     [self loadData];
+
 }
 
 -(void)searchItemTapped:(id)sender{
@@ -101,16 +120,56 @@
     _currentDynasty = dynasty;
     
     if (!dynasty) {
-        _items = [[WTArticleManager sharedManager] allEntity];
+
         _dynastyItem.title = @"全部";
      
     }else{
-        _items = [[WTArticleManager sharedManager] allPoetryOfDynasty:dynasty.title];
         _dynastyItem.title = dynasty.title;
     }
+    _reachEnd = NO;
+    [self loadDataAtPageIndex:0];
     
+}
+
+
+-(void)loadDataAtPageIndex:(NSInteger)pageIndex{
+
+    if (_reachEnd == YES) {
+        return;
+    }
+    
+    if (pageIndex == 0) {
+        _items = [[NSMutableArray alloc] initWithCapacity:100];
+    }
+    
+    NSArray * newItems;
+    if (_currentDynasty == nil) {
+//        (_items.count == 0)? 0 : self.currentPageIndex+1
+        newItems = [[WTArticleManager sharedManager] poetriesAtPage:pageIndex pageSize:kPageSize];
+        
+    }else{
+    
+        newItems = [[WTArticleManager sharedManager] allPoetryOfDynasty:_currentDynasty.title atPage:pageIndex pageSize:kPageSize];
+    }
+    
+    if (newItems.count <kPageSize) {
+        _reachEnd = YES;
+        _tableView.tableFooterView = nil;
+    }else{
+        _tableView.tableFooterView = _loadMoreView;
+    }
+    
+    
+    
+    NSMutableArray * indexPathArray = [[NSMutableArray alloc] initWithCapacity:newItems.count];
+    for (NSInteger i = 0; i < newItems.count; i++) {
+        [indexPathArray addObject:[NSIndexPath indexPathForRow:_items.count + i inSection:0]];
+    }
+    
+    [_items addObjectsFromArray:newItems];
+    
+    //    [_tableView insertRowsAtIndexPaths:indexPathArray withRowAnimation:(UITableViewRowAnimationNone)];
     [_tableView reloadData];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -119,8 +178,9 @@
 }
 
 -(void)loadData{
-    _items = [[WTArticleManager sharedManager] allEntity];
-    [_tableView reloadData];
+    _items = [[NSMutableArray alloc] initWithCapacity:100];
+    [self tryLoadMore];
+//    [_tableView reloadData];
 }
 
 -(void)restoreIndexPath{
@@ -146,12 +206,16 @@
 
     if (decelerate == NO) {
         [self saveCurrentIndexPath];
+        [self tryLoadMore];
+
     }
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
 //    NSLog(@"scrollViewDidEndDecelerating");
     [self saveCurrentIndexPath];
+    [self tryLoadMore];
+
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -200,6 +264,22 @@
     [self.navigationController pushViewController:articleVC animated:YES];
 }
 
+
+
+
+-(BOOL)currentPageIndex{
+
+    return (_items.count+kPageSize/2) / kPageSize;
+}
+
+-(void)tryLoadMore{
+
+    
+    if (_tableView.contentOffset.y + CGRectGetHeight(_tableView.bounds) > _tableView.contentSize.height - 80 && _reachEnd == NO ) {
+        [self loadDataAtPageIndex:self.currentPageIndex + 1];
+    }
+    
+}
 @end
 
 

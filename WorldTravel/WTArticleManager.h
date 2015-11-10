@@ -13,9 +13,11 @@
 + (instancetype)sharedManager;
 
 -(NSArray *)allEntity;
+-(NSArray *)poetriesAtPage:(NSInteger)pageIndex pageSize:(NSInteger)pageSize;
 -(NSArray *)allDynasty;
 -(void)setFav:(BOOL)isFav forEntityId:(NSInteger)entityId;
--(NSArray *)allPoetryOfDynasty:(NSString *)dynasty;
-
+//-(NSArray *)allPoetryOfDynasty:(NSString *)dynasty;
+-(NSArray *)allPoetryOfDynasty:(NSString *)dynasty atPage:(NSInteger)pageIndex pageSize:(NSUInteger)pageSize;
 -(NSArray *)searchWithKeyword:(NSString *)keyword;
+-(NSString *)getMainSummaryOfPoetryId:(NSInteger)poetryId;
 @end
