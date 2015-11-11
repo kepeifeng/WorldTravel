@@ -54,7 +54,7 @@
             return nil;
         }
         
-        [self clear];
+//        [self clear];
     }
     return self;
 }
@@ -67,6 +67,7 @@
     
 }
 
+
 -(NSArray *)poetriesAtPage:(NSInteger)pageIndex pageSize:(NSInteger)pageSize{
 
     NSString * sql = [NSString stringWithFormat:@"SELECT * FROM `T_SHI`  LIMIT %ld, %ld;", (long)pageIndex * pageSize, (long)pageSize];
@@ -75,6 +76,14 @@
     return [self entitiesFromResultSet:set];
 
 
+}
+
+-(NSArray *)favEntities{
+
+    NSString * sql = @"SELECT * FROM `T_SHI` WHERE d_fav = 1 LIMIT 0, 50000;";
+    FMResultSet * set = [_database executeQuery:sql];
+    
+    return [self entitiesFromResultSet:set];
 }
 
 -(NSArray *)entitiesFromResultSet:(FMResultSet *)set{
@@ -89,9 +98,38 @@
         entity.fav = [set intForColumn:@"D_FAV"];
 //        entity.summary = [set stringForColumn:@"D_INTROSHI"];
         [entityArray addObject:entity];
+        
+        [self clearEntity:entity];
     }
     
     return entityArray;
+    
+}
+
+
+-(void)clearEntity:(WTArticleEntity *)entity{
+
+    NSError * error;
+    NSRegularExpression * exp = [NSRegularExpression regularExpressionWithPattern:@"[\\(（][^\\)）]+[\\)）]" options:(0) error:&error];
+    NSMutableString * newTitle = [entity.title mutableCopy];
+    [exp replaceMatchesInString:newTitle options:0 range:(NSMakeRange(0, entity.title.length)) withTemplate:@""];
+    entity.title = newTitle;
+    
+    
+    NSRegularExpression * bodyExp = [NSRegularExpression regularExpressionWithPattern:@"【.+\\s+" options:0 error:&error];
+    NSString * oldContent = entity.content;
+    NSMutableString * newBody = [entity.content mutableCopy];
+    entity.content = newBody;
+    
+    [bodyExp replaceMatchesInString:newBody options:0 range:(NSMakeRange(0, newBody.length)) withTemplate:@""];
+    entity.content = [entity.content stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+//    NSRegularExpression * clearNumber = [NSRegularExpression regularExpressionWithPattern:@"\\s+\\[(\\d+)\\]\\s+" options:0 error:&error];
+//    NSInteger occurence = [clearNumber replaceMatchesInString:newBody options:0 range:NSMakeRange(0, newBody.length) withTemplate:@"$1"];
+//    if (occurence>0) {
+//        NSLog(@"Before:\n%@\n\nAfter:\n%@", oldContent, newBody);
+//    }
+    
     
 }
 
@@ -124,7 +162,7 @@
 
 -(NSArray *)searchWithKeyword:(NSString *)keyword{
 
-    NSString * sql = [NSString stringWithFormat:@"select * from t_shi where d_author like '%%%@%%' or d_shi like '%%%@%%'", keyword, keyword];
+    NSString * sql = [NSString stringWithFormat:@"select * from t_shi where d_author like '%%%@%%' OR d_shi like '%%%@%%' OR d_title like '%%%@%%'", keyword, keyword, keyword];
     FMResultSet * set = [_database executeQuery:sql];
     return [self entitiesFromResultSet:set];
 
@@ -135,7 +173,9 @@
     NSString * sql = [NSString stringWithFormat:@"SELECT * FROM T_SHI_DETAIL WHERE D_SHI_ID = %ld LIMIT 0,1", (long)poetryId];
     FMResultSet * set = [_database executeQuery:sql];
     while (set.next) {
-        return [set stringForColumn:@"D_CONTENT"];
+        
+        NSString * content = [set stringForColumn:@"D_CONTENT"];
+        return content;
     }
     
     return nil;

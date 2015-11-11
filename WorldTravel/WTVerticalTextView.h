@@ -12,7 +12,7 @@
     NSAttributedString * _attributedText;
 }
 @property (nonatomic, strong) NSString * text;
-@property (nonatomic, readonly) NSAttributedString * attributedText;
+@property (nonatomic, strong) NSAttributedString * attributedText;
 @property (nonatomic, copy) UIFont * font;
 @property (nonatomic, assign) CGFloat minimumLineHeight;
 

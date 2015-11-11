@@ -10,4 +10,6 @@
 
 @interface NSString (Utility)
 - (NSString *)urlencode;
+
++ (NSString *)convertArabicNumbersToChinese:(NSInteger)arabicNum;
 @end

@@ -67,7 +67,7 @@
     //    CTParagraphStyleRef style = CTParagraphStyleCreate(settings, 1);
     NSMutableParagraphStyle * style = [[NSMutableParagraphStyle alloc] init];
     style.minimumLineHeight = self.minimumLineHeight;
-    
+
     [attributed addAttributes:@{NSFontAttributeName:self.font, //吐血, 用 systemFont 就会排版出错
                                 NSVerticalGlyphFormAttributeName:@(YES),
                                 NSParagraphStyleAttributeName:style} range:NSMakeRange(0, attributed.length)];
@@ -98,6 +98,7 @@
     CGPathRef path = CGPathCreateWithRect(CGRectMake(0.0, 0.0, rect.size.height, rect.size.width), nil);
     CTFrameRef frame = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, 0), path, nil);
     CTFrameDraw(frame, context);
+    CGPathRelease(path);
     
     
     

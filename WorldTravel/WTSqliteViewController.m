@@ -12,6 +12,7 @@
 #import "WTArticleViewController.h"
 #import "WTAlertAction.h"
 #import "WTPoetrySearchViewController.h"
+#import "WTFavListViewController.h"
 
 @interface WTSqliteViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, readonly) BOOL currentPageIndex;
@@ -66,10 +67,17 @@
     self.navigationItem.rightBarButtonItem = searchItem;
     
     _dynastyItem = [[UIBarButtonItem alloc] initWithTitle:@"朝代" style:(UIBarButtonItemStylePlain) target:self action:@selector(dynastyItemTapped:)];
-    self.toolbarItems = @[_dynastyItem];
+    UIBarButtonItem * spaceItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemFlexibleSpace) target:nil action:nil];
+    UIBarButtonItem * favItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon-heart-empty"] style:(UIBarButtonItemStylePlain) target:self action:@selector(favItemTapped:)];
+    self.toolbarItems = @[_dynastyItem, spaceItem, favItem];
     self.navigationController.toolbarHidden = NO;
     [self loadData];
 
+}
+-(void)favItemTapped:(id)sender{
+
+    WTFavListViewController * favListVC = [[WTFavListViewController alloc] init];
+    [self.navigationController pushViewController:favListVC animated:YES];
 }
 
 -(void)searchItemTapped:(id)sender{

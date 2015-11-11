@@ -337,7 +337,7 @@
         articleView.contentSize = articleView.bounds.size;
         articleView.showsHorizontalScrollIndicator = NO;
         articleView.showsVerticalScrollIndicator = NO;
-        articleView.contentInset = insert;
+        articleView.padding = insert;
         articleView.bounces = NO;
         articleView.tag = 10000;
         
@@ -347,15 +347,11 @@
     WTArticleView * articleView = (WTArticleView *)[view viewWithTag:10000];
     
     WTArticleEntity * articleEntity = self.entityArray[index];
-    
     if (articleEntity.summary == nil) {
         articleEntity.summary = [[WTArticleManager sharedManager]getMainSummaryOfPoetryId:articleEntity.entityId];
     }
     
-    articleView.titleView.text = articleEntity.title;
-    articleView.authorLabel.text = articleEntity.author;
-    articleView.contentLabel.text = articleEntity.content;
-    [articleView layout];
+    articleView.article = articleEntity;
     
     return view;
 

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface WTPoetrySearchViewController : UIViewController
+#import "WTBasicEntityListViewController.h"
+@interface WTPoetrySearchViewController : WTBasicEntityListViewController
 
 @end

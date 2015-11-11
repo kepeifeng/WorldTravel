@@ -15,6 +15,7 @@
 -(NSArray *)allEntity;
 -(NSArray *)poetriesAtPage:(NSInteger)pageIndex pageSize:(NSInteger)pageSize;
 -(NSArray *)allDynasty;
+-(NSArray *)favEntities;
 -(void)setFav:(BOOL)isFav forEntityId:(NSInteger)entityId;
 //-(NSArray *)allPoetryOfDynasty:(NSString *)dynasty;
 -(NSArray *)allPoetryOfDynasty:(NSString *)dynasty atPage:(NSInteger)pageIndex pageSize:(NSUInteger)pageSize;

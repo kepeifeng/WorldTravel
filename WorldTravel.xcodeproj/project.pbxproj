@@ -217,6 +217,9 @@
 		18F9AEC41AA03299003F8780 /* ArrowPathViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F9AEC31AA03299003F8780 /* ArrowPathViewController.m */; };
 		18F9AEC71AA032EB003F8780 /* ArrowPathView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F9AEC61AA032EB003F8780 /* ArrowPathView.m */; };
 		18F9AEC91AA0349E003F8780 /* track_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F9AEC81AA0349E003F8780 /* track_arrow@2x.png */; };
+		370606061BEB21A100E31ACA /* WTBasicEntityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 370606051BEB21A100E31ACA /* WTBasicEntityListViewController.m */; };
+		370606091BEB225500E31ACA /* WTFavListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 370606081BEB225500E31ACA /* WTFavListViewController.m */; };
+		3706060C1BEB30FD00E31ACA /* WTNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 3706060B1BEB30FD00E31ACA /* WTNote.m */; };
 		371F5FF51BC8B15F00FD36A5 /* UIDynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371F5FF41BC8B15F00FD36A5 /* UIDynamicViewController.m */; };
 		371F5FFE1BC8E5AB00FD36A5 /* ActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371F5FFD1BC8E5AB00FD36A5 /* ActionViewController.m */; };
 		371F60011BC8E5AB00FD36A5 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 371F5FFF1BC8E5AB00FD36A5 /* MainInterface.storyboard */; };
@@ -739,6 +742,12 @@
 		18F9AEC51AA032EB003F8780 /* ArrowPathView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrowPathView.h; sourceTree = "<group>"; };
 		18F9AEC61AA032EB003F8780 /* ArrowPathView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrowPathView.m; sourceTree = "<group>"; };
 		18F9AEC81AA0349E003F8780 /* track_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "track_arrow@2x.png"; sourceTree = "<group>"; };
+		370606041BEB21A100E31ACA /* WTBasicEntityListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTBasicEntityListViewController.h; sourceTree = "<group>"; };
+		370606051BEB21A100E31ACA /* WTBasicEntityListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTBasicEntityListViewController.m; sourceTree = "<group>"; };
+		370606071BEB225500E31ACA /* WTFavListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTFavListViewController.h; sourceTree = "<group>"; };
+		370606081BEB225500E31ACA /* WTFavListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTFavListViewController.m; sourceTree = "<group>"; };
+		3706060A1BEB30FD00E31ACA /* WTNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTNote.h; sourceTree = "<group>"; };
+		3706060B1BEB30FD00E31ACA /* WTNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTNote.m; sourceTree = "<group>"; };
 		371F5FF31BC8B15F00FD36A5 /* UIDynamicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDynamicViewController.h; sourceTree = "<group>"; };
 		371F5FF41BC8B15F00FD36A5 /* UIDynamicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDynamicViewController.m; sourceTree = "<group>"; };
 		371F5FFA1BC8E5AB00FD36A5 /* ActionExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ActionExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1831,6 +1840,8 @@
 				37B132E01BE31EB80054559E /* WTVerticalTextView.m */,
 				37E8BD8E1BEA14C50050FDAB /* WTPoetryContentView.h */,
 				37E8BD8F1BEA14C50050FDAB /* WTPoetryContentView.m */,
+				3706060A1BEB30FD00E31ACA /* WTNote.h */,
+				3706060B1BEB30FD00E31ACA /* WTNote.m */,
 			);
 			name = "Vertical Text View Controller";
 			sourceTree = "<group>";
@@ -1859,6 +1870,10 @@
 				37CA56511BE8A36500CA43BC /* WTAlertAction.m */,
 				37CA56531BE8ACE700CA43BC /* WTPoetrySearchViewController.h */,
 				37CA56541BE8ACE700CA43BC /* WTPoetrySearchViewController.m */,
+				370606041BEB21A100E31ACA /* WTBasicEntityListViewController.h */,
+				370606051BEB21A100E31ACA /* WTBasicEntityListViewController.m */,
+				370606071BEB225500E31ACA /* WTFavListViewController.h */,
+				370606081BEB225500E31ACA /* WTFavListViewController.m */,
 			);
 			name = "Sqlite View Controller";
 			sourceTree = "<group>";
@@ -2427,6 +2442,7 @@
 				188DA71A1917287C005C8A12 /* AppDelegate.mm in Sources */,
 				1891B5CE1918A7C900195AE8 /* ChatMessageView.m in Sources */,
 				18ECC4CD1A036BA5001AFABD /* CustomModalViewController.m in Sources */,
+				3706060C1BEB30FD00E31ACA /* WTNote.m in Sources */,
 				18901A7019877AFB00CD4FAC /* TableViewCell.m in Sources */,
 				1878FE1E1926074400730B56 /* QuickDialogController.m in Sources */,
 				1878FE181926074400730B56 /* QTextElement.m in Sources */,
@@ -2450,6 +2466,7 @@
 				1878FE081926074400730B56 /* QLoadingElement.m in Sources */,
 				18490E101A5A57AD005C73B7 /* WelcomeViewController.m in Sources */,
 				1878FE201926074400730B56 /* QuickDialogTableDelegate.m in Sources */,
+				370606091BEB225500E31ACA /* WTFavListViewController.m in Sources */,
 				18D5D43A1A660BBE00145163 /* MapHelper.m in Sources */,
 				1878FE1C1926074400730B56 /* QuickDialogController+Loading.m in Sources */,
 				1878FE151926074400730B56 /* QSelectSection.m in Sources */,
@@ -2488,6 +2505,7 @@
 				1878FDF91926074400730B56 /* QDateTimeInlineElement.m in Sources */,
 				1878FE0E1926074400730B56 /* QRadioSection.m in Sources */,
 				1878FE111926074400730B56 /* QRootElement.m in Sources */,
+				370606061BEB21A100E31ACA /* WTBasicEntityListViewController.m in Sources */,
 				18C593E81A6515C00000F07F /* SwitchMapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

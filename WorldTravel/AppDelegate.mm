@@ -154,7 +154,14 @@ static long long idCounter;
     NSLog(@"%@", url);*/
 
 
-
+//    NSRegularExpression * exp = [NSRegularExpression regularExpressionWithPattern:@"\\[(\\d+)\\]([^\\:]+)\\:(.+)" options:0 error:nil];
+//    NSString * string = @"[1]时间:不存在";
+//    NSTextCheckingResult * result = [exp firstMatchInString:string options:0 range:NSMakeRange(0, string.length)];
+//    for (NSInteger i = 0; i<result.numberOfRanges; i++) {
+//        NSRange range = [result rangeAtIndex:i];
+//        NSLog(@"%@",[string substringWithRange:range]);
+//        
+//    }
     
     return YES;
 }
