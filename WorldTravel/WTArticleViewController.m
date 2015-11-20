@@ -15,7 +15,7 @@
 #import "WTArticleSummaryViewController.h"
 
 @interface WTArticleViewController ()<SwipeViewDataSource, SwipeViewDelegate>
-@property (nonatomic, readonly) WTArticleEntity * articleEntity;
+@property (nonatomic, readonly) WTArticleEntity * currentArticleEntity;
 @end
 
 @implementation WTArticleViewController{
@@ -29,6 +29,7 @@
     SwipeView * _swipeView;
     
     UIBarButtonItem * _favButton;
+    UIBarButtonItem * infoButton;
 }
 
 -(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
@@ -50,7 +51,7 @@
     return radians * 180 / M_PI;
 };
 
--(WTArticleEntity *)articleEntity{
+-(WTArticleEntity *)currentArticleEntity{
 
     if (_swipeView.currentItemIndex >=0 && _swipeView.currentItemIndex < self.entityArray.count) {
         return self.entityArray[_swipeView.currentItemIndex];
@@ -126,7 +127,7 @@
 //    self.navigationController.hidesBarsOnTap = YES;
 
     
-    UIBarButtonItem * backItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:(UIBarButtonItemStylePlain) target:self action:@selector(backButtonTapped:)];
+    UIBarButtonItem * backItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:(UIBarButtonItemStylePlain) target:self action:@selector(backButtonTapped:)];
     UIBarButtonItem * space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemFlexibleSpace) target:nil action:NULL];
     UIBarButtonItem * prevButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon-left"]
                                                                     style:(UIBarButtonItemStylePlain)
@@ -139,7 +140,7 @@
                                                                    style:(UIBarButtonItemStylePlain)
                                                                   target:self action:@selector(favButtonTapped:)];
     
-    UIBarButtonItem * infoButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon-info"] style:(UIBarButtonItemStylePlain) target:self action:@selector(infoButtonTapped:)];
+    infoButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon-info"] style:(UIBarButtonItemStylePlain) target:self action:@selector(infoButtonTapped:)];
     
     self.toolbarItems = @[backItem, space, prevButton, nextButton, _favButton,infoButton];
 //    self.navigationController.toolbarHidden = NO;
@@ -242,7 +243,7 @@
 -(void)infoButtonTapped:(id)sender{
 
     WTArticleSummaryViewController * summaryVC = [WTArticleSummaryViewController new];
-    summaryVC.articleEntity = self.articleEntity;
+    summaryVC.articleEntity = self.currentArticleEntity;
     [self presentViewController:[[UINavigationController alloc] initWithRootViewController:summaryVC] animated:YES completion:NULL];
     
 }
@@ -272,14 +273,14 @@
 
 -(void)updateViewFromEntity{
 
-    _favButton.image = [UIImage imageNamed:(self.articleEntity.fav)?@"icon-heart-full":@"icon-heart-empty"];
+    _favButton.image = [UIImage imageNamed:(self.currentArticleEntity.fav)?@"icon-heart-full":@"icon-heart-empty"];
     
 }
 
 -(void)favButtonTapped:(id)sender{
 
-    self.articleEntity.fav = !self.articleEntity.isFav;
-    [[WTArticleManager sharedManager] setFav:self.articleEntity.fav forEntityId:self.articleEntity.entityId];
+    self.currentArticleEntity.fav = !self.currentArticleEntity.isFav;
+    [[WTArticleManager sharedManager] setFav:self.currentArticleEntity.fav forEntityId:self.currentArticleEntity.entityId];
     [self updateViewFromEntity];
 }
 
@@ -318,6 +319,12 @@
 
 -(void)swipeViewCurrentItemIndexDidChange:(SwipeView *)swipeView{
     [self updateViewFromEntity];
+    
+    if (self.currentArticleEntity.summary.length) {
+        infoButton.enabled = YES;
+    }else{
+        infoButton.enabled = NO;
+    }
 }
 
 -(UIView *)swipeView:(SwipeView *)swipeView viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view{
@@ -342,6 +349,12 @@
         articleView.tag = 10000;
         
         [view addSubview:articleView];
+        
+//        UIButton * button = [[UIButton alloc] initWithFrame:(CGRectMake((CGRectGetWidth(swipeView.bounds) - 80)/2, (CGRectGetHeight(swipeView.bounds) - 40)/2, 80, 40))];
+//        button.backgroundColor = [UIColor redColor];
+//        [button setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
+//        [button addTarget:self action:@selector(buttonTapped:) forControlEvents:(UIControlEventTouchUpInside)];
+//        [articleView addSubview:button];
     }
     
     WTArticleView * articleView = (WTArticleView *)[view viewWithTag:10000];
@@ -355,6 +368,11 @@
     
     return view;
 
+}
+
+-(void)buttonTapped:(id)sender{
+
+    [self showMessage:@"Button Tapped"];
 }
 
 -(void)swipeView:(SwipeView *)swipeView didSelectItemAtIndex:(NSInteger)index{

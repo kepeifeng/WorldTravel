@@ -7,6 +7,7 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.2.0):
     - CocoaLumberjack/Default
+  - DQAlertView (1.2.1)
   - FastImageCache (1.3)
   - FMDB (2.5):
     - FMDB/standard (= 2.5)
@@ -15,25 +16,33 @@ PODS:
     - FMDB/common
   - iOS-KML-Framework (1.0.0):
     - TBXML (~> 1.5)
+  - MSCachedAsyncViewDrawing (1.0.1)
   - pop (1.0.8)
   - SwipeView (1.3.2)
   - TBXML (1.5)
 
 DEPENDENCIES:
   - CocoaLumberjack
+  - DQAlertView (from `https://github.com/kepeifeng/DQAlertView`)
   - FastImageCache
   - FMDB
   - iOS-KML-Framework (from `https://github.com/FLCLjp/iOS-KML-Framework.git`)
+  - MSCachedAsyncViewDrawing
   - pop
   - SwipeView (from `https://github.com/kepeifeng/SwipeView`)
 
 EXTERNAL SOURCES:
+  DQAlertView:
+    :git: https://github.com/kepeifeng/DQAlertView
   iOS-KML-Framework:
     :git: https://github.com/FLCLjp/iOS-KML-Framework.git
   SwipeView:
     :git: https://github.com/kepeifeng/SwipeView
 
 CHECKOUT OPTIONS:
+  DQAlertView:
+    :commit: 411721c9a47b5d6d46e264b00fb40d7b5bb5bbab
+    :git: https://github.com/kepeifeng/DQAlertView
   iOS-KML-Framework:
     :commit: dc38d7c2e80e0d4c077a63e7cce4c3b34ac25d08
     :git: https://github.com/FLCLjp/iOS-KML-Framework.git
@@ -43,9 +52,11 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
+  DQAlertView: 2c12ff1c6ea0003e23dacb8968313d926c77c889
   FastImageCache: 25f214fd46405daca3d1995d783fb83b9036c62e
   FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
   iOS-KML-Framework: c16f4605bc290b769a13f2645840211e31f8d92a
+  MSCachedAsyncViewDrawing: 96fd0c12e8dd548e021540b49546faa9ff238257
   pop: bb773ae2c791ca2629de13b347e7a8b450fa6a57
   SwipeView: bd67cfaf7760c036438446b3ccb28a3b84fce009
   TBXML: 9f9dadb239f2f2af1dadb87fe43a0ce6e479379a

@@ -220,6 +220,7 @@
 		370606061BEB21A100E31ACA /* WTBasicEntityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 370606051BEB21A100E31ACA /* WTBasicEntityListViewController.m */; };
 		370606091BEB225500E31ACA /* WTFavListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 370606081BEB225500E31ACA /* WTFavListViewController.m */; };
 		3706060C1BEB30FD00E31ACA /* WTNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 3706060B1BEB30FD00E31ACA /* WTNote.m */; };
+		370B96851BF9D33500FC1602 /* WTLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 370B96841BF9D33500FC1602 /* WTLink.m */; };
 		371F5FF51BC8B15F00FD36A5 /* UIDynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371F5FF41BC8B15F00FD36A5 /* UIDynamicViewController.m */; };
 		371F5FFE1BC8E5AB00FD36A5 /* ActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371F5FFD1BC8E5AB00FD36A5 /* ActionViewController.m */; };
 		371F60011BC8E5AB00FD36A5 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 371F5FFF1BC8E5AB00FD36A5 /* MainInterface.storyboard */; };
@@ -243,6 +244,7 @@
 		37307AC91BE50A130023E681 /* icon-heart-full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37307AC51BE50A130023E681 /* icon-heart-full@2x.png */; };
 		37307ACA1BE50A130023E681 /* icon-left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37307AC61BE50A130023E681 /* icon-left@2x.png */; };
 		37307ACB1BE50A130023E681 /* icon-right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37307AC71BE50A130023E681 /* icon-right@2x.png */; };
+		37371A791BFAF640006792DF /* WTDictionaryItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37371A781BFAF640006792DF /* WTDictionaryItemView.m */; };
 		373E2F481BCB5C030043BB52 /* MusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 373E2F461BCB5C030043BB52 /* MusicViewController.m */; };
 		373E2F491BCB5C030043BB52 /* MusicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 373E2F471BCB5C030043BB52 /* MusicViewController.xib */; };
 		373E2F4B1BCB5C850043BB52 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 373E2F4A1BCB5C850043BB52 /* AVFoundation.framework */; };
@@ -259,6 +261,8 @@
 		373E2F6A1BCBB3880043BB52 /* WTLogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 373E2F681BCBB3880043BB52 /* WTLogViewController.xib */; };
 		3740B9B41BE3850E006CCB71 /* lisongpro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3740B9B31BE38499006CCB71 /* lisongpro.ttf */; };
 		3740B9B61BE38594006CCB71 /* TpldYiFengScripture.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3740B9B51BE38594006CCB71 /* TpldYiFengScripture.otf */; };
+		3743590C1BF463E200CF2B2B /* zhushi.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3743590B1BF463E200CF2B2B /* zhushi.txt */; };
+		3743590D1BF4679300CF2B2B /* zhushi.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3743590B1BF463E200CF2B2B /* zhushi.txt */; };
 		375F61A41BE73CFD009CE82E /* WTArticleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 375F61A31BE73CFD009CE82E /* WTArticleManager.m */; };
 		375F61A71BE75011009CE82E /* WTArticleSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 375F61A61BE75011009CE82E /* WTArticleSummaryViewController.m */; };
 		375F61A91BE759A9009CE82E /* icon-info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 375F61A81BE759A9009CE82E /* icon-info@2x.png */; };
@@ -276,6 +280,23 @@
 		37CA564F1BE87EB500CA43BC /* WTDynastyEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CA564E1BE87EB500CA43BC /* WTDynastyEntity.m */; };
 		37CA56521BE8A36500CA43BC /* WTAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CA56511BE8A36500CA43BC /* WTAlertAction.m */; };
 		37CA56551BE8ACE700CA43BC /* WTPoetrySearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CA56541BE8ACE700CA43BC /* WTPoetrySearchViewController.m */; };
+		37CF52931BF9885000002956 /* HTProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CF527C1BF9885000002956 /* HTProgressHUD.m */; };
+		37CF52941BF9885000002956 /* HTProgressHUDAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CF527E1BF9885000002956 /* HTProgressHUDAnimation.m */; };
+		37CF52951BF9885000002956 /* HTProgressHUDFadeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CF52801BF9885000002956 /* HTProgressHUDFadeAnimation.m */; };
+		37CF52961BF9885000002956 /* HTProgressHUDFadeZoomAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CF52821BF9885000002956 /* HTProgressHUDFadeZoomAnimation.m */; };
+		37CF52971BF9885000002956 /* HTProgressHUDImageIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CF52841BF9885000002956 /* HTProgressHUDImageIndicatorView.m */; };
+		37CF52981BF9885000002956 /* HTProgressHUDIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CF52861BF9885000002956 /* HTProgressHUDIndicatorView.m */; };
+		37CF52991BF9885000002956 /* HTProgressHUDPieIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CF52881BF9885000002956 /* HTProgressHUDPieIndicatorView.m */; };
+		37CF529A1BF9885000002956 /* HTProgressHUDRingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CF528A1BF9885000002956 /* HTProgressHUDRingIndicatorView.m */; };
+		37CF529B1BF9885000002956 /* HTProgressHUDSlideAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CF528C1BF9885000002956 /* HTProgressHUDSlideAnimation.m */; };
+		37CF529C1BF9885000002956 /* icon-checkmark-circled.png in Resources */ = {isa = PBXBuildFile; fileRef = 37CF528D1BF9885000002956 /* icon-checkmark-circled.png */; };
+		37CF529D1BF9885000002956 /* icon-checkmark-circled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37CF528E1BF9885000002956 /* icon-checkmark-circled@2x.png */; };
+		37CF529E1BF9885000002956 /* icon-error-circled.png in Resources */ = {isa = PBXBuildFile; fileRef = 37CF528F1BF9885000002956 /* icon-error-circled.png */; };
+		37CF529F1BF9885000002956 /* icon-error-circled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37CF52901BF9885000002956 /* icon-error-circled@2x.png */; };
+		37CF52A01BF9885000002956 /* icon-warn-circled.png in Resources */ = {isa = PBXBuildFile; fileRef = 37CF52911BF9885000002956 /* icon-warn-circled.png */; };
+		37CF52A11BF9885000002956 /* icon-warn-circled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37CF52921BF9885000002956 /* icon-warn-circled@2x.png */; };
+		37CF52A41BF9886900002956 /* UIView+Progress.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CF52A31BF9886900002956 /* UIView+Progress.m */; };
+		37CF52A71BF9888D00002956 /* KeyboardStateListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CF52A61BF9888D00002956 /* KeyboardStateListener.m */; };
 		37E6CCE81BC7BF1D00B14535 /* AccelerometerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E6CCE71BC7BF1D00B14535 /* AccelerometerViewController.m */; };
 		37E6CCEA1BC7BF4100B14535 /* AccelerometerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E6CCE91BC7BF4100B14535 /* AccelerometerViewController.xib */; };
 		37E6CCEC1BC7C19700B14535 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E6CCEB1BC7C19700B14535 /* CoreMotion.framework */; };
@@ -291,7 +312,6 @@
 		37F0AAC61BD7665400EB8FEC /* WTVerticalTextContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F0AAC51BD7665400EB8FEC /* WTVerticalTextContainer.m */; };
 		37F0AAD01BD7911700EB8FEC /* vertical-text.html in Resources */ = {isa = PBXBuildFile; fileRef = 37F0AACF1BD7911700EB8FEC /* vertical-text.html */; };
 		549762262BB082D7F416CB46 /* libPods-WorldTravel Logic Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E8D4C917F56404C3650B9A /* libPods-WorldTravel Logic Tests.a */; };
-		A38E458A8F2196F7C1CB92C3 /* libPods-WorldTravelTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5697BD0622F4D25F5A4D7225 /* libPods-WorldTravelTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -748,6 +768,8 @@
 		370606081BEB225500E31ACA /* WTFavListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTFavListViewController.m; sourceTree = "<group>"; };
 		3706060A1BEB30FD00E31ACA /* WTNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTNote.h; sourceTree = "<group>"; };
 		3706060B1BEB30FD00E31ACA /* WTNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTNote.m; sourceTree = "<group>"; };
+		370B96831BF9D33500FC1602 /* WTLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTLink.h; sourceTree = "<group>"; };
+		370B96841BF9D33500FC1602 /* WTLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTLink.m; sourceTree = "<group>"; };
 		371F5FF31BC8B15F00FD36A5 /* UIDynamicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDynamicViewController.h; sourceTree = "<group>"; };
 		371F5FF41BC8B15F00FD36A5 /* UIDynamicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDynamicViewController.m; sourceTree = "<group>"; };
 		371F5FFA1BC8E5AB00FD36A5 /* ActionExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ActionExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -779,6 +801,8 @@
 		37307AC51BE50A130023E681 /* icon-heart-full@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-heart-full@2x.png"; sourceTree = "<group>"; };
 		37307AC61BE50A130023E681 /* icon-left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-left@2x.png"; sourceTree = "<group>"; };
 		37307AC71BE50A130023E681 /* icon-right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-right@2x.png"; sourceTree = "<group>"; };
+		37371A771BFAF640006792DF /* WTDictionaryItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTDictionaryItemView.h; sourceTree = "<group>"; };
+		37371A781BFAF640006792DF /* WTDictionaryItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTDictionaryItemView.m; sourceTree = "<group>"; };
 		373E2F451BCB5C030043BB52 /* MusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicViewController.h; sourceTree = "<group>"; };
 		373E2F461BCB5C030043BB52 /* MusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicViewController.m; sourceTree = "<group>"; };
 		373E2F471BCB5C030043BB52 /* MusicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MusicViewController.xib; sourceTree = "<group>"; };
@@ -801,6 +825,7 @@
 		373E2F681BCBB3880043BB52 /* WTLogViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WTLogViewController.xib; sourceTree = "<group>"; };
 		3740B9B31BE38499006CCB71 /* lisongpro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lisongpro.ttf; sourceTree = "<group>"; };
 		3740B9B51BE38594006CCB71 /* TpldYiFengScripture.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TpldYiFengScripture.otf; sourceTree = "<group>"; };
+		3743590B1BF463E200CF2B2B /* zhushi.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = zhushi.txt; sourceTree = "<group>"; };
 		37502387FF5855BE3CDF676D /* Pods-WorldTravelTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorldTravelTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WorldTravelTests/Pods-WorldTravelTests.debug.xcconfig"; sourceTree = "<group>"; };
 		375F61A21BE73CFD009CE82E /* WTArticleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTArticleManager.h; sourceTree = "<group>"; };
 		375F61A31BE73CFD009CE82E /* WTArticleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTArticleManager.m; sourceTree = "<group>"; };
@@ -828,6 +853,34 @@
 		37CA56511BE8A36500CA43BC /* WTAlertAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTAlertAction.m; sourceTree = "<group>"; };
 		37CA56531BE8ACE700CA43BC /* WTPoetrySearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTPoetrySearchViewController.h; sourceTree = "<group>"; };
 		37CA56541BE8ACE700CA43BC /* WTPoetrySearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTPoetrySearchViewController.m; sourceTree = "<group>"; };
+		37CF527B1BF9885000002956 /* HTProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTProgressHUD.h; sourceTree = "<group>"; };
+		37CF527C1BF9885000002956 /* HTProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTProgressHUD.m; sourceTree = "<group>"; };
+		37CF527D1BF9885000002956 /* HTProgressHUDAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTProgressHUDAnimation.h; sourceTree = "<group>"; };
+		37CF527E1BF9885000002956 /* HTProgressHUDAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTProgressHUDAnimation.m; sourceTree = "<group>"; };
+		37CF527F1BF9885000002956 /* HTProgressHUDFadeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTProgressHUDFadeAnimation.h; sourceTree = "<group>"; };
+		37CF52801BF9885000002956 /* HTProgressHUDFadeAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTProgressHUDFadeAnimation.m; sourceTree = "<group>"; };
+		37CF52811BF9885000002956 /* HTProgressHUDFadeZoomAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTProgressHUDFadeZoomAnimation.h; sourceTree = "<group>"; };
+		37CF52821BF9885000002956 /* HTProgressHUDFadeZoomAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTProgressHUDFadeZoomAnimation.m; sourceTree = "<group>"; };
+		37CF52831BF9885000002956 /* HTProgressHUDImageIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTProgressHUDImageIndicatorView.h; sourceTree = "<group>"; };
+		37CF52841BF9885000002956 /* HTProgressHUDImageIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTProgressHUDImageIndicatorView.m; sourceTree = "<group>"; };
+		37CF52851BF9885000002956 /* HTProgressHUDIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTProgressHUDIndicatorView.h; sourceTree = "<group>"; };
+		37CF52861BF9885000002956 /* HTProgressHUDIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTProgressHUDIndicatorView.m; sourceTree = "<group>"; };
+		37CF52871BF9885000002956 /* HTProgressHUDPieIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTProgressHUDPieIndicatorView.h; sourceTree = "<group>"; };
+		37CF52881BF9885000002956 /* HTProgressHUDPieIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTProgressHUDPieIndicatorView.m; sourceTree = "<group>"; };
+		37CF52891BF9885000002956 /* HTProgressHUDRingIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTProgressHUDRingIndicatorView.h; sourceTree = "<group>"; };
+		37CF528A1BF9885000002956 /* HTProgressHUDRingIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTProgressHUDRingIndicatorView.m; sourceTree = "<group>"; };
+		37CF528B1BF9885000002956 /* HTProgressHUDSlideAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTProgressHUDSlideAnimation.h; sourceTree = "<group>"; };
+		37CF528C1BF9885000002956 /* HTProgressHUDSlideAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTProgressHUDSlideAnimation.m; sourceTree = "<group>"; };
+		37CF528D1BF9885000002956 /* icon-checkmark-circled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-checkmark-circled.png"; sourceTree = "<group>"; };
+		37CF528E1BF9885000002956 /* icon-checkmark-circled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-checkmark-circled@2x.png"; sourceTree = "<group>"; };
+		37CF528F1BF9885000002956 /* icon-error-circled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-error-circled.png"; sourceTree = "<group>"; };
+		37CF52901BF9885000002956 /* icon-error-circled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-error-circled@2x.png"; sourceTree = "<group>"; };
+		37CF52911BF9885000002956 /* icon-warn-circled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-warn-circled.png"; sourceTree = "<group>"; };
+		37CF52921BF9885000002956 /* icon-warn-circled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-warn-circled@2x.png"; sourceTree = "<group>"; };
+		37CF52A21BF9886900002956 /* UIView+Progress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Progress.h"; sourceTree = "<group>"; };
+		37CF52A31BF9886900002956 /* UIView+Progress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Progress.m"; sourceTree = "<group>"; };
+		37CF52A51BF9888D00002956 /* KeyboardStateListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardStateListener.h; sourceTree = "<group>"; };
+		37CF52A61BF9888D00002956 /* KeyboardStateListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardStateListener.m; sourceTree = "<group>"; };
 		37E6CCE61BC7BF1D00B14535 /* AccelerometerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccelerometerViewController.h; path = CoreMotion/AccelerometerViewController.h; sourceTree = "<group>"; };
 		37E6CCE71BC7BF1D00B14535 /* AccelerometerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccelerometerViewController.m; path = CoreMotion/AccelerometerViewController.m; sourceTree = "<group>"; };
 		37E6CCE91BC7BF4100B14535 /* AccelerometerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccelerometerViewController.xib; sourceTree = "<group>"; };
@@ -894,7 +947,6 @@
 				188DA7291917287C005C8A12 /* XCTest.framework in Frameworks */,
 				188DA72B1917287D005C8A12 /* UIKit.framework in Frameworks */,
 				188DA72A1917287C005C8A12 /* Foundation.framework in Frameworks */,
-				A38E458A8F2196F7C1CB92C3 /* libPods-WorldTravelTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1279,6 +1331,7 @@
 		188DA70F1917287C005C8A12 /* WorldTravel */ = {
 			isa = PBXGroup;
 			children = (
+				37CF52791BF9884800002956 /* Tools */,
 				188DA7181917287C005C8A12 /* AppDelegate.h */,
 				188DA7191917287C005C8A12 /* AppDelegate.mm */,
 				373E2F651BCBB3610043BB52 /* Catagory */,
@@ -1315,6 +1368,7 @@
 		188DA72E1917287D005C8A12 /* WorldTravelTests */ = {
 			isa = PBXGroup;
 			children = (
+				3743590B1BF463E200CF2B2B /* zhushi.txt */,
 				188DA7341917287D005C8A12 /* WorldTravelTests.m */,
 				188DA72F1917287D005C8A12 /* Supporting Files */,
 			);
@@ -1842,8 +1896,53 @@
 				37E8BD8F1BEA14C50050FDAB /* WTPoetryContentView.m */,
 				3706060A1BEB30FD00E31ACA /* WTNote.h */,
 				3706060B1BEB30FD00E31ACA /* WTNote.m */,
+				370B96831BF9D33500FC1602 /* WTLink.h */,
+				370B96841BF9D33500FC1602 /* WTLink.m */,
 			);
 			name = "Vertical Text View Controller";
+			sourceTree = "<group>";
+		};
+		37CF52791BF9884800002956 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				37CF52A21BF9886900002956 /* UIView+Progress.h */,
+				37CF52A31BF9886900002956 /* UIView+Progress.m */,
+				37CF52A51BF9888D00002956 /* KeyboardStateListener.h */,
+				37CF52A61BF9888D00002956 /* KeyboardStateListener.m */,
+				37CF527A1BF9885000002956 /* HTProgressHUD */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		37CF527A1BF9885000002956 /* HTProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				37CF527B1BF9885000002956 /* HTProgressHUD.h */,
+				37CF527C1BF9885000002956 /* HTProgressHUD.m */,
+				37CF527D1BF9885000002956 /* HTProgressHUDAnimation.h */,
+				37CF527E1BF9885000002956 /* HTProgressHUDAnimation.m */,
+				37CF527F1BF9885000002956 /* HTProgressHUDFadeAnimation.h */,
+				37CF52801BF9885000002956 /* HTProgressHUDFadeAnimation.m */,
+				37CF52811BF9885000002956 /* HTProgressHUDFadeZoomAnimation.h */,
+				37CF52821BF9885000002956 /* HTProgressHUDFadeZoomAnimation.m */,
+				37CF52831BF9885000002956 /* HTProgressHUDImageIndicatorView.h */,
+				37CF52841BF9885000002956 /* HTProgressHUDImageIndicatorView.m */,
+				37CF52851BF9885000002956 /* HTProgressHUDIndicatorView.h */,
+				37CF52861BF9885000002956 /* HTProgressHUDIndicatorView.m */,
+				37CF52871BF9885000002956 /* HTProgressHUDPieIndicatorView.h */,
+				37CF52881BF9885000002956 /* HTProgressHUDPieIndicatorView.m */,
+				37CF52891BF9885000002956 /* HTProgressHUDRingIndicatorView.h */,
+				37CF528A1BF9885000002956 /* HTProgressHUDRingIndicatorView.m */,
+				37CF528B1BF9885000002956 /* HTProgressHUDSlideAnimation.h */,
+				37CF528C1BF9885000002956 /* HTProgressHUDSlideAnimation.m */,
+				37CF528D1BF9885000002956 /* icon-checkmark-circled.png */,
+				37CF528E1BF9885000002956 /* icon-checkmark-circled@2x.png */,
+				37CF528F1BF9885000002956 /* icon-error-circled.png */,
+				37CF52901BF9885000002956 /* icon-error-circled@2x.png */,
+				37CF52911BF9885000002956 /* icon-warn-circled.png */,
+				37CF52921BF9885000002956 /* icon-warn-circled@2x.png */,
+			);
+			path = HTProgressHUD;
 			sourceTree = "<group>";
 		};
 		37F0AABA1BD7611900EB8FEC /* Sqlite View Controller */ = {
@@ -1874,6 +1973,8 @@
 				370606051BEB21A100E31ACA /* WTBasicEntityListViewController.m */,
 				370606071BEB225500E31ACA /* WTFavListViewController.h */,
 				370606081BEB225500E31ACA /* WTFavListViewController.m */,
+				37371A771BFAF640006792DF /* WTDictionaryItemView.h */,
+				37371A781BFAF640006792DF /* WTDictionaryItemView.m */,
 			);
 			name = "Sqlite View Controller";
 			sourceTree = "<group>";
@@ -2126,8 +2227,10 @@
 				18A7797B1A5F817E007C2D0B /* start_sport_btn_img.png in Resources */,
 				18AACBCD19175AE50008FA5F /* mark@2x.png in Resources */,
 				18B934781A0C95090093940A /* EmptyButtonViewController.xib in Resources */,
+				37CF529E1BF9885000002956 /* icon-error-circled.png in Resources */,
 				182FD01F1A52A07D00FE3F2C /* ObserverViewController.xib in Resources */,
 				1891B5D01918B51F00195AE8 /* bg_chat_text_right@2x.png in Resources */,
+				37CF529D1BF9885000002956 /* icon-checkmark-circled@2x.png in Resources */,
 				18D5D46E1A66592900145163 /* icon_maptype_osm.png in Resources */,
 				37B1331F1BE3826C0054559E /* ChekiangShuKeSung.TTF in Resources */,
 				37B45E3F1BEF972E00A2AEE3 /* poetry.db in Resources */,
@@ -2142,6 +2245,7 @@
 				18AACBEC1917A5F30008FA5F /* man@2x.png in Resources */,
 				37307AC91BE50A130023E681 /* icon-heart-full@2x.png in Resources */,
 				18D5D4421A66473400145163 /* icon_plus.png in Resources */,
+				37CF52A11BF9885000002956 /* icon-warn-circled@2x.png in Resources */,
 				18D22C7B1A59458B00AF5AA0 /* FileSharingViewController.xib in Resources */,
 				18D5D46F1A66592900145163 /* icon_maptype_osm@2x.png in Resources */,
 				18D5D4651A66592900145163 /* icon_maptype_night_street_selected@2x.png in Resources */,
@@ -2149,7 +2253,9 @@
 				18ECC4CE1A036BA5001AFABD /* CustomModalViewController.xib in Resources */,
 				1835CAD5199DDF46006497A3 /* RotateImageViewController.xib in Resources */,
 				188DA7141917287C005C8A12 /* InfoPlist.strings in Resources */,
+				37CF529F1BF9885000002956 /* icon-error-circled@2x.png in Resources */,
 				37A5B7441BC66C1B0017BA22 /* ImagePickerViewController.xib in Resources */,
+				37CF52A01BF9885000002956 /* icon-warn-circled.png in Resources */,
 				37CA564C1BE8772400CA43BC /* tang-poetry-2.db in Resources */,
 				18D5D4691A66592900145163 /* icon_maptype_ocm_selected@2x.png in Resources */,
 				18D5D45F1A66592900145163 /* icon_map_type.png in Resources */,
@@ -2167,6 +2273,7 @@
 				37307AC81BE50A130023E681 /* icon-heart-empty@2x.png in Resources */,
 				18901A7119877AFB00CD4FAC /* TableViewCell.xib in Resources */,
 				37A5B73F1BC668DC0017BA22 /* main@2x.jpg in Resources */,
+				3743590D1BF4679300CF2B2B /* zhushi.txt in Resources */,
 				18A779791A5F7418007C2D0B /* navigation_left_btn@2x.png in Resources */,
 				37A5B73D1BC667630017BA22 /* LaunchScreen.xib in Resources */,
 				18A0F9911A11BD3E002989FA /* AlertViewController.xib in Resources */,
@@ -2174,6 +2281,7 @@
 				18AACBD9191797730008FA5F /* bg_chat_text_left.png in Resources */,
 				3740B9B41BE3850E006CCB71 /* lisongpro.ttf in Resources */,
 				18D5D46A1A66592900145163 /* icon_maptype_ocm.png in Resources */,
+				37CF529C1BF9885000002956 /* icon-checkmark-circled.png in Resources */,
 				1801B59E195C001700AE5D05 /* MapViewController.xib in Resources */,
 				18D5D4671A66592900145163 /* icon_maptype_night_street@2x.png in Resources */,
 				37E6CCEA1BC7BF4100B14535 /* AccelerometerViewController.xib in Resources */,
@@ -2202,6 +2310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				188DA7331917287D005C8A12 /* InfoPlist.strings in Resources */,
+				3743590C1BF463E200CF2B2B /* zhushi.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2364,6 +2473,7 @@
 			files = (
 				1878FE171926074400730B56 /* QTableViewCell.m in Sources */,
 				180D2EBB197D15A300AD58AE /* SomeClass+CategoryA.m in Sources */,
+				37CF52991BF9885000002956 /* HTProgressHUDPieIndicatorView.m in Sources */,
 				18490E161A5A69C5005C73B7 /* FastImageViewController.m in Sources */,
 				18F9AEC71AA032EB003F8780 /* ArrowPathView.m in Sources */,
 				18B9346D1A0C8DDB0093940A /* ParentViewController.m in Sources */,
@@ -2375,6 +2485,7 @@
 				18BC19C01A6510CC00261644 /* LAMap.m in Sources */,
 				1878FDE91926074400730B56 /* DOAutocompleteTextField.m in Sources */,
 				1878FE1A1926074400730B56 /* QuickDialogController+Animations.m in Sources */,
+				37371A791BFAF640006792DF /* WTDictionaryItemView.m in Sources */,
 				1878FE131926074400730B56 /* QSegmentedElement.m in Sources */,
 				188DA7201917287C005C8A12 /* ViewController.m in Sources */,
 				1887DC1F1A6118DF00A9AFAA /* SimpleViewController.m in Sources */,
@@ -2391,6 +2502,7 @@
 				1878FE0C1926074400730B56 /* QRadioElement.m in Sources */,
 				1878FDF01926074400730B56 /* QBadgeLabel.m in Sources */,
 				1811D9281A3149ED0011C5DA /* GotoPrefViewController.m in Sources */,
+				37CF52951BF9885000002956 /* HTProgressHUDFadeAnimation.m in Sources */,
 				1878FDFC1926074400730B56 /* QDynamicDataSection.m in Sources */,
 				1878FE061926074400730B56 /* QImageTableViewCell.m in Sources */,
 				1878FE26192607A300730B56 /* QDateInlineTableViewCell.m in Sources */,
@@ -2405,11 +2517,14 @@
 				37B132DD1BE31E910054559E /* WTVerticalTextViewController.m in Sources */,
 				373E2F581BCB90100043BB52 /* WTCopyQuoteViewController.m in Sources */,
 				1878FDF51926074400730B56 /* QClassicAppearance.m in Sources */,
+				37CF529B1BF9885000002956 /* HTProgressHUDSlideAnimation.m in Sources */,
+				37CF52A71BF9888D00002956 /* KeyboardStateListener.m in Sources */,
 				1878FDF21926074400730B56 /* QBindingEvaluator.m in Sources */,
 				18D7C4F819C1A2F700C55304 /* CircleButtonViewController.m in Sources */,
 				1878FDEE1926074400730B56 /* QAutoEntryTableViewCell.m in Sources */,
 				1878FE031926074400730B56 /* QFloatElement.m in Sources */,
 				1878FDEC1926074400730B56 /* QAppearance.m in Sources */,
+				370B96851BF9D33500FC1602 /* WTLink.m in Sources */,
 				37A5B7431BC66C1B0017BA22 /* ImagePickerViewController.m in Sources */,
 				37E6CCF01BC7C6BF00B14535 /* GyroViewController.m in Sources */,
 				1878FE101926074400730B56 /* QRootElement+JsonBuilder.m in Sources */,
@@ -2433,6 +2548,7 @@
 				18D5D42E1A66049100145163 /* LAAnnotation.m in Sources */,
 				1878FDFF1926074400730B56 /* QEmptyListElement.m in Sources */,
 				183BFFE61A5E93250087BD43 /* CamButton.m in Sources */,
+				37CF529A1BF9885000002956 /* HTProgressHUDRingIndicatorView.m in Sources */,
 				180D2EB8197D158200AD58AE /* SomeClass.m in Sources */,
 				18D22C7A1A59458B00AF5AA0 /* FileSharingViewController.m in Sources */,
 				1878FE071926074400730B56 /* QLabelElement.m in Sources */,
@@ -2454,6 +2570,8 @@
 				1878FE0B1926074400730B56 /* QProgressElement.m in Sources */,
 				1878FDF71926074400730B56 /* QDateEntryTableViewCell.m in Sources */,
 				1878FE041926074400730B56 /* QFloatTableViewCell.m in Sources */,
+				37CF52971BF9885000002956 /* HTProgressHUDImageIndicatorView.m in Sources */,
+				37CF52961BF9885000002956 /* HTProgressHUDFadeZoomAnimation.m in Sources */,
 				180D2EBE197D15B900AD58AE /* SomeClass+CategoryB.m in Sources */,
 				1878FDEA1926074400730B56 /* NSMutableArray+IMSExtensions.m in Sources */,
 				1878FE021926074400730B56 /* QFlatAppearance.m in Sources */,
@@ -2461,6 +2579,7 @@
 				188DA7161917287C005C8A12 /* main.m in Sources */,
 				37F0AAC61BD7665400EB8FEC /* WTVerticalTextContainer.m in Sources */,
 				18AACBE5191799430008FA5F /* ChatTextMessageView.m in Sources */,
+				37CF52941BF9885000002956 /* HTProgressHUDAnimation.m in Sources */,
 				18AACBE1191798320008FA5F /* ChatTextMessage.m in Sources */,
 				1878FE1F1926074400730B56 /* QuickDialogDataSource.m in Sources */,
 				1878FE081926074400730B56 /* QLoadingElement.m in Sources */,
@@ -2478,6 +2597,7 @@
 				18990A3D1A66628800D5208B /* MAMap+LAMap.m in Sources */,
 				18F4E1421A7CD80C00F98963 /* UIImage+Utility.m in Sources */,
 				1865D2A01A0CB5CA002D30C0 /* AKNavigationBar.m in Sources */,
+				37CF52931BF9885000002956 /* HTProgressHUD.m in Sources */,
 				1801B5A3195C01B600AE5D05 /* MessageAnnotationView.m in Sources */,
 				18F9AEC41AA03299003F8780 /* ArrowPathViewController.m in Sources */,
 				18A779771A5F6873007C2D0B /* UINavigationBar+CustomHeight.m in Sources */,
@@ -2486,6 +2606,7 @@
 				37F0A9D51BD730A800EB8FEC /* WTWebViewController.m in Sources */,
 				1878FDED1926074400730B56 /* QAutoEntryElement.m in Sources */,
 				1878FE011926074400730B56 /* QEntryTableViewCell.m in Sources */,
+				37CF52981BF9885000002956 /* HTProgressHUDIndicatorView.m in Sources */,
 				1878FE001926074400730B56 /* QEntryElement.m in Sources */,
 				37F0AAC01BD7615200EB8FEC /* WTArticleEntity.m in Sources */,
 				1878FE221926074400730B56 /* QuickDialogWebController.m in Sources */,
@@ -2495,6 +2616,7 @@
 				18ECC4D21A037E56001AFABD /* AnimationViewController.m in Sources */,
 				1878FE1B1926074400730B56 /* QuickDialogController+Helpers.m in Sources */,
 				1838F92A1A7B19530078A2D0 /* AKGradientButton.m in Sources */,
+				37CF52A41BF9886900002956 /* UIView+Progress.m in Sources */,
 				37CA564F1BE87EB500CA43BC /* WTDynastyEntity.m in Sources */,
 				1878FDFA1926074400730B56 /* QDecimalElement.m in Sources */,
 				37B132E11BE31EB80054559E /* WTVerticalTextView.m in Sources */,

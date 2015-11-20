@@ -10,7 +10,7 @@
 #import "WTVerticalTextView.h"
 #import "WTArticleEntity.h"
 
-@interface WTArticleView : UIScrollView
+@interface WTArticleView : UIScrollView<WTVerticalTextViewDelegate>
 @property (nonatomic, strong) WTArticleEntity * article;
 
 @property (nonatomic, strong) WTVerticalTextView * titleView;

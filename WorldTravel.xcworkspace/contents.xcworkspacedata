@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:TabAndNav/TabAndNav.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:CoreDataPlayground/CoreDataPlayground.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:WorldTravel.xcodeproj">
    </FileRef>
    <FileRef

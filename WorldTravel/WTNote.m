@@ -9,5 +9,5 @@
 #import "WTNote.h"
 
 @implementation WTNote
-
+@synthesize range, link;
 @end

@@ -163,7 +163,44 @@ static long long idCounter;
 //        
 //    }
     
+/*
+    NSError * error;
+    NSRegularExpression * numExp = [NSRegularExpression regularExpressionWithPattern:@"[\\u2460-\\u24FF\\u2776-\\u2783\\u3220-\\u3229\\u3280-\\u3289]" options:0 error:&error];
+    NSString * numberString = @"⓪①❶⑵㈠㊀";
+    for (NSInteger i = 0; i<numberString.length; i++) {
+        unichar character = [numberString characterAtIndex:i];
+        NSLog(@"%d", character);
+    }
+    NSLog(@"%@", numberString);
+    
+    NSArray * resultArray = [numExp matchesInString:numberString options:0 range:NSMakeRange(0, numberString.length)];
+    for (NSTextCheckingResult *result in resultArray) {
+        NSLog(@"%@", [numberString substringWithRange:result.range]);
+    }
+*/
+    
+//    [self testNoteParse];
+
     return YES;
+}
+
+
+-(void)testNoteParse{
+    
+    NSString * path = [[NSBundle mainBundle] pathForResource:@"zhushi" ofType:@"txt"];
+    NSString * summary = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+
+    NSError * error;
+    NSRegularExpression * noteExp = [NSRegularExpression regularExpressionWithPattern:@"^ *[\\(\\[（]{0,1}([0-9\\u2460-\\u24FF\\u2776-\\u2783\\u3220-\\u3229\\u3280-\\u3289]*)[\\]\\)\\）\\.\\、 ]*([^\\s：，—]+)[，：—](.+)$" options:NSRegularExpressionAnchorsMatchLines error:&error];
+//    NSRegularExpression * noteExp = [NSRegularExpression regularExpressionWithPattern:@"^.+$" options:NSRegularExpressionAnchorsMatchLines error:&error];
+    NSArray<NSTextCheckingResult *> * matches = [noteExp matchesInString:summary options:0 range:(NSMakeRange(0, summary.length))];
+    for (NSTextCheckingResult * result in matches) {
+        for (NSInteger i = 0 ; i<result.numberOfRanges; i++) {
+            NSLog(@"%@", [summary substringWithRange:[result rangeAtIndex:i]]);
+        }
+        NSLog(@"=============================================");
+    }
+    
 }
 
 //- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

@@ -37,7 +37,12 @@
     NSString * summary = self.articleEntity.summary;
     NSMutableString * newString = [summary mutableCopy];
     NSRegularExpression * numberExp = [NSRegularExpression regularExpressionWithPattern:@"\\[(\\d+)\\]" options:0 error:nil];
-    NSArray<NSTextCheckingResult *> * matches = [numberExp matchesInString:summary options:0 range:(NSMakeRange(0, summary.length))];
+    NSArray<NSTextCheckingResult *> * matches;
+    
+    if (newString.length) {
+        
+        matches = [numberExp matchesInString:summary options:0 range:(NSMakeRange(0, summary.length))];
+    }
     NSInteger offset = 0;
     for (NSTextCheckingResult * result in matches) {
         
@@ -77,7 +82,7 @@
 
     self.navigationController.toolbarHidden = NO;
     self.navigationController.navigationBarHidden = YES;
-    UIBarButtonItem * backItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:(UIBarButtonItemStylePlain) target:self action:@selector(backButtonTapped:)];
+    UIBarButtonItem * backItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:(UIBarButtonItemStylePlain) target:self action:@selector(backButtonTapped:)];
     
     self.toolbarItems = @[backItem];
 }

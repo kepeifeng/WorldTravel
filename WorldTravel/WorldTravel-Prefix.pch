@@ -28,3 +28,5 @@ static const DDLogLevel ddLogLevel = DDLogLevelWarn;
 
 #define FONT_NAME @"MingLiU"
 #define ARTICLE_FONT_SIZE (18.0)
+
+#import "UIView+Progress.h"

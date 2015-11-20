@@ -122,6 +122,15 @@
     entity.content = newBody;
     
     [bodyExp replaceMatchesInString:newBody options:0 range:(NSMakeRange(0, newBody.length)) withTemplate:@""];
+    
+    if ([entity.content hasPrefix:@"兰之猗猗"]) {
+        NSLog(@"%@", entity.content);
+    }
+    
+    NSRegularExpression * linebreakExp = [NSRegularExpression regularExpressionWithPattern:@"[\\n]{3,}" options:(0) error:nil];
+    [linebreakExp replaceMatchesInString:newBody options:0 range:NSMakeRange(0, newBody.length) withTemplate:@"\n"];
+//    entity.content = [entity.content stringByReplacingOccurrencesOfString:@"\n\n\n" withString:@"\n"];
+
     entity.content = [entity.content stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
 //    NSRegularExpression * clearNumber = [NSRegularExpression regularExpressionWithPattern:@"\\s+\\[(\\d+)\\]\\s+" options:0 error:&error];

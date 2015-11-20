@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WTLink.h"
 
-@interface WTNote : NSObject
+@interface WTNote : NSObject<WTAttributedStringLink>
 @property (nonatomic) NSRange range;
 @property (nonatomic) NSInteger index;
-@property (nonatomic) NSString * itemName;//如: 锱铢
-@property (nonatomic) NSString * title;//如: 锱铢(zizhu)
+///如: 锱铢
+@property (nonatomic) NSString * itemName;
+///如: 锱铢(zizhu)
+@property (nonatomic) NSString * title;
 @property (nonatomic) NSString * detail;
 @end
